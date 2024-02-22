@@ -1,0 +1,142 @@
+.container--about {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header--about {
+    margin-bottom: -40px;
+}
+
+.picture-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.picture-container img {
+    width: 100%;
+    height: 200px;
+    background-color: lightgray;
+    object-fit: cover;
+}
+
+.body-container--about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.body-container--about p {
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 147%;
+    letter-spacing: -5%;
+    padding: 0;
+    margin: 0;
+}
+
+.content--xl {
+    display: none;
+}
+
+.body-container--about a {
+    width: fit-content;
+}
+
+@media screen and (min-width: 600px) {
+    .container--about {
+        gap: 30px;
+    }
+
+    .body-container--about {
+        gap: 30px;
+    }
+
+    .picture-container img {
+        width: 100%;
+        height: 300px;
+        background-color: lightgray;
+    }
+
+    .body-container--about p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #about {
+        padding-top: 50px;
+    }
+    
+    .container--about {
+        display: grid;
+        grid-template-rows: repeat(12, 1fr);
+        grid-template-columns: repeat(12, 1fr);
+        gap: 15px;
+    }
+
+    .picture-container {
+        grid-row: 1 / 13;
+        grid-column: 1 / 5;
+    }
+
+    .header--about {
+        grid-row: 1 / 5;
+        grid-column: 5 / 13;
+        margin-bottom: -40px;
+    }
+
+    .body-container--about {
+        grid-row: 5 / 13;
+        grid-column: 5 / 13;
+        gap: 15px;
+    }
+
+    .picture-container img {
+        width: min(100%, 297px);
+        height: 100%;
+        min-height: 297px;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+
+    .container--about {
+        grid-template-rows: repeat(11, 1fr);
+        grid-template-columns: repeat(11, 1fr);
+        column-gap: 100px;
+        row-gap: 40px;
+        padding: 0 50px 0 50px;
+    }
+
+    .content--xl {
+        display: block;
+    }
+
+    .picture-container {
+        grid-row: 1 /12;
+        grid-column: 1 / 6;
+    }
+
+    .picture-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header--about {
+        grid-column: 6 / 13;
+    }
+
+    .body-container--about {
+        grid-column: 6 / 13;
+        grid-row: 5 / 12;
+        justify-content: end;
+        gap: 40px;
+    }
+
+    .body-container--about p {
+        font-size: 1.2vw;
+    }
+}

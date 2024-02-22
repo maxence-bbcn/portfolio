@@ -1,0 +1,118 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #212121;
+    box-shadow: 4px 4px 15px 0px black;
+    
+}
+
+.project-card-header {
+    height: 50%;
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px -120px 80px 0 #212121;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0 10px 0px 20px;
+}
+
+
+.project-card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    font-size: 6vw;
+    width: 100%;
+    font-weight: 900;
+    color: var(--theme);
+}
+
+.project-card-title p {
+    margin: 0;
+}
+
+.project-card-body {
+    height: 40%;
+    padding: 10px 10px 0px 20px;
+    font-size: 4vw;
+    font-weight: 100;
+}
+
+.project-card-button {
+    align-self: end;
+}
+
+@media screen and (min-width: 600px) {
+    .project-card-title {
+        font-size: 6vw;
+    }
+
+    .project-card-body {
+        font-size: 3.3vw;
+        padding: 10px 30px 0px 20px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .project-card {
+        width: 60%;
+    }
+
+    .project-card-title {
+        font-size: 3.5vw;
+    }
+
+    .project-card-body {
+        font-size: 2.2vw;
+        padding: 10px 30px 0px 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .project-card-body {
+        font-size: 1.8vw;
+        padding: 10px 40px 0px 20px;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+
+    .project-card {
+        width: 40%;
+    }
+    
+    .project-card-header {
+        height: 60%;
+        box-shadow: inset 0px -130px 80px 0 #212121;
+        padding: 0 10px 0px 20px;
+    }
+    
+    
+    .project-card-title {
+        font-size: 2.5vw;
+    }
+    
+    .project-card-title p {
+        margin: 0;
+    }
+    
+    .project-card-body {
+        height: 30%;
+        padding: 20px 40px 0px 20px;
+        font-size: 1.1vw;
+    }
+}
+

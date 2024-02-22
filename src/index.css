@@ -1,0 +1,46 @@
+@font-face {
+    font-family: karla;
+    src: url('../assets/fonts/Karla/Karla-VariableFont_wght.ttf');
+}
+
+:root {
+    --background-theme: #191919;
+    --theme: #FF6201;
+    --text-color: #FFFFFF;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 10px 20px 40px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (min-width: 600px) {
+    section {
+        padding: 10px 40px 40px 40px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    section {
+        padding: 20px 75px 30px 75px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    section {
+        padding: 100px 150px 50px 150px;
+    }
+}
