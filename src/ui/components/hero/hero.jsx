@@ -1,7 +1,7 @@
-import { Button, Typography } from '@mui/material';
-import './hero.css';
-import heroImg from '../../assets/profil.png';
-import { scroller } from 'react-scroll';
+import { Button, Typography } from "@mui/material";
+import "./hero.css";
+import heroImg from "../../assets/profil.png";
+import { scroller } from "react-scroll";
 
 const Hero = () => {
     const handleScroll = (element) => {
@@ -11,34 +11,35 @@ const Hero = () => {
             smooth: true,
             offset: -75,
         });
-    }
+    };
 
     return (
-        <div className='container--hero'>
-            <div className='body-container--hero'>
-                <div className='header--hero'>
-                    <Typography variant='h1'>Ingénieur freelance</Typography>
-                    <Typography variant='h2'>Maxence Barbançon</Typography>
+        <div className="container--hero">
+            <div className="body-container--hero">
+                <div className="header--hero">
+                    <Typography variant="h1">Développeur fullstack</Typography>
+                    <Typography variant="h2">Maxence Barbançon</Typography>
                 </div>
-                <div className='left-col'>
-                    <div className='quote-container'>
+                <div className="left-col">
+                    <div className="quote-container">
                         <div>
-                            <p className='quote'>
-                                Les détails font la perfection et la perfection n{`'`}est pas un détail
+                            <p className="quote">
+                                Les détails font la perfection et la perfection
+                                n{`'`}est pas un détail
                             </p>
                         </div>
-                        <p className='quote'>
-                            - Leonard De Vinci -
-                        </p>
+                        <p className="quote">- Leonard De Vinci -</p>
                     </div>
-                    <Button onClick={() => handleScroll('contact')}>Contactez-moi</Button>
+                    <Button onClick={() => handleScroll("contact")}>
+                        Contactez-moi
+                    </Button>
                 </div>
-                <div className='right-col'>
-                    <img src={heroImg} alt='profil picture' />
+                <div className="right-col">
+                    <img src={heroImg} alt="profil picture" />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Hero;
