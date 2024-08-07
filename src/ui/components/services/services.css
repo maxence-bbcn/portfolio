@@ -1,3 +1,39 @@
+#services {
+    padding: 0;
+}
+
+#services h3 {
+    text-align: center;
+}
+
+.header--services {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container-catchphrase--services {
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+.container-catchphrase--services > * {
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+}
+
+.container-catchphrase--services p {
+    font-size: 1rem;
+}
+
+.container-catchphrase--services span {
+    font-size: 0.9rem;
+}
+
 .container--services {
     height: 100%;
     display: flex;
@@ -5,172 +41,85 @@
     gap: 20px;
 }
 
-.button-container--services {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.button--service {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: #212121;
-    box-sizing: border-box;
-    padding: 20px;
-    cursor: pointer;
-}
-
-.button-header--service {
-    height: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-}
-
-.button--service .type--mobile {
-    writing-mode: sideways-lr;
-    display: inline-block;
-    user-select: none;
-    white-space: nowrap;
-    transform: rotate(0deg);
-    -webkit-writing-mode: vertical-lr;
-    -webkit-transform: rotate(180deg);
-    -o-writing-mode: vertical-lr;
-    -o-transform: rotate(180deg);
-    -ms-writing-mode: vertical-lr;
-    -ms-transform: rotate(180deg);
-    -moz-transform: rotate(0deg);
-}
-
-.button--service--selected {
-    box-shadow: 4px 4px 15px 0px black;
-}
-
-.button--service--selected h4 {
-    color: var(--theme);
-}
-
-.button--service--selected img {
-    filter: invert(46%) sepia(44%) saturate(5047%) hue-rotate(0deg) brightness(103%) contrast(104%);
-}
-
-.service-item--selected {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.service-item--selected .summary {
-    font-size: 0.9rem;
-    font-style: italic;
-    line-height: 159%;
-}
-
-.service-item--selected p {
-    font-size: 1rem;
-    font-weight: 100;
-    line-height: 159%;
-    margin: 0;
-}
-
-.button--service .type, .button--service .summary {
-    display: none;
-}
-
-
 @media screen and (min-width: 600px) {
+    #services h3 {
+        padding-left: 40px;
+        text-align: left;
+    }
+
+    .container-catchphrase--services {
+        padding: 30px 50px;
+    }
+
     .container--services {
         gap: 50px;
     }
 
-    .button-container--services {
-        gap: 20px;
+    .container-catchphrase--services p {
+        font-size: 1.05rem;
     }
 
-    .button--service {
-        width: 80px;
+    .container-catchphrase--services span {
+        font-size: 1rem;
     }
-
-    .service-item--selected {
-        gap: 30px;
-    }
-
-    .service-item--selected .summary {
-        font-size: 1.1rem;
-    }
-    
-    .service-item--selected p {
-        font-size: 1.3rem;
-    }
-    
 }
 
-
 @media screen and (min-width: 900px) {
-    .button-container--services {
-        width: 50%;
+    #services h3 {
+        padding-left: 75px;
     }
 
-    .service-item--selected {
-        width: 50%;
+    .container-catchphrase--services p {
+        font-size: 1.1rem;
     }
 
-    .button--service {
-        width: 100%;
-        height: fit-content;
+    .container-catchphrase--services span {
+        font-size: 1rem;
     }
-    
-    .button-header--service {
-        flex-direction: row;
-        justify-content: space-between;
+}
+
+@media screen and (min-width: 1200px) {
+    #services h3 {
+        padding-top: 50px;
+        padding-left: 150px;
     }
 
-    .button--service .type {
-        display: block;
+    .container-catchphrase--services {
+        padding: 30px 150px;
     }
 
-    .button--service .type--mobile {
-        display: none;
+    .container-catchphrase--services p {
+        font-size: 1.3rem;
     }
 
-    .button--service .summary {
-        display: block;
-        font-size: 14px;
-        font-weight: 100;
-    }
-
-    .service-item--selected .summary, .service-item--selected p {
-        font-size: 1.05rem;
+    .container-catchphrase--services span {
+        font-size: 1.1rem;
     }
 }
 
 @media screen and (min-width: 1536px) {
+    #services h3 {
+        padding-top: 100px;
+    }
+
+    .header--services {
+        gap: 150px;
+    }
+
+    .container-catchphrase--services {
+        padding: 50px 100px 50px 100px;
+        gap: 60px;
+    }
+
+    .container-catchphrase--services p {
+        font-size: 2rem;
+    }
+
+    .container-catchphrase--services span {
+        font-size: 1.7rem;
+    }
+
     .container--services {
         padding: 0px 50px 0 50px;
-    }
-
-    .button-container--services {
-        width: 45%;
-    }
-
-    .button--service .summary {
-        font-size: 1vw;
-    }
-
-    .service-item--selected {
-        width: 50%;
-    }
-
-    .service-item--selected .summary {
-        font-size: 1.3vw;
-    }
-
-    .service-item--selected p {
-        font-size: 1.2vw;
     }
 }

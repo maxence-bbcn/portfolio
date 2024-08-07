@@ -1,83 +1,67 @@
-import { Typography } from '@mui/material';
-import './services.css'
-import DesignIcon from '../../assets/pen-tool.svg';
-import MonitorIcon from '../../assets/monitor.svg';
-import SmartphoneIcon from '../../assets/smartphone.svg';
-import { useState } from 'react';
+import { Typography } from "@mui/material";
+import "./services.css";
+import { useState } from "react";
 
 const Services = () => {
-    
-    const services = [
+    const steps = [
         {
-            title: 'Envie de designer votre projet ?',
-            type: 'Design',
-            typeActive: 'Design',
-            img: DesignIcon,
-            summary: 'Vous avez une idée, mais vous ne savez pas par où commencer ? Le design graphique et conceptuel permet de donner vie à votre projet !',
-            desc1: "Les wireframes et les mockups permettent de se concentrer davantage sur l'expérience utilisateur et l'esthétique d'une application. Ils sont essentiels dans la réalisation de votre projet et forment une base solide pour le développement.",
-            desc2: 'Ainsi, mes connaissances en design graphique et ma maîtrise des logiciels Adobe et de Figma me permettent de créer des maquettes basses et hautes fidélités pour donner vie à vos projets.'
+            title: "Apprenons à nous connaître",
+            summary:
+                "Pour bien travailler ensemble, il faut d’abord bien se connaître. Je vous propose de faire connaissance pendant une première réunion où nous discuterons de votre activité et de votre projet.  A l’issue de cette rencontre, je rédigerai un cahier des charges qui me permettra de vous transmettre un devis aussi précis que possible.",
+            keywords: ["Réunion", "Cahier des charges", "Devis"],
         },
         {
-            title: "Besoin d'un site web pour votre activité ?",
-            type: 'Développement web',
-            typeActive: 'Dév. web',
-            img: MonitorIcon,
-            summary: "Vous désirez plus de visibilité pour votre marque ou votre entreprise ? Le développement d'un site web vitrine ou e-commerce peut être la solution !",
-            desc1: "Qu'il s'agisse d'un site web vitrine ou e-commerce ou d'une application web spécifique, le développement d'un tel projet offre de nouvelles opportunités pour votre activité.",
-            desc2: "Venant s'appuyer sur les maquettes designées en amont, le développement peut se faire via différentes technologies du web comme HTML, CSS et Javascript ou via des framework comme React ou Node.js pour les projets les plus complexes.",
+            title: "Je design votre projet",
+            summary:
+                "La première des étapes pour réaliser un projet web qui vous plaît et qui plaît à vos client, c’est de concevoir un bon design. Lors d’une seconde réunion, nous aborderons et discuterons des visuels qui vous plaisent, de vos attentes et de vos goûts en matière de design afin de construire ensemble un moodboard qui vous ressemble. Je produirai ensuite des maquettes détaillées qui vous seront soumises à validation.",
+            keywords: ["Moodboard", "Maquettes détaillées", "Validation"],
         },
         {
-            title: 'Vous souhaitez intégrer le marché des applications mobiles ?',
-            type: 'Développement mobile',
-            typeActive: 'Dév. mobile',
-            img: SmartphoneIcon,
-            summary: "Vous voulez faciliter l'accès à votre service ou développer une idée originale pour toucher un public large ? Créer une application mobile pourrait être un choix stratégique !",
-            desc1: "Développer votre projet via une application mobile peut vous permettre d'étendre votre base d'utilisateurs ou de fidéliser ceux que vous possédez déjà !",
-            desc2: "La conception d'une application cross-platform grâce à React Native permet de déployer votre projet sur les stores de Google et d'Apple le plus rapidement possible.",
-        }
-    ]
-
-    const [activeCard, setActiveCard] = useState(services[0]);
-
-    const Card = ({type, typeActive, img, summary}, index) => {
-
-        const handleClick = () => {
-            setActiveCard(services[index]);
-            const items = document.getElementsByClassName('button--service');
-            for (const item of items) item.classList.remove('button--service--selected');
-            document.getElementById(index).classList.add('button--service--selected');
-        }
-
-        return (
-            <div key={index} className={index == 0 ? 'button--service button--service--selected' : 'button--service'} id={index} onClick={handleClick}>
-                <div className='button-header--service'>
-                    <Typography variant='h4' className='type'>{type}</Typography>
-                    <Typography variant='h4' className='type--mobile'>{typeActive}</Typography>
-                    <img src={img}/>
-                </div>
-                <p className='summary'>{summary}</p>
-            </div>
-        );
-    }
-
+            title: "Le développement commence",
+            summary:
+                "On entre dans le concret ! Lors de la phase de développement, il sera important de planifier quelques réunions, selon un rythme qui vous convient, pour valider les points essentiels du projet.",
+            keywords: ["Développement", "Réunions planifiées", "Validation"],
+        },
+        {
+            title: "Votre projet est en ligne",
+            summary:
+                "Votre projet se termine. Il est temps de le rendre public et de le partager à vos clients ! Il faudra choisir une solution d’hébergement pour qu’il soit accessible en ligne et procéder aux derniers tests grandeur nature. \nJe propose des solutions d’hébergement et de maintenance.",
+            keywords: ["Hébergement", "Tests"],
+        },
+        {
+            title: "Et après ?",
+            summary:
+                "Votre projet va grandir et évoluer avec votre activité. Le maintenir et pouvoir agir rapidement en cas de panne est primordial. L’améliorer et ajouter des fonctionnalités fais également partie intégrante de sa vie. Je peux vous proposer des solutions sur-mesure pour prévoir au mieux le futur de votre projet.",
+            keywords: ["Maintenance", "Amélioration"],
+        },
+    ];
 
     return (
-        <section id='services'>
-            <Typography variant='h3'>Mes services</Typography>
-            <div className='container--services'>
-                <div className='button-container--services'>
-                    {services.map((service, index) => Card(service, index))}
+        <section id="services">
+            <div className="header--services">
+                <Typography variant="h3">
+                    Besoin d’un site web pour votre activité ?
+                </Typography>
+                <div className="container-catchphrase--services">
+                    <p>
+                        Vous désirez plus de visibilité pour votre marque ou
+                        votre entreprise ? Le développement d'un site web
+                        vitrine ou e-commerce peut être la solution !
+                    </p>
+                    <span>
+                        Je travaille principalement avec les technologies React
+                        JS et Node JS, respectivement pour le frontend et le
+                        backend.
+                    </span>
                 </div>
-                <div className='service-item--selected'>
-                    <Typography variant='h5' className='title'>{activeCard.title}</Typography>
-                    <p className='summary'>{activeCard.summary}</p>
-                    <p className='desc1'>{activeCard.desc1}</p>
-                    <p className='desc2'>{activeCard.desc2}</p>
-                </div>
-                
+            </div>
+            <div className="container--services">
+                {steps.map((step, index) => (
+                    <div key={index} className={`step step--${index}`}></div>
+                ))}
             </div>
         </section>
     );
-}
+};
 
 export default Services;
