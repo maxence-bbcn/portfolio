@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import "./services.css";
-import { useState } from "react";
 
 const Services = () => {
     const steps = [
@@ -44,9 +43,9 @@ const Services = () => {
                 </Typography>
                 <div className="container-catchphrase--services">
                     <p>
-                        Vous désirez plus de visibilité pour votre marque ou
-                        votre entreprise ? Le développement d'un site web
-                        vitrine ou e-commerce peut être la solution !
+                        {
+                            "Vous désirez plus de visibilité pour votre marque ou votre entreprise ? Le développement d'un site web vitrine ou e-commerce peut être la solution !"
+                        }
                     </p>
                     <span>
                         Je travaille principalement avec les technologies React
@@ -55,9 +54,20 @@ const Services = () => {
                     </span>
                 </div>
             </div>
-            <div className="container--services">
+            <div className="services--step-container">
                 {steps.map((step, index) => (
-                    <div key={index} className={`step step--${index}`}></div>
+                    <div key={index} className={`step step--${index + 1}`}>
+                        <p className="service-number">{index + 1}</p>
+                        <h4>{step.title}</h4>
+                        <p className="step-desc">{step.summary}</p>
+                        <div className="services--keywords-container">
+                            {step.keywords.map((keyword, index) => (
+                                <div key={index} className="keyword">
+                                    <p>{keyword}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>

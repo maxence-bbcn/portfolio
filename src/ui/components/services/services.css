@@ -34,17 +34,82 @@
     font-size: 0.9rem;
 }
 
-.container--services {
-    height: 100%;
+.services--step-container {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 25px;
+    gap: 10px;
+}
+
+.step--2,
+.step--4 {
+    text-align: right;
+}
+
+.service-number {
+    z-index: 0;
+    font-size: 128px;
+    font-weight: 900;
+    margin: 0;
+    color: var(--background-theme);
+    text-shadow: 2px 2px 0 var(--theme), -2px -2px 0 var(--theme),
+        2px -2px 0 var(--theme), -2px 2px 0 var(--theme), 2px 0 0 var(--theme),
+        -2px 0 0 var(--theme), 0 2px 0 var(--theme), 0 -2px 0 var(--theme);
+    opacity: 0.5;
+    position: absolute;
+    top: -5%;
+}
+
+.step--2 .service-number,
+.step--4 .service-number {
+    right: 5%;
+}
+
+.step h4 {
+    z-index: 1;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.step--2 .services--keywords-container,
+.step--4 .services--keywords-container {
+    justify-content: end;
+}
+
+.services--keywords-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.keyword {
+    width: fit-content;
+    height: fit-content;
+    background-color: #212121;
+    padding: 15px;
+}
+
+.keyword p {
+    margin: 0;
+    font-size: 12px;
+    text-wrap: nowrap;
 }
 
 @media screen and (min-width: 600px) {
     #services h3 {
         padding-left: 40px;
         text-align: left;
+    }
+
+    .services--step-container {
+        padding: 0 40px;
     }
 
     .container-catchphrase--services {
@@ -66,7 +131,7 @@
 
 @media screen and (min-width: 900px) {
     #services h3 {
-        padding-left: 75px;
+        padding: 10px 75px;
     }
 
     .container-catchphrase--services p {
@@ -76,12 +141,45 @@
     .container-catchphrase--services span {
         font-size: 1rem;
     }
+
+    .services--step-container {
+        padding: 0 75px;
+    }
+
+    .step {
+        width: 80%;
+    }
+
+    .step--2,
+    .step--4 {
+        align-self: flex-end;
+    }
+
+    .step h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .step-desc {
+        font-size: 1.2rem;
+    }
+
+    .keyword p {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     #services h3 {
         padding-top: 50px;
         padding-left: 150px;
+    }
+
+    .services--step-container {
+        padding: 0 150px;
+        background-image: url("../../assets//line.png");
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .container-catchphrase--services {
@@ -103,7 +201,7 @@
     }
 
     .header--services {
-        gap: 150px;
+        gap: 50px;
     }
 
     .container-catchphrase--services {
@@ -112,14 +210,58 @@
     }
 
     .container-catchphrase--services p {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .container-catchphrase--services span {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
     }
 
-    .container--services {
-        padding: 0px 50px 0 50px;
+    .services--step-container {
+        padding: 150px 150px 0 150px;
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 20px 0 50px 0;
+        gap: 20px;
+        width: 60%;
+    }
+
+    .step--2,
+    .step--4 {
+        text-align: right;
+    }
+
+    .service-number {
+        font-size: 250px;
+        top: -25%;
+    }
+
+    .step h4 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .services--keywords-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .keyword {
+        width: fit-content;
+        height: fit-content;
+        background-color: #212121;
+        padding: 15px;
+    }
+
+    .keyword p {
+        margin: 0;
+        font-size: 12px;
+        text-wrap: nowrap;
     }
 }
