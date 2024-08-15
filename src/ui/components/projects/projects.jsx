@@ -45,7 +45,7 @@ const Projects = () => {
                         }
                         color="secondary"
                     >
-                        Voir plus de détails
+                        En savoir plus
                     </Button>
                 </div>
             </div>

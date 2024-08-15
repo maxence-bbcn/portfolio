@@ -21,7 +21,7 @@ const useProjects = () => {
             clientName: "Univers Kids",
             clientDesc:
                 "Univers Kids est une boutique de jeux de société et jeux de rôles troyenne. Michaël, son fondateur, est un passionné de jeux depuis plusieurs années. Il organise de nombreux événements sur Troyes autour du jeux de rôles.",
-            desc: "",
+            desc: "Michaël m'a décrit son besoin d'avoir un site e-commerce performant et esthétique ainsi qu'un accès administrateur lui permettant de gérer son stock. Pour mener à bien cette mission, j'ai designé un site client et un site admnistrateur. En plus de ces deux sites, j'ai développé une API en Node JS permettant de gérer son stock facilement et rapidement.",
             images: [],
             externalLink: "project url",
         },
