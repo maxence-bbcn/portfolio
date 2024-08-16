@@ -41,7 +41,7 @@ const Hero = () => {
                 <div className="right-col">
                     <img
                         srcSet={`${heroImg} 350w, ${heroImgS} 600w, ${heroImgM} 900w, ${heroImgLg} 1200w, ${heroImgXl} 1536w`}
-                        src={heroImgXl}
+                        src={heroImg}
                         alt="profil picture"
                         loading="lazy"
                         width={200}

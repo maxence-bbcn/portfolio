@@ -27,7 +27,7 @@ const About = () => {
                 <div className="picture-container">
                     <img
                         srcSet={`${aboutPicture} 350w, ${aboutPictureS} 600w, ${aboutPictureM} 900w, ${aboutPictureLg} 1200w, ${aboutPictureXl} 1536w`}
-                        src={aboutPictureXl}
+                        src={aboutPicture}
                         alt="about picture"
                         className="picture"
                         loading="lazy"
