@@ -38,7 +38,13 @@ const ProjectCard = ({ project }) => {
                     size="medium"
                     className="project-card-button"
                     onClick={() => handleClick(project)}
-                    startIcon={<img src={externalLink} style={{ width: 16 }} />}
+                    startIcon={
+                        <img
+                            src={externalLink}
+                            alt="icône lien"
+                            style={{ width: 16 }}
+                        />
+                    }
                     color="secondary"
                 >
                     En savoir plus

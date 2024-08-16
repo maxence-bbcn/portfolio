@@ -103,7 +103,7 @@ const Toolbar = () => {
 
     return (
         <div className="toolbar">
-            <img src={logo} className="logo" />
+            <img src={logo} alt="logo" className="logo" />
             <Links className="links" />
             <IconButton
                 aria-label="menu"

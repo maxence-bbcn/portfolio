@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import "./hero.css";
-import heroImg from "../../assets/images/profil.png";
+import heroImg from "../../assets/images/profil.webp";
 import { scroller } from "react-scroll";
 
 const Hero = () => {
