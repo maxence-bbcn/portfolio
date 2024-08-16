@@ -43,6 +43,7 @@ const Hero = () => {
                         srcSet={`${heroImg} 350w, ${heroImgS} 600w, ${heroImgM} 900w, ${heroImgLg} 1200w, ${heroImgXl} 1536w`}
                         src={heroImgXl}
                         alt="profil picture"
+                        loading="lazy"
                     />
                 </div>
             </div>

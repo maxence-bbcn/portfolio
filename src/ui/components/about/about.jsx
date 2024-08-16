@@ -30,6 +30,7 @@ const About = () => {
                         src={aboutPictureXl}
                         alt="about picture"
                         className="picture"
+                        loading="lazy"
                     />
                 </div>
                 <div className="body-container--about">
