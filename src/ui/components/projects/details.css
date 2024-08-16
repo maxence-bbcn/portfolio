@@ -1,0 +1,249 @@
+@font-face {
+    font-family: Karla;
+    src: url("../../assets/fonts/Karla/Karla-VariableFont_wght.ttf");
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    align-items: center;
+    font-family: "Karla";
+    overflow-x: hidden;
+}
+
+.details--right-col {
+    display: none;
+}
+
+.details--left-col {
+    width: 100%;
+    min-height: 110px;
+    padding: 20px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.dot-line-row {
+    display: flex;
+    align-items: center;
+}
+
+.line,
+.dot {
+    flex: 0 0 auto;
+}
+
+.line {
+    width: 175px;
+    border: 1px solid var(--theme);
+}
+
+.line--grey {
+    border: 1px solid #2d2d33;
+}
+
+.line--dashed {
+    border: 1px dashed var(--theme);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background-color: var(--theme);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dot--grey {
+    background-color: #2d2d33;
+}
+
+.dot-text {
+    margin: 0;
+    padding-top: 25px;
+    font-size: 12px;
+    text-wrap: wrap;
+    text-align: center;
+}
+
+.dot:hover {
+    cursor: pointer;
+}
+
+.details--middle {
+    /* width: 60%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 80px;
+}
+
+.details--middle h4 {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+}
+
+.details-summary {
+    display: flex;
+    word-break: keep-all;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.details-summary p:first-child {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #212121;
+    box-shadow: 4px 4px 15px 0px black;
+}
+
+.details-card img {
+    width: 14px;
+    height: 14px;
+}
+
+.details-card--header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 30px 20px;
+    border-bottom: 1px solid #717171;
+}
+
+.tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.details-card--body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 30px;
+}
+
+.details-card--body > p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.05rem;
+    font-weight: 100;
+}
+
+.details-card--body > p > span {
+    font-weight: 400;
+}
+
+.details-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.details-image-wrapper > img {
+    width: 100%;
+    height: auto;
+}
+
+.details-card--footer {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+    .details-container {
+        margin: 0;
+        height: fit-content;
+        flex-direction: row;
+        align-items: start;
+        overflow-y: hidden;
+        padding-bottom: 15px;
+        gap: 50px;
+    }
+
+    .details--right-col,
+    .details--left-col {
+        display: flex;
+        width: 20%;
+    }
+
+    .details--left-col {
+        padding: 0;
+    }
+
+    .details--middle {
+        width: 60%;
+        padding-top: 10px;
+    }
+
+    .dot-line-row {
+        max-height: 100vh;
+        width: 100%;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line {
+        width: 0;
+        height: 250px;
+    }
+
+    .dot {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dot-text {
+        padding-top: 0px;
+        padding-left: 25px;
+        font-size: 1rem;
+    }
+
+    .details-card {
+        gap: 5px;
+    }
+
+    .details-card--header {
+        gap: 15px;
+    }
+
+    .details-card--body {
+        gap: 15px;
+    }
+
+    .details-card--body > p {
+        font-size: 16px;
+        letter-spacing: 0.05rem;
+        font-weight: 100;
+    }
+
+    .details-image-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .details-image-wrapper img {
+        width: 33%;
+        height: auto;
+    }
+
+    .details-card--footer {
+        padding: 0 30px 10px;
+    }
+}

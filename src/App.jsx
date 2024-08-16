@@ -5,7 +5,7 @@ import Karla from "./ui/assets/fonts/Karla/Karla-VariableFont_wght.ttf";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import Services from "./ui/components/services/services";
-import Projects from "./ui/components/projects/projects";
+import { Projects } from "./ui/components/projects/projects";
 import Contact from "./ui/components/contact/contact";
 import Footer from "./ui/components/footer/footer";
 

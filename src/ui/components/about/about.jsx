@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import "./about.css";
 import "../../../index.css";
 import cv from "../../assets/Maxence Barbançon.pdf";
-import aboutPicture from "../../assets/about.jpg";
+import aboutPicture from "../../assets/images/about.jpg";
 
 const About = () => {
     const contentOnXLScreen =
