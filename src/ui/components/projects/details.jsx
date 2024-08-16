@@ -136,6 +136,7 @@ const Details = () => {
                                         <img
                                             src={image}
                                             alt="image du projet"
+                                            loading="lazy"
                                         />
                                     </div>
                                 ))}

@@ -8,7 +8,8 @@
     flex-direction: column-reverse;
     gap: 30px;
     align-items: center;
-    font-family: "Karla";
+    font-family: "Karla" sans-serif;
+    font-display: swap;
     overflow-x: hidden;
 }
 
