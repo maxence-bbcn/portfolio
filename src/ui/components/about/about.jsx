@@ -31,6 +31,8 @@ const About = () => {
                         alt="about picture"
                         className="picture"
                         loading="lazy"
+                        width={219}
+                        height={132}
                     />
                 </div>
                 <div className="body-container--about">

@@ -1,6 +1,7 @@
 @font-face {
     font-family: Karla;
     src: url("../../assets/fonts/Karla/Karla-VariableFont_wght.ttf");
+    font-display: swap;
 }
 
 .details-container {
@@ -9,7 +10,6 @@
     gap: 30px;
     align-items: center;
     font-family: "Karla" sans-serif;
-    font-display: swap;
     overflow-x: hidden;
 }
 

@@ -137,6 +137,8 @@ const Details = () => {
                                             src={image}
                                             alt="image du projet"
                                             loading="lazy"
+                                            width={315}
+                                            height={150}
                                         />
                                     </div>
                                 ))}

@@ -44,6 +44,8 @@ const Hero = () => {
                         src={heroImgXl}
                         alt="profil picture"
                         loading="lazy"
+                        width={200}
+                        height={350}
                     />
                 </div>
             </div>
