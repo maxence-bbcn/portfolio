@@ -1,6 +1,10 @@
 import { Button, Typography } from "@mui/material";
 import "./hero.css";
 import heroImg from "../../assets/images/profil.webp";
+import heroImgS from "../../assets/images/profil-s.webp";
+import heroImgM from "../../assets/images/profil-m.webp";
+import heroImgLg from "../../assets/images/profil-lg.webp";
+import heroImgXl from "../../assets/images/profil-xl.webp";
 import { scroller } from "react-scroll";
 
 const Hero = () => {
@@ -35,7 +39,11 @@ const Hero = () => {
                     </Button>
                 </div>
                 <div className="right-col">
-                    <img src={heroImg} alt="profil picture" />
+                    <img
+                        srcSet={`${heroImg} 350w, ${heroImgS} 600w, ${heroImgM} 900w, ${heroImgLg} 1200w, ${heroImgXl} 1536w`}
+                        src={heroImgXl}
+                        alt="profil picture"
+                    />
                 </div>
             </div>
         </div>
