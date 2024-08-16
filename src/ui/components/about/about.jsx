@@ -3,6 +3,10 @@ import "./about.css";
 import "../../../index.css";
 import cv from "../../assets/Maxence Barbançon.pdf";
 import aboutPicture from "../../assets/images/about.webp";
+import aboutPictureS from "../../assets/images/about-s.webp";
+import aboutPictureM from "../../assets/images/about-m.webp";
+import aboutPictureLg from "../../assets/images/about-lg.webp";
+import aboutPictureXl from "../../assets/images/about-xl.webp";
 
 const About = () => {
     const contentOnXLScreen =
@@ -22,7 +26,8 @@ const About = () => {
                 </div>
                 <div className="picture-container">
                     <img
-                        src={aboutPicture}
+                        srcSet={`${aboutPicture} 350w, ${aboutPictureS} 600w, ${aboutPictureM} 900w, ${aboutPictureLg} 1200w, ${aboutPictureXl} 1536w`}
+                        src={aboutPictureXl}
                         alt="about picture"
                         className="picture"
                     />
