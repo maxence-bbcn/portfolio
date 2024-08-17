@@ -127,7 +127,7 @@ const Details = () => {
                                 <span>Description du projet : </span>{" "}
                                 {project.desc}
                             </p>
-                            {project.images.length !== 0 &&
+                            {project.images.length !== 0 ? (
                                 project.images.map((image, index) => (
                                     <div
                                         key={index}
@@ -141,7 +141,10 @@ const Details = () => {
                                             height={150}
                                         />
                                     </div>
-                                ))}
+                                ))
+                            ) : (
+                                <span>Images à venir</span>
+                            )}
                         </div>
                         <div className="details-card--footer">
                             {project.githubLink && (
@@ -180,7 +183,15 @@ const Details = () => {
                     </div>
                 )}
             </div>
-            <div className="details--right-col"></div>
+            <div className="details--right-col">
+                {project !== null && (
+                    <p>
+                        {
+                            "→ Cliquez sur le nom d'un projet pour plus de détails."
+                        }
+                    </p>
+                )}
+            </div>
         </div>
     );
 };

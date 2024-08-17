@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import "./projects.css";
 import useProjects from "./useProjects";
 import externalLink from "../../assets/icons/external-link.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const STATUS = ["Pas commencé", "En cours", "Terminé"];
 const STATUS_COLORS = ["#AAAAAA", "#138FD5", "#0DD87F"];
@@ -65,6 +65,9 @@ const Projects = () => {
                     <ProjectCard key={index} project={project} />
                 ))}
             </div>
+            <Link to={"roadmap"} className="projects--link">
+                Voir ma roadmap
+            </Link>
         </section>
     );
 };

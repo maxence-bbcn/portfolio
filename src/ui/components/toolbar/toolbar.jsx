@@ -6,7 +6,6 @@ import { scroller } from "react-scroll";
 import MailIcon from "../../assets/icons/mail.svg";
 import LinkedInIcon from "../../assets/icons/linkedin.svg";
 import logo from "../../assets/icons/logo.svg";
-import { useNavigate } from "react-router-dom";
 
 const Toolbar = () => {
     const links = [
@@ -21,10 +20,6 @@ const Toolbar = () => {
         {
             url: "projects",
             text: "Mes projets",
-        },
-        {
-            url: "roadmap",
-            text: "Ma roadmap",
         },
         {
             url: "contact",
@@ -56,8 +51,6 @@ const Toolbar = () => {
             });
         };
 
-        const navigate = useNavigate();
-
         return (
             <div
                 className={className}
@@ -66,14 +59,7 @@ const Toolbar = () => {
             >
                 <div className="links-container">
                     {links.map((link, i) => (
-                        <p
-                            key={i}
-                            onClick={() =>
-                                link.url === "roadmap"
-                                    ? navigate(link.url)
-                                    : handleScroll(link.url)
-                            }
-                        >
+                        <p key={i} onClick={() => handleScroll(link.url)}>
                             {link.text}
                         </p>
                     ))}

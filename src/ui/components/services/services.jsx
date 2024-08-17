@@ -12,7 +12,7 @@ const Services = () => {
         {
             title: "Je design votre projet",
             summary:
-                "La première des étapes pour réaliser un projet web qui vous plaît et qui plaît à vos client, c’est de concevoir un bon design. Lors d’une seconde réunion, nous aborderons et discuterons des visuels qui vous plaisent, de vos attentes et de vos goûts en matière de design afin de construire ensemble un moodboard qui vous ressemble. Je produirai ensuite des maquettes détaillées qui vous seront soumises à validation.",
+                "La première des étapes pour réaliser un projet web qui vous plaît et qui plaît à vos clients, c’est de concevoir un bon design. Lors d’une seconde réunion, nous aborderons et discuterons des visuels qui vous plaisent, de vos attentes et de vos goûts en matière de design afin de construire ensemble un moodboard qui vous ressemble. Je produirai ensuite des maquettes détaillées qui vous seront soumises à validation.",
             keywords: ["Moodboard", "Maquettes détaillées", "Validation"],
         },
         {

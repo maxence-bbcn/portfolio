@@ -12,7 +12,7 @@ const About = () => {
     const contentOnXLScreen =
         "Bonjour, je suis Maxence Barbançon, diplômé de l'Université de Technologie de Troyes en tant qu'ingénieur en informatique et systèmes d'information. ";
     const content =
-        "Depuis le brouillon d'idées sur une feuille blanche jusqu'à la création du produit fini : j'aime réaliser des projets en tous genres ! Mes compétences dans les technologies du web, du mobile et du design graphique me permettent de concevoir des projets esthétiques, maintenables et évolutifs qui sauront répondre à vos besoins présents et futurs.";
+        "Depuis le brouillon d'idées sur une feuille blanche jusqu'à la création du produit fini : j'aime réaliser des projets en tous genres ! Mes compétences dans les technologies du web et du design graphique me permettent de concevoir des projets esthétiques, maintenables et évolutifs qui sauront répondre à vos besoins présents et futurs.";
 
     return (
         <section id="about">
