@@ -15,6 +15,7 @@ const STATUS_COLORS = ["#AAAAAA", "#138FD5", "#0DD87F"];
 const TECHS = {
     Design: designIcon,
     "React JS": layoutIcon,
+    "Vue JS": layoutIcon,
     "Node JS": codeIcon,
 };
 
@@ -127,24 +128,22 @@ const Details = () => {
                                 <span>Description du projet : </span>{" "}
                                 {project.desc}
                             </p>
-                            {project.images.length !== 0 ? (
-                                project.images.map((image, index) => (
-                                    <div
-                                        key={index}
-                                        className="details-image-wrapper"
-                                    >
+                            <div className="details-image-wrapper">
+                                {project.images.length !== 0 ? (
+                                    project.images.map((image, index) => (
                                         <img
+                                            key={index}
                                             src={image}
                                             alt="image du projet"
                                             loading="lazy"
                                             width={315}
                                             height={150}
                                         />
-                                    </div>
-                                ))
-                            ) : (
-                                <span>Images à venir</span>
-                            )}
+                                    ))
+                                ) : (
+                                    <span>Images à venir</span>
+                                )}
+                            </div>
                         </div>
                         <div className="details-card--footer">
                             {project.githubLink && (
