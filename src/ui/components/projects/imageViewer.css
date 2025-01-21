@@ -1,0 +1,78 @@
+.images-viewer--backdrop {
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images-viewer--container {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 70%;
+    height: 90%;
+    background-color: #212121;
+}
+
+.images-viewer--header {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.images-viewer--close:hover {
+    cursor: pointer;
+}
+
+.images-viewer--body {
+    display: flex;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+}
+
+.images-viewer--image {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.images-viewer--icons {
+    width: 30px;
+    height: auto;
+}
+
+.images-viewer--icons:hover {
+    cursor: pointer;
+}
+
+.images-viewer--footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    gap: 5px;
+    padding-top: 12px;
+    width: 100%;
+    height: 10%;
+}
+
+.images-viewer--step {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    background-color: lightgray;
+}
+
+.active-step {
+    background-color: var(--theme);
+}

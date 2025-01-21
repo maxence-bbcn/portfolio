@@ -8,6 +8,7 @@ import layoutIcon from "../../assets/icons/layout.svg";
 import codeIcon from "../../assets/icons/code.svg";
 import externalLinkIcon from "../../assets/icons/external-link.svg";
 import githubIcon from "../../assets/icons/github.svg";
+import ImageViewer from "./imageViewer";
 
 const STATUS = ["Pas commencé", "En cours", "Terminé"];
 const STATUS_COLORS = ["#AAAAAA", "#138FD5", "#0DD87F"];
@@ -24,6 +25,16 @@ const Details = () => {
     const [project, setProject] = useState(
         location.state === null ? null : location.state.project
     );
+    const [openImageViewer, setOpenImageViewer] = useState(false);
+    const [opennedImageIndex, setOpennedImageIndex] = useState(0);
+
+    const handleOpenImage = (event) => {
+        console.log(event.target.attributes.src.nodeValue);
+        setOpennedImageIndex(
+            project.images.indexOf(event.target.attributes.src.nodeValue)
+        );
+        setOpenImageViewer(true);
+    };
 
     const projectList = useProjects();
 
@@ -41,7 +52,7 @@ const Details = () => {
 
     return (
         <div className="details-container">
-            <div className="details--left-col">
+            <div className={`details--left-col`}>
                 <div className="dot-line-row">
                     {projectList.map((project) => (
                         <>
@@ -64,7 +75,7 @@ const Details = () => {
                     ))}
                 </div>
             </div>
-            <div className="details--middle">
+            <div className={`details--middle`}>
                 <Typography variant="h4" onClick={() => setProject(null)}>
                     Roadmap
                 </Typography>
@@ -138,6 +149,7 @@ const Details = () => {
                                             loading="lazy"
                                             width={315}
                                             height={150}
+                                            onClick={handleOpenImage}
                                         />
                                     ))
                                 ) : (
@@ -182,7 +194,7 @@ const Details = () => {
                     </div>
                 )}
             </div>
-            <div className="details--right-col">
+            <div className={`details--right-col`}>
                 {project !== null && (
                     <p>
                         {
@@ -191,6 +203,13 @@ const Details = () => {
                     </p>
                 )}
             </div>
+            {openImageViewer && (
+                <ImageViewer
+                    images={project.images}
+                    firstImageIndex={opennedImageIndex}
+                    onClose={() => setOpenImageViewer(false)}
+                />
+            )}
         </div>
     );
 };

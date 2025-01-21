@@ -86,6 +86,7 @@
     gap: 50px;
     padding-top: 80px;
     order: 3;
+    position: relative;
 }
 
 .details--middle h4 {
