@@ -1,46 +1,43 @@
+@import "tailwindcss";
+
 @font-face {
-    font-family: karla;
-    src: url('../assets/fonts/Karla/Karla-VariableFont_wght.ttf');
+  font-family: Inter;
+  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
 }
 
-:root {
-    --background-theme: #191919;
-    --theme: #FF6201;
-    --text-color: #FFFFFF;
+@font-face {
+  font-family: Lora;
+  src: url("../assets/fonts/Lora/Lora-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
-body {
-    scroll-behavior: smooth;
+@theme {
+  --color-primary-900: #1f1e39;
+  --color-primary-800: #2d2b52;
+  --color-primary-600: #494584;
+  --color-primary-500: #57529d;
+  --color-primary-400: #726ead;
+  --color-primary-300: #8d89bc;
+  --color-primary-200: #a8a5cc;
+  --color-primary-100: #c3c1dc;
+  --color-primary-50: #d0cfe4;
+  --color-primary-bg: #141539;
+  --font-title: "Lora", serif;
+  --font-body: "Inter", sans-serif;
 }
 
-section {
-    padding: 10px 20px 40px 20px;
+.bg-primary-gradient {
+  background: #5000f0;
+  background: linear-gradient(
+    90deg,
+    rgba(80, 0, 240, 1) 0%,
+    rgba(124, 0, 240, 1) 70%
+  );
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
-img {
-    width: 24px;
-    height: 24px;
-}
-
-@media screen and (min-width: 600px) {
-    section {
-        padding: 10px 40px 40px 40px;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    section {
-        padding: 20px 75px 30px 75px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    section {
-        padding: 100px 150px 50px 150px;
-    }
+@layer base {
+  html {
+    @apply bg-primary-bg text-white p-0 m-0 tracking-[-2%] font-body;
+  }
 }
