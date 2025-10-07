@@ -38,6 +38,6 @@
 
 @layer base {
   html {
-    @apply bg-primary-bg text-white p-0 m-0 tracking-[-2%] font-body;
+    @apply bg-primary-bg text-white p-0 m-0 tracking-[-2%] font-body font-light;
   }
 }

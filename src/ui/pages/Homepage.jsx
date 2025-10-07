@@ -1,3 +1,4 @@
+import IPhoneAsset from "../assets/images/Iphone - notifications.png";
 import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
@@ -37,7 +38,7 @@ export default function Homepage() {
         <Button>Je planifie un appel gratuit</Button>
       </section>
       <section id="brands" className="flex flex-col grap-3 items-center">
-        <p className="text-primary-200 font-light italic">
+        <p className="text-primary-200 font-extralight italic">
           {"Ils m'ont fait confiance !"}
         </p>
         <div className="flex gap-3 p-4 w-full justify-between items-center">
@@ -52,12 +53,34 @@ export default function Homepage() {
         <h2 className="text-center text-3xl font-title">
           Des outils génériques qui ne comprennent pas vos besoins
         </h2>
-        <p className="font-light italic text-center leading-loose">
-          {
-            "Les logiciels standards que vous utilisez ne sont pas adaptés à vos méthodes de travail ? Ils vous imposent des contraintes ? Vous obligent à trouver des solutions détournées et rendent chaque tâche plus complexe qu'elle ne devrait l'être ?"
-          }
+        <p className="font-extralight italic text-center leading-loose">
+          Les logiciels standards que vous utilisez ne sont pas adaptés à vos
+          méthodes de travail ? Ils vous imposent des contraintes ? Vous
+          obligent à trouver des solutions détournées et rendent chaque tâche
+          plus complexe qu'elle ne devrait l'être ?
         </p>
-        <div></div>
+        <div className="pt-6 border rounded-2xl border-primary-600 overflow-x-visible w-full flex flex-col">
+          <p className="text-xl leading-loose px-8">
+            Vos équipes{" "}
+            <span className="font-semibold">perdent en efficacité</span>,
+            l'information circule mal entre les services, et{" "}
+            <span className="font-semibold">
+              les tâches répétitives s'accumulent
+            </span>
+            . Sans outil adapté, la centralisation des données devient complexe,
+            <span className="font-semibold">les erreurs se multiplient</span>,
+            et vos collaborateurs passent plus de temps à gérer des contraintes
+            qu'à <span className="font-semibold">créer de la valeur</span>.
+          </p>
+          <div className="h-80 overflow-y-clip overflow-x-visible relative">
+            <img
+              src={IPhoneAsset}
+              alt=""
+              width="970px"
+              className="min-w-[400px] absolute -right-10"
+            />
+          </div>
+        </div>
       </section>
     </main>
   );
