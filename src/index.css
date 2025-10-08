@@ -25,6 +25,7 @@
   --color-primary-bg: #141539;
   --font-title: "Lora", serif;
   --font-body: "Inter", sans-serif;
+  --text-2xs: 10px;
 }
 
 .bg-primary-gradient {
@@ -36,8 +37,40 @@
   );
 }
 
+.border-primary-gradient {
+  background: #494584;
+  background: linear-gradient(
+    180deg,
+    rgba(73, 69, 132, 1) 0%,
+    rgba(45, 43, 82, 1) 100%
+  );
+}
+
+.mask-right {
+  overflow: clip;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100vw - 16px);
+  height: 280px;
+}
+
+.bg-pattern-straight {
+  background: linear-gradient(
+      180deg,
+      rgba(20, 21, 57, 1) 0%,
+      rgba(20, 21, 57, 0) 50%,
+      rgba(20, 21, 57, 1) 100%
+    ),
+    url("src/ui/assets/images/bg-pattern-straight.png"),
+    radial-gradient(circle, rgba(45, 43, 82, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
 @layer base {
   html {
-    @apply bg-primary-bg text-white p-0 m-0 tracking-[-2%] font-body font-light;
+    @apply bg-primary-bg text-white p-0 m-0 tracking-[-2%] font-body font-light overflow-x-hidden;
+  }
+  body {
+    @apply overflow-x-hidden;
   }
 }

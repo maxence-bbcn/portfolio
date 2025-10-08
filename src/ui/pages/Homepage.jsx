@@ -1,4 +1,10 @@
+import AppsAsset from "../assets/images/apps circles.png";
+import FingerprintAsset from "../assets/images/Fingerprint.png";
+import GraphAsset from "../assets/images/graph.png";
 import IPhoneAsset from "../assets/images/Iphone - notifications.png";
+import TextsAsset from "../assets/images/Iphone - texts.png";
+import UiModsAsset from "../assets/images/ui mods.png";
+import ZapAsset from "../assets/images/zap.png";
 import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
@@ -20,6 +26,30 @@ export default function Homepage() {
     },
   ];
 
+  const statistics = [
+    {
+      value: 26,
+      catchphrase: "Du temps de travail perdu chaque jour",
+      content:
+        "Environ 26 % du temps de travail quotidien est consacré à des tâches administratives inutiles ou redondantes...",
+      source: "",
+    },
+    {
+      value: 58,
+      catchphrase: 'Du temps passé à du "work about work"',
+      content:
+        "Les employés passent 58 % de leur temps à des activités de coordination, d’e-mails, de réunions ou de gestion de tâches administratives...",
+      source: "",
+    },
+    {
+      value: 30,
+      catchphrase: "De perte de CA annuel",
+      content:
+        "Des processus inefficaces peuvent coûter entre 20 et 30 % des revenus annuels d’une entreprise à cause de tâches redondantes...",
+      source: "",
+    },
+  ];
+
   return (
     // nav here
     <main>
@@ -37,7 +67,7 @@ export default function Homepage() {
         </p>
         <Button>Je planifie un appel gratuit</Button>
       </section>
-      <section id="brands" className="flex flex-col grap-3 items-center">
+      <section id="brands" className="flex flex-col gap-3 items-center">
         <p className="text-primary-200 font-extralight italic">
           {"Ils m'ont fait confiance !"}
         </p>
@@ -59,28 +89,202 @@ export default function Homepage() {
           obligent à trouver des solutions détournées et rendent chaque tâche
           plus complexe qu'elle ne devrait l'être ?
         </p>
-        <div className="pt-6 border rounded-2xl border-primary-600 overflow-x-visible w-full flex flex-col">
-          <p className="text-xl leading-loose px-8">
-            Vos équipes{" "}
-            <span className="font-semibold">perdent en efficacité</span>,
-            l'information circule mal entre les services, et{" "}
-            <span className="font-semibold">
-              les tâches répétitives s'accumulent
-            </span>
-            . Sans outil adapté, la centralisation des données devient complexe,
-            <span className="font-semibold">les erreurs se multiplient</span>,
-            et vos collaborateurs passent plus de temps à gérer des contraintes
-            qu'à <span className="font-semibold">créer de la valeur</span>.
-          </p>
-          <div className="h-80 overflow-y-clip overflow-x-visible relative">
+        <div className="p-px rounded-2xl border-primary-gradient overflow-x-visible">
+          <div className="pt-6 rounded-2xl flex flex-col w-full bg-primary-bg">
+            <p className="text-xl leading-loose px-8">
+              Vos équipes{" "}
+              <span className="font-semibold">perdent en efficacité</span>,
+              l'information circule mal entre les services, et{" "}
+              <span className="font-semibold">
+                les tâches répétitives s'accumulent
+              </span>
+              . Sans outil adapté, la centralisation des données devient
+              complexe,
+              <span className="font-semibold">les erreurs se multiplient</span>,
+              et vos collaborateurs passent plus de temps à gérer des
+              contraintes qu'à{" "}
+              <span className="font-semibold">créer de la valeur</span>.
+            </p>
+            <div className="h-80 overflow-y-clip overflow-x-visible relative">
+              <img
+                src={IPhoneAsset}
+                alt="Illustration d'un téléphone saturé par des notifications"
+                width="970px"
+                className="min-w-[400px] absolute -right-10"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="agitate" className="flex flex-col gap-16 py-16 px-4">
+        <h2 className="text-center text-3xl font-title">
+          Ces workflows inefficaces vous coûtent plus cher que vous ne le pensez
+        </h2>
+        <div className="flex flex-col gap-16 items-center">
+          <div className="flex flex-col gap-6 w-full">
+            {statistics.map((stat, index) => (
+              <div
+                key={index}
+                className="w-full min-h-56 border-primary-gradient p-px rounded-2xl"
+              >
+                <div className="w-full h-full min-h-56 bg-primary-bg rounded-2xl px-6 pt-6 pb-2 flex flex-col gap-4 items-center">
+                  <div className="flex flex-col gap-0 items-center">
+                    <p className="text-6xl font-black">
+                      {stat.value}
+                      <span className="text-base font-normal">%</span>
+                    </p>
+                    <p className="text-sm">{stat.catchphrase}</p>
+                  </div>
+                  <p className="text-sm font-extralight italic">
+                    {stat.content}
+                  </p>
+                  <a
+                    href={stat.source}
+                    className="self-end text-2xs text-primary-200 underline decoration-dotted"
+                  >
+                    Voir la source
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Button>J'améliore mes workflows</Button>
+        </div>
+      </section>
+      <section id="solution" className="flex flex-col gap-16 py-16 px-4">
+        <h2 className="text-center text-3xl font-title">
+          Des applications web sur mesure, pensées pour vous
+        </h2>
+        <p className="font-extralight italic text-center leading-loose">
+          Je conçois des applications web sur mesure, parfaitement intégrées à
+          vos outils et processus existants. Que vous cherchiez à automatiser
+          des tâches, centraliser vos données ou structurer vos workflows,
+          chaque solution est pensée autour de vos besoins réels.
+        </p>
+        {/* Carte accompagnement */}
+        <div className="flex flex-col gap-10">
+          <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 border border-primary-800 relative">
+            <div className="px-6 gap-8 flex flex-col">
+              <h3 className="font-medium text-2xl">
+                Un accompagnement sur-mesure, <strong>du début à la fin</strong>
+              </h3>
+              <p className="font-extralight italic leading-normal text-lg">
+                Écoute, pédagogie et réactivité : vous avancez en confiance,
+                avec un interlocuteur unique qui comprend vos enjeux et reste
+                disponible.
+              </p>
+            </div>
+            <div className="h-70 overflow-y-clip overflow-x-hidden relative "></div>
+            <div className="mask-right">
+              <img
+                src={TextsAsset}
+                alt="Illustration d'un échange de sms"
+                width="598px"
+                className="min-w-[500px] absolute -right-1/4"
+              />
+            </div>
+          </div>
+          {/* Carte interface */}
+          <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 gap-2 border border-primary-800 relative">
+            <div className="px-6 gap-8 flex flex-col">
+              <h3 className="font-medium text-2xl">
+                Une interface pensée pour <strong>vos utilisateurs</strong>
+              </h3>
+              <p className="font-extralight italic leading-normal text-lg">
+                L’interface est simple à prendre en main, agréable à utiliser au
+                quotidien, et parfaitement adaptée à vos usages métier.
+              </p>
+              <Button>Planifiez un appel</Button>
+            </div>
+            <div className="h-64 overflow-visible relative">
+              <img
+                src={UiModsAsset}
+                alt="Illusatration d'une interface utilisateur"
+                className="absolute left-1/10"
+              />
+            </div>
+          </div>
+          {/* Carte mise en prod */}
+          <div className=" w-full rounded-2xl overflow-hidden flex flex-col py-6 gap-2 border border-primary-800">
+            <div className="px-6 gap-8 flex flex-col relative">
+              <h3 className="font-medium text-2xl">
+                Mise en ligne <strong>rapide</strong>, sans compromis sur la{" "}
+                <strong>qualité</strong>
+              </h3>
+              <div className="flex flex-row -gap-2 h-fit">
+                <p className="font-extralight italic leading-normal text-lg w-3/4">
+                  Vos outils sont opérationnels rapidement pour que vous
+                  puissiez gagner en efficacité sans attendre.
+                </p>
+                <div className="w-1/4 relative h-60">
+                  <img
+                    src={ZapAsset}
+                    alt="Illustration d'un éclair"
+                    className="absolute min-w-80 -right-20 -top-6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Carte évolutivité */}
+          <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 gap-2 border border-primary-800">
+            <div className="pl-6 gap-8 flex flex-col relative">
+              <h3 className="font-medium text-2xl pr-6">
+                Une solution pensée pour <strong>grandir avec vous</strong>
+              </h3>
+              <div className="flex flex-row -gap-2 h-fit">
+                <p className="font-extralight italic leading-normal text-lg w-5/6 pr-6">
+                  Architecture modulaire, fonctionnalités extensibles, votre
+                  outil s’adapte à vos futurs besoins.
+                </p>
+                <div className="w-1/6 relative h-50">
+                  <img
+                    src={GraphAsset}
+                    alt="Illustration d'une courbe qui monte"
+                    className="absolute min-w-64 right-0 bottom-0"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Carte compatibilité */}
+          <div className=" w-full rounded-2xl overflow-hidden flex flex-col items-center pt-6 px-6 gap-8 border border-primary-800 h-[400px]">
+            <h3 className="font-medium text-2xl text-center">
+              <strong>Compatible</strong> avec vos outils existants
+            </h3>
+            <p className="font-extralight italic leading-normal text-lg w-3/4 text-center">
+              Connexions possibles avec vos logiciels, API ou plateformes déjà
+              en place.
+            </p>
             <img
-              src={IPhoneAsset}
-              alt=""
-              width="970px"
-              className="min-w-[400px] absolute -right-10"
+              src={AppsAsset}
+              alt="Logos de plusieurs outils liés par des cercles concentriques"
+            />
+          </div>
+          {/* Carte solution sur mesure */}
+          <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 px-6 gap-8 border border-primary-800 relative h-[360px]">
+            <h3 className="font-medium text-2xl">
+              Une solution vraiment faire <strong>pour vous</strong>
+            </h3>
+            <p className="font-extralight italic leading-normal text-lg">
+              Chaque projet part de vos contraintes réelles : vous obtenez une
+              solution unique, conçue pour fonctionner dans votre contexte.
+            </p>
+            <img
+              src={FingerprintAsset}
+              alt="Illustration d'une emprunte digitale"
+              className="absolute top-40"
             />
           </div>
         </div>
+      </section>
+      <section
+        id="testimonials"
+        className="flex flex-col gap-16 py-16 px-4 bg-pattern-straight h-96"
+      >
+        <h2 className="text-center text-3xl font-title">
+          Ils ont gagné en efficacité grâce à des solutions pensées pour eux
+        </h2>
       </section>
     </main>
   );
