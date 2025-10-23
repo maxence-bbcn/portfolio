@@ -89,6 +89,17 @@
     radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+.bg-pattern-diag {
+  background: linear-gradient(
+      180deg,
+      var(--color-primary-bg) 0%,
+      rgba(20, 21, 57, 0) 50%,
+      var(--color-primary-bg) 100%
+    ),
+    url("src/ui/assets/images/bg-pattern-diag.png") no-repeat,
+    radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
 .glow {
   box-shadow: 1px 1px 100px 0px rgba(255, 255, 255, 0.15);
 }

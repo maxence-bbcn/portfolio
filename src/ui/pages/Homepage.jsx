@@ -11,6 +11,7 @@ import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import Button from "../components/Button";
 import CollaspibleQuestion from "../components/CollaspsibleQuestion";
 import CTACard from "../components/CTACard";
+import CustomFooter from "../components/CustomFooter";
 import TestimonialCard from "../components/TestimonialCard";
 
 export default function Homepage() {
@@ -335,6 +336,7 @@ export default function Homepage() {
           </CollaspibleQuestion>
         </div>
       </section>
+      <CustomFooter />
     </main>
   );
 }
