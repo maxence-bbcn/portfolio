@@ -58,12 +58,12 @@
 .bg-pattern-straight {
   background: linear-gradient(
       180deg,
-      rgba(20, 21, 57, 1) 0%,
+      rgba(20, 21, 57, 0.8) 0%,
       rgba(20, 21, 57, 0) 50%,
       rgba(20, 21, 57, 1) 100%
     ),
     url("src/ui/assets/images/bg-pattern-straight.png"),
-    radial-gradient(circle, rgba(45, 43, 82, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 @layer base {

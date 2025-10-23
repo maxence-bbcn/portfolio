@@ -9,6 +9,7 @@ import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import Button from "../components/Button";
+import TestimonialCard from "../components/TestimonialCard";
 
 export default function Homepage() {
   const brandLogos = [
@@ -31,22 +32,31 @@ export default function Homepage() {
       value: 26,
       catchphrase: "Du temps de travail perdu chaque jour",
       content:
-        "Environ 26 % du temps de travail quotidien est consacré à des tâches administratives inutiles ou redondantes...",
+        "Environ 26% du temps de travail quotidien est consacré à des tâches administratives inutiles ou redondantes...",
       source: "",
     },
     {
       value: 58,
       catchphrase: 'Du temps passé à du "work about work"',
       content:
-        "Les employés passent 58 % de leur temps à des activités de coordination, d’e-mails, de réunions ou de gestion de tâches administratives...",
+        "Les employés passent 58% de leur temps à des activités de coordination, d'e-mails, de réunions ou de gestion de tâches administratives...",
       source: "",
     },
     {
       value: 30,
       catchphrase: "De perte de CA annuel",
       content:
-        "Des processus inefficaces peuvent coûter entre 20 et 30 % des revenus annuels d’une entreprise à cause de tâches redondantes...",
+        "Des processus inefficaces peuvent coûter entre 20 et 30% des revenus annuels d'une entreprise à cause de tâches redondantes...",
       source: "",
+    },
+  ];
+
+  const testimonials = [
+    {
+      author: "Filler",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
+      pp: "",
     },
   ];
 
@@ -87,22 +97,22 @@ export default function Homepage() {
           Les logiciels standards que vous utilisez ne sont pas adaptés à vos
           méthodes de travail ? Ils vous imposent des contraintes ? Vous
           obligent à trouver des solutions détournées et rendent chaque tâche
-          plus complexe qu'elle ne devrait l'être ?
+          plus complexe qu&apos;elle ne devrait l&apos;être ?
         </p>
         <div className="p-px rounded-2xl border-primary-gradient overflow-x-visible">
           <div className="pt-6 rounded-2xl flex flex-col w-full bg-primary-bg">
             <p className="text-xl leading-loose px-8">
               Vos équipes{" "}
               <span className="font-semibold">perdent en efficacité</span>,
-              l'information circule mal entre les services, et{" "}
+              l&apos;information circule mal entre les services, et{" "}
               <span className="font-semibold">
-                les tâches répétitives s'accumulent
+                les tâches répétitives s&apos;accumulent
               </span>
               . Sans outil adapté, la centralisation des données devient
               complexe,
               <span className="font-semibold">les erreurs se multiplient</span>,
               et vos collaborateurs passent plus de temps à gérer des
-              contraintes qu'à{" "}
+              contraintes qu&apos;à{" "}
               <span className="font-semibold">créer de la valeur</span>.
             </p>
             <div className="h-80 overflow-y-clip overflow-x-visible relative">
@@ -148,7 +158,7 @@ export default function Homepage() {
               </div>
             ))}
           </div>
-          <Button>J'améliore mes workflows</Button>
+          <Button>J&apos;améliore mes workflows</Button>
         </div>
       </section>
       <section id="solution" className="flex flex-col gap-16 py-16 px-4">
@@ -280,11 +290,21 @@ export default function Homepage() {
       </section>
       <section
         id="testimonials"
-        className="flex flex-col gap-16 py-16 px-4 bg-pattern-straight h-96"
+        className="flex flex-col gap-16 py-16 px-4 bg-pattern-straight"
       >
         <h2 className="text-center text-3xl font-title">
           Ils ont gagné en efficacité grâce à des solutions pensées pour eux
         </h2>
+        <div className="flex flex-row flex-wrap gap-10">
+          {testimonials.map(({ content, author, pp }, index) => (
+            <TestimonialCard
+              key={index}
+              content={content}
+              author={author}
+              pp={pp}
+            />
+          ))}
+        </div>
       </section>
     </main>
   );
