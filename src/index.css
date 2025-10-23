@@ -46,6 +46,29 @@
   );
 }
 
+.border-cta-gradient {
+  background: var(--color-primary-500);
+  background: radial-gradient(
+    ellipse at 40% bottom,
+    rgba(255, 255, 255, 1) 0%,
+    var(--color-primary-bg) 60%
+  );
+  background-repeat: no-repeat;
+  background-size: 120% 100%;
+}
+
+.bg-cta-gradient {
+  background: var(--color-primary-500);
+  background: url("src/ui/assets/images/cta-texture.png") no-repeat center 150% /
+      152%,
+    radial-gradient(
+      circle at 50% 120%,
+      var(--color-primary-500) 0%,
+      rgba(23, 24, 62, 1) 35%,
+      var(--color-primary-bg) 100%
+    );
+}
+
 .mask-right {
   overflow: clip;
   position: absolute;
@@ -64,6 +87,10 @@
     ),
     url("src/ui/assets/images/bg-pattern-straight.png"),
     radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.glow {
+  box-shadow: 1px 1px 100px 0px rgba(255, 255, 255, 0.1);
 }
 
 @layer base {

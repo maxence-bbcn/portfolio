@@ -9,6 +9,7 @@ import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import Button from "../components/Button";
+import CTACard from "../components/CTACard";
 import TestimonialCard from "../components/TestimonialCard";
 
 export default function Homepage() {
@@ -305,6 +306,9 @@ export default function Homepage() {
             />
           ))}
         </div>
+      </section>
+      <section id="cta" className="px-4 py-16">
+        <CTACard />
       </section>
     </main>
   );
