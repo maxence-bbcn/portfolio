@@ -9,6 +9,7 @@ import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import Button from "../components/Button";
+import CollaspibleQuestion from "../components/CollaspsibleQuestion";
 import CTACard from "../components/CTACard";
 import TestimonialCard from "../components/TestimonialCard";
 
@@ -260,10 +261,10 @@ export default function Homepage() {
           </div>
           {/* Carte compatibilité */}
           <div className=" w-full rounded-2xl overflow-hidden flex flex-col items-center pt-6 px-6 gap-8 border border-primary-800 h-[400px]">
-            <h3 className="font-medium text-2xl text-center">
+            <h3 className="font-medium text-2xl">
               <strong>Compatible</strong> avec vos outils existants
             </h3>
-            <p className="font-extralight italic leading-normal text-lg w-3/4 text-center">
+            <p className="font-extralight italic leading-normal text-lg">
               Connexions possibles avec vos logiciels, API ou plateformes déjà
               en place.
             </p>
@@ -309,6 +310,30 @@ export default function Homepage() {
       </section>
       <section id="cta" className="px-4 py-16">
         <CTACard />
+      </section>
+      <section id="faq" className="flex flex-col gap-16 py-16 px-4">
+        <h2 className="text-center text-3xl font-title">
+          Questions fréquentes
+        </h2>
+        <div className="flex flex-col">
+          <CollaspibleQuestion>
+            1. Combien de temps faut-il pour développer un outil sur-mesure ?
+          </CollaspibleQuestion>
+          <CollaspibleQuestion>
+            2. Est-ce que vous pouvez intégrer l&apos;outil avec les logiciels
+            que nous utilisons déjà ?
+          </CollaspibleQuestion>
+          <CollaspibleQuestion>
+            3. Je n&apos;ai pas de cahier des charges précis, est-ce un problème
+            ?
+          </CollaspibleQuestion>
+          <CollaspibleQuestion>
+            4. Quel budget faut-il prévoir pour un projet comme le mien ?
+          </CollaspibleQuestion>
+          <CollaspibleQuestion>
+            5. Et si j&apos;ai besoin de faire évoluer l&apos;outil plus tard ?
+          </CollaspibleQuestion>
+        </div>
       </section>
     </main>
   );

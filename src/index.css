@@ -90,7 +90,7 @@
 }
 
 .glow {
-  box-shadow: 1px 1px 100px 0px rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 1px 100px 0px rgba(255, 255, 255, 0.15);
 }
 
 @layer base {
