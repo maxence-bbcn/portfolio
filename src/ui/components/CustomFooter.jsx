@@ -52,7 +52,7 @@ export default function CustomFooter() {
             </p>
             <p className="font-semibold text-2xl">Contact :</p>
             <div className="flex flex-row gap-2">
-              <img src="src/ui/assets/images/mail.svg" alt="icône e-mail" />
+              <img src="src/ui/assets/icons/mail.svg" alt="icône e-mail" />
               <p>maxence.barbancon@gmail.com</p>
             </div>
             <Button>Je réserve un appel gratuit</Button>
@@ -60,6 +60,7 @@ export default function CustomFooter() {
           <div className="flex flex-col items-center gap-6">
             <p className="font-semibold text-2xl">Services</p>
             <p className="text-primary-200">Développement sur mesure</p>
+            <p className="text-primary-200">Site vitrine et portfolio</p>
             <p className="text-primary-200">Autres projets web</p>
           </div>
           <div className="flex flex-col items-center gap-6">
