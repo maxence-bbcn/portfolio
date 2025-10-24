@@ -36,9 +36,7 @@ export default function CustomFooter() {
               className="border rounded-lg p-6 bg-primary-bg border-primary-500/50"
             />
           </div>
-          <Button type="submit" size="small">
-            J&apos;envoie un message
-          </Button>
+          <Button type="submit">J&apos;envoie un message</Button>
         </form>
       </div>
       <footer className="px-4">
@@ -57,7 +55,7 @@ export default function CustomFooter() {
               <img src="src/ui/assets/images/mail.svg" alt="icône e-mail" />
               <p>maxence.barbancon@gmail.com</p>
             </div>
-            <Button size={"small"}>Je réserve un appel gratuit</Button>
+            <Button>Je réserve un appel gratuit</Button>
           </div>
           <div className="flex flex-col items-center gap-6">
             <p className="font-semibold text-2xl">Services</p>

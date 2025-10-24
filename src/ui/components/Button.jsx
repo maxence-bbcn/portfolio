@@ -1,4 +1,4 @@
-export default function Button({ size, children, type = "button" }) {
+export default function Button({ size = "small", children, type = "button" }) {
   return (
     <button
       type={type}

@@ -1,5 +1,5 @@
 import Button from "./Button";
-import SparkleIcon from "/src/ui/assets/images/sparkle.svg";
+import SparkleIcon from "/src/ui/assets/icons/sparkle.svg";
 
 const CustomSparkleBulletListItem = ({ children }) => {
   return (
@@ -37,7 +37,7 @@ export default function CTACard() {
             Une estimation réaliste des délais et du type de projet à envisager
           </CustomSparkleBulletListItem>
         </div>
-        <Button size="small">Je réserve un appel gratuit</Button>
+        <Button>Je réserve un appel gratuit</Button>
       </div>
     </article>
   );
