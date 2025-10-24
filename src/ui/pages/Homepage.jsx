@@ -172,13 +172,16 @@ export default function Homepage() {
             </div>
           </div>
         </section>
-        <section id="agitate" className="flex flex-col gap-16 py-16 px-4">
-          <h2 className="text-center text-3xl font-title">
+        <section
+          id="agitate"
+          className="flex flex-col gap-16 py-16 px-4 xl:p-32 xl:gap-32"
+        >
+          <h2 className="text-center text-3xl xl:text-5xl font-title">
             Ces workflows inefficaces vous coûtent plus cher que vous ne le
             pensez
           </h2>
           <div className="flex flex-col gap-16 items-center">
-            <div className="flex flex-col gap-6 w-full">
+            <div className="flex flex-col xl:flex-row gap-6 w-full">
               {statistics.map((stat, index) => (
                 <div
                   key={index}
