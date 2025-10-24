@@ -101,47 +101,55 @@ export default function Homepage() {
       <main>
         <section
           id="hero"
-          className="px-6 mt-16 flex flex-col gap-16 items-center pb-16"
+          className="px-6 xl:px-16 mt-16 xl:mt-32 flex flex-col gap-16 xl:gap-32 items-center pb-16 xl:w-2/3 xl:mx-auto"
         >
-          <h1 className="font-title text-5xl text-center leading-tight">
+          <h1 className="font-title text-5xl xl:text-6xl text-center leading-tight">
             <span className="font-bold">Simplifiez</span> vos worflows avec des
             outils conçus pour <span className="font-bold">votre métier</span>.
           </h1>
-          <p className="text-primary-200 text-xl leading-relaxed text-center">
+          <p className="text-primary-200 text-xl xl:text-2xl leading-relaxed text-center">
             Optimisez chaque étape de votre activité grâce à des solutions sur
             mesure, pensées et développées pour vous.
           </p>
           <Button>Je planifie un appel gratuit</Button>
         </section>
-        <section id="brands" className="flex flex-col gap-3 items-center">
+        <section
+          id="brands"
+          className="flex flex-col gap-3 items-center xl:px-32 xl:pb-16"
+        >
           <p className="text-primary-200 font-extralight italic">
-            {"Ils m'ont fait confiance !"}
+            Ils m&apos;ont fait confiance !
           </p>
           <div className="flex gap-3 p-4 w-full justify-between items-center">
             {brandLogos.map((brand, index) => (
               <div key={index} className="w-full flex justify-center">
+                {/* TODO srcset et sizes pour les images responsives */}
                 <img src={brand.logo} alt={brand.alt} />
               </div>
             ))}
           </div>
         </section>
-        <section id="problem" className="flex flex-col gap-16 py-16 px-4">
-          <h2 className="text-center text-3xl font-title">
+        <section
+          id="problem"
+          className="flex flex-col gap-16 py-16 px-4 xl:p-32 items-center xl:w-11/12 xl:mx-auto"
+        >
+          <h2 className="text-center text-3xl xl:text-5xl font-title">
             Des outils génériques qui ne comprennent pas vos besoins
           </h2>
-          <p className="font-extralight italic text-center leading-loose">
+          <p className="font-extralight italic text-center leading-loose xl:text-xl xl:mb-10">
             Les logiciels standards que vous utilisez ne sont pas adaptés à vos
             méthodes de travail ? Ils vous imposent des contraintes ? Vous
             obligent à trouver des solutions détournées et rendent chaque tâche
             plus complexe qu&apos;elle ne devrait l&apos;être ?
           </p>
           <div className="p-px rounded-2xl border-primary-gradient overflow-x-visible">
-            <div className="pt-6 rounded-2xl flex flex-col w-full bg-primary-bg">
-              <p className="text-xl leading-loose px-8">
-                Vos équipes{" "}
-                <span className="font-semibold">perdent en efficacité</span>,
-                l&apos;information circule mal entre les services, et{" "}
+            <div className="rounded-2xl flex flex-col xl:flex-row w-full bg-primary-bg xl:relative">
+              <p className="text-xl xl:text-2xl leading-loose pt-6 px-8 xl:w-2/3 xl:p-16">
+                Vos équipes
+                <span className="font-semibold"> perdent en efficacité</span>,
+                l&apos;information circule mal entre les services, et
                 <span className="font-semibold">
+                  {" "}
                   les tâches répétitives s&apos;accumulent
                 </span>
                 . Sans outil adapté, la centralisation des données devient
@@ -150,15 +158,15 @@ export default function Homepage() {
                   les erreurs se multiplient
                 </span>
                 , et vos collaborateurs passent plus de temps à gérer des
-                contraintes qu&apos;à{" "}
-                <span className="font-semibold">créer de la valeur</span>.
+                contraintes qu&apos;à
+                <span className="font-semibold"> créer de la valeur</span>.
               </p>
-              <div className="h-80 overflow-y-clip overflow-x-visible relative">
+              <div className="h-80 xl:h-auto overflow-y-clip xl:overflow-y-visible overflow-x-visible relative xl:w-1/3 mask-bottom">
                 <img
                   src={IPhoneAsset}
                   alt="Illustration d'un téléphone saturé par des notifications"
                   width="970px"
-                  className="min-w-[400px] absolute -right-10"
+                  className="min-w-[400px] absolute -right-10 xl:left-0 xl:top-0"
                 />
               </div>
             </div>

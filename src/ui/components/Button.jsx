@@ -1,4 +1,23 @@
-export default function Button({ size = "small", children, type = "button" }) {
+import { useEffect, useState } from "react";
+
+export default function Button({ children, type = "button" }) {
+  const [size, setSize] = useState("small");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth >= 1280) {
+      setSize("large");
+    }
+  }, [windowWidth]);
+
   return (
     <button
       type={type}

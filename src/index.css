@@ -90,6 +90,17 @@
   height: 280px;
 }
 
+@media screen and (min-width: 80rem) {
+  .mask-bottom {
+    overflow: clip;
+    position: absolute;
+    bottom: 0;
+    right: -3em;
+    width: 35%;
+    height: 125%;
+  }
+}
+
 .bg-pattern-straight {
   background: linear-gradient(
       180deg,
