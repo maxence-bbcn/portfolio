@@ -211,21 +211,24 @@ export default function Homepage() {
             <Button>J&apos;améliore mes workflows</Button>
           </div>
         </section>
-        <section id="solution" className="flex flex-col gap-16 py-16 px-4">
-          <h2 className="text-center text-3xl font-title">
+        <section
+          id="solution"
+          className="flex flex-col gap-16 py-16 px-4 xl:p-32"
+        >
+          <h2 className="text-center text-3xl xl:text-5xl font-title">
             Des applications web sur mesure, pensées pour vous
           </h2>
-          <p className="font-extralight italic text-center leading-loose">
+          <p className="font-extralight italic text-center leading-loose xl:text-xl">
             Je conçois des applications web sur mesure, parfaitement intégrées à
             vos outils et processus existants. Que vous cherchiez à automatiser
             des tâches, centraliser vos données ou structurer vos workflows,
             chaque solution est pensée autour de vos besoins réels.
           </p>
-          {/* Carte accompagnement */}
-          <div className="flex flex-col gap-10">
-            <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 border border-primary-800 relative">
+          <div className="flex flex-col gap-10 xl:grid grid-cols-12 grid-rows-12 xl:gap-3">
+            {/* Carte accompagnement */}
+            <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 border border-primary-800 relative xl:col-start-1 xl:col-span-4 xl:row-start-1 xl:row-span-7">
               <div className="px-6 gap-8 flex flex-col">
-                <h3 className="font-medium text-2xl">
+                <h3 className="font-medium text-2xl xl:text-3xl">
                   Un accompagnement sur-mesure,{" "}
                   <strong>du début à la fin</strong>
                 </h3>
@@ -235,20 +238,20 @@ export default function Homepage() {
                   disponible.
                 </p>
               </div>
-              <div className="h-70 overflow-y-clip overflow-x-hidden relative "></div>
+              <div className="h-70 xl:h-0 overflow-y-clip overflow-x-hidden relative"></div>
               <div className="mask-right">
                 <img
                   src={TextsAsset}
                   alt="Illustration d'un échange de sms"
                   width="598px"
-                  className="min-w-[500px] absolute -right-1/4"
+                  className="min-w-[500px] absolute -right-1/4 xl:left-0 xl:min-w-[600px]"
                 />
               </div>
             </div>
             {/* Carte interface */}
-            <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 gap-2 border border-primary-800 relative">
-              <div className="px-6 gap-8 flex flex-col">
-                <h3 className="font-medium text-2xl">
+            <div className="overflow-x-visible w-full rounded-2xl flex flex-col xl:flex-row pt-6 gap-2 border border-primary-800 relative xl:col-start-5 xl:col-end-13 xl:row-start-1 xl:row-span-3">
+              <div className="px-6 gap-8 flex flex-col xl:w-3/5">
+                <h3 className="font-medium text-2xl xl:text-3xl">
                   Une interface pensée pour <strong>vos utilisateurs</strong>
                 </h3>
                 <p className="font-extralight italic leading-normal text-lg">
@@ -257,18 +260,18 @@ export default function Homepage() {
                 </p>
                 <Button>Planifiez un appel</Button>
               </div>
-              <div className="h-64 overflow-visible relative">
+              <div className="h-64 xl:h-full xl:w-2/5 overflow-visible relative">
                 <img
                   src={UiModsAsset}
                   alt="Illusatration d'une interface utilisateur"
-                  className="absolute left-1/10"
+                  className="absolute left-1/10 xl:-top-12"
                 />
               </div>
             </div>
             {/* Carte mise en prod */}
-            <div className=" w-full rounded-2xl overflow-hidden flex flex-col py-6 gap-2 border border-primary-800">
+            <div className=" w-full rounded-2xl overflow-hidden flex flex-col py-6 gap-2 border border-primary-800 xl:col-start-5 col-end-9 xl:row-start-4 xl:row-span-4">
               <div className="px-6 gap-8 flex flex-col relative">
-                <h3 className="font-medium text-2xl">
+                <h3 className="font-medium text-2xl xl:text-3xl">
                   Mise en ligne <strong>rapide</strong>, sans compromis sur la{" "}
                   <strong>qualité</strong>
                 </h3>
@@ -288,17 +291,17 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte évolutivité */}
-            <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 gap-2 border border-primary-800">
-              <div className="pl-6 gap-8 flex flex-col relative">
-                <h3 className="font-medium text-2xl pr-6">
+            <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 gap-2 border border-primary-800 xl:col-start-9 xl:col-end-13 xl:row-start-4 xl:row-span-4">
+              <div className="pl-6 gap-8 flex flex-col relative h-full">
+                <h3 className="font-medium text-2xl pr-6 xl:text-3xl">
                   Une solution pensée pour <strong>grandir avec vous</strong>
                 </h3>
-                <div className="flex flex-row -gap-2 h-fit">
+                <div className="flex flex-row -gap-2 h-full">
                   <p className="font-extralight italic leading-normal text-lg w-5/6 pr-6">
                     Architecture modulaire, fonctionnalités extensibles, votre
                     outil s’adapte à vos futurs besoins.
                   </p>
-                  <div className="w-1/6 relative h-50">
+                  <div className="w-1/6 relative h-50 xl:h-full">
                     <img
                       src={GraphAsset}
                       alt="Illustration d'une courbe qui monte"
@@ -309,8 +312,8 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte compatibilité */}
-            <div className=" w-full rounded-2xl overflow-hidden flex flex-col items-center pt-6 px-6 gap-8 border border-primary-800 h-[400px]">
-              <h3 className="font-medium text-2xl">
+            <div className="w-full rounded-2xl overflow-hidden flex flex-col items-center pt-6 px-6 gap-8 border border-primary-800 h-[400px] xl:h-[360px] xl:col-start-7 xl:col-span-6 xl:row-start-8 xl:row-span-4">
+              <h3 className="font-medium text-2xl xl:text-3xl">
                 <strong>Compatible</strong> avec vos outils existants
               </h3>
               <p className="font-extralight italic leading-normal text-lg">
@@ -320,11 +323,12 @@ export default function Homepage() {
               <img
                 src={AppsAsset}
                 alt="Logos de plusieurs outils liés par des cercles concentriques"
+                className="xl:w-2/5"
               />
             </div>
             {/* Carte solution sur mesure */}
-            <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 px-6 gap-8 border border-primary-800 relative h-[360px]">
-              <h3 className="font-medium text-2xl">
+            <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 px-6 gap-8 border border-primary-800 relative h-[360px] xl:h-[360px] xl:col-start-1 xl:col-span-6 xl:row-start-8 xl:row-span-4">
+              <h3 className="font-medium text-2xl xl:text-3xl">
                 Une solution vraiment faire <strong>pour vous</strong>
               </h3>
               <p className="font-extralight italic leading-normal text-lg">
@@ -334,7 +338,7 @@ export default function Homepage() {
               <img
                 src={FingerprintAsset}
                 alt="Illustration d'une emprunte digitale"
-                className="absolute top-40"
+                className="absolute top-40 xl:top-15 xl:-right-10 xl:w-2/3"
               />
             </div>
           </div>

@@ -99,6 +99,16 @@
     width: 35%;
     height: 125%;
   }
+
+  .mask-right {
+    overflow: clip;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* border: 1px solid white; */
+    width: 120%;
+    height: 65%;
+  }
 }
 
 .bg-pattern-straight {
