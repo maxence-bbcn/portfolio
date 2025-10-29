@@ -104,12 +104,12 @@
 .bg-pattern-diag {
   background: linear-gradient(
       180deg,
-      var(--color-primary-bg) 0%,
-      rgba(20, 21, 57, 0) 50%,
-      var(--color-primary-bg) 100%
+      rgba(20, 21, 57, 0.95) 5%,
+      rgba(20, 21, 57, 0.5) 50%,
+      rgba(20, 21, 57, 0.95) 100%
     ),
-    url("src/ui/assets/textures/bg-pattern-diag.png") no-repeat,
-    radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    url("src/ui/assets/textures/bg-pattern-diag.png") no-repeat center left /
+      500% 100%;
 }
 
 .glow {
@@ -150,6 +150,17 @@
       url("src/ui/assets/textures/bg-pattern-straight.png") no-repeat center 15% /
         170%,
       radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .bg-pattern-diag {
+    background: linear-gradient(
+        180deg,
+        rgba(20, 21, 57, 0.95) 5%,
+        rgba(20, 21, 57, 0.5) 50%,
+        rgba(20, 21, 57, 0.95) 100%
+      ),
+      url("src/ui/assets/textures/bg-pattern-diag.png") no-repeat top center /
+        100% 100%;
   }
 
   .border-cta-gradient {

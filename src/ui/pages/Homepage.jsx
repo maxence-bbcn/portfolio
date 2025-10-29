@@ -365,11 +365,11 @@ export default function Homepage() {
         <section id="cta" className="px-4 py-16 xl:p-32">
           <CTACard />
         </section>
-        <section id="faq" className="flex flex-col gap-16 py-16 px-4">
-          <h2 className="text-center text-3xl font-title">
+        <section id="faq" className="flex flex-col gap-16 py-16 px-4 xl:p-32">
+          <h2 className="text-center text-3xl font-title xl:text-5xl">
             Questions fréquentes
           </h2>
-          <div className="flex flex-col">
+          <div className="flex flex-col xl:w-5/6 self-center">
             <CollaspibleQuestion>
               1. Combien de temps faut-il pour développer un outil sur-mesure ?
             </CollaspibleQuestion>
