@@ -213,7 +213,7 @@ export default function Homepage() {
         </section>
         <section
           id="solution"
-          className="flex flex-col gap-16 py-16 px-4 xl:p-32"
+          className="flex flex-col gap-16 pt-16 px-4 xl:px-32 xl:pt-32"
         >
           <h2 className="text-center text-3xl xl:text-5xl font-title">
             Des applications web sur mesure, pensées pour vous
@@ -224,7 +224,7 @@ export default function Homepage() {
             des tâches, centraliser vos données ou structurer vos workflows,
             chaque solution est pensée autour de vos besoins réels.
           </p>
-          <div className="flex flex-col gap-10 xl:grid grid-cols-12 grid-rows-10 xl:gap-3">
+          <div className="flex flex-col gap-10 xl:grid grid-cols-12 grid-rows-12 xl:gap-3">
             {/* Carte accompagnement */}
             <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 border border-primary-800 relative xl:col-start-1 xl:col-span-4 xl:row-start-1 xl:row-span-7">
               <div className="px-6 gap-8 flex flex-col">
