@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Button({ children, type = "button" }) {
+export default function Button({ children, type = "button", className }) {
   const [size, setSize] = useState("small");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -23,7 +23,7 @@ export default function Button({ children, type = "button" }) {
       type={type}
       className={`bg-primary-gradient text-white rounded-full w-fit px-6 py-2 ${
         size === "small" ? "text-base" : "text-xl"
-      }`}
+      } ${className}`}
     >
       {children}
     </button>

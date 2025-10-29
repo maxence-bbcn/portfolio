@@ -362,7 +362,7 @@ export default function Homepage() {
             ))}
           </div>
         </section>
-        <section id="cta" className="px-4 py-16">
+        <section id="cta" className="px-4 py-16 xl:p-32">
           <CTACard />
         </section>
         <section id="faq" className="flex flex-col gap-16 py-16 px-4">
