@@ -224,7 +224,7 @@ export default function Homepage() {
             des tâches, centraliser vos données ou structurer vos workflows,
             chaque solution est pensée autour de vos besoins réels.
           </p>
-          <div className="flex flex-col gap-10 xl:grid grid-cols-12 grid-rows-12 xl:gap-3">
+          <div className="flex flex-col gap-10 xl:grid grid-cols-12 grid-rows-10 xl:gap-3">
             {/* Carte accompagnement */}
             <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 border border-primary-800 relative xl:col-start-1 xl:col-span-4 xl:row-start-1 xl:row-span-7">
               <div className="px-6 gap-8 flex flex-col">
@@ -255,8 +255,9 @@ export default function Homepage() {
                   Une interface pensée pour <strong>vos utilisateurs</strong>
                 </h3>
                 <p className="font-extralight italic leading-normal text-lg">
-                  L’interface est simple à prendre en main, agréable à utiliser
-                  au quotidien, et parfaitement adaptée à vos usages métier.
+                  L&apos;interface est simple à prendre en main, agréable à
+                  utiliser au quotidien, et parfaitement adaptée à vos usages
+                  métier.
                 </p>
                 <Button>Planifiez un appel</Button>
               </div>
@@ -345,12 +346,12 @@ export default function Homepage() {
         </section>
         <section
           id="testimonials"
-          className="flex flex-col gap-16 py-16 px-4 bg-pattern-straight"
+          className="flex flex-col gap-16 py-16 px-4 xl:p-32 bg-pattern-straight"
         >
-          <h2 className="text-center text-3xl font-title">
+          <h2 className="text-center text-3xl xl:text-5xl font-title">
             Ils ont gagné en efficacité grâce à des solutions pensées pour eux
           </h2>
-          <div className="flex flex-row flex-wrap gap-10">
+          <div className="flex flex-row flex-wrap gap-10 xl:gap-10 justify-center">
             {testimonials.map(({ content, author, pp }, index) => (
               <TestimonialCard
                 key={index}

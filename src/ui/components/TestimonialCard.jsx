@@ -1,6 +1,9 @@
 export default function TestimonialCard({ content, author, pp, ...props }) {
   return (
-    <article {...props} className="border-primary-gradient p-px rounded-2xl">
+    <article
+      {...props}
+      className="border-primary-gradient p-px rounded-2xl xl:max-w-2/5"
+    >
       <div className="flex flex-row gap-8 p-6 rounded-2xl bg-primary-bg">
         <img
           src={pp}
