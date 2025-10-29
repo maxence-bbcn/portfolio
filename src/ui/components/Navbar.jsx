@@ -3,10 +3,10 @@ import Button from "./Button";
 
 export default function Navbar({ toggleMobileMenu }) {
   return (
-    <nav className="px-6 xl:px-16 py-4 xl:py-8 flex flex-row justify-between items-center relative">
-      <div className="w-1/3 flex gap-3">
+    <nav className="relative flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16 xl:py-8">
+      <div className="flex w-1/3 gap-3">
         <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
-        <p className="hidden xl:block font-bold text-xl font-title">
+        <p className="font-title hidden text-xl font-bold md:block">
           Maxence Barbançon
         </p>
       </div>
@@ -16,18 +16,18 @@ export default function Navbar({ toggleMobileMenu }) {
         className="select-none xl:hidden"
         onClick={() => toggleMobileMenu((prevState) => !prevState)}
       />
-      <div className="hidden xl:flex flex-row justify-center w-1/3 gap-8">
-        <Link to="/services" className="xl:text-xl">
+      <div className="hidden w-1/3 flex-row justify-center gap-8 xl:flex">
+        <Link to="/services" className="lg:text-lg 2xl:text-xl">
           Mes services
         </Link>
-        <Link to="/projects" className="xl:text-xl">
+        <Link to="/projects" className="lg:text-lg 2xl:text-xl">
           Mes projets
         </Link>
-        <Link to="/about" className="xl:text-xl">
+        <Link to="/about" className="lg:text-lg 2xl:text-xl">
           Qui suis-je ?
         </Link>
       </div>
-      <div className="hidden xl:flex flex-row w-1/3 justify-end">
+      <div className="hidden w-1/3 flex-row justify-end xl:flex">
         <Button>Planifiez un appel</Button>
       </div>
     </nav>

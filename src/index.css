@@ -59,8 +59,8 @@
 
 .bg-cta-gradient {
   background: var(--color-primary-500);
-  background: url("src/ui/assets/textures/cta-texture.png") no-repeat center
-      150% / 152%,
+  background:
+    url("src/ui/assets/textures/cta-texture.png") no-repeat center 150% / 152%,
     radial-gradient(
       circle at 50% 120%,
       var(--color-primary-500) 0%,
@@ -71,8 +71,8 @@
 
 .bg-cta-gradient--menu {
   background: var(--color-primary-500);
-  background: url("src/ui/assets/textures/cta-texture.png") no-repeat 50% 135% /
-      170%,
+  background:
+    url("src/ui/assets/textures/cta-texture.png") no-repeat 50% 135% / 170%,
     radial-gradient(
       ellipse 100% 100% at 50% 100%,
       var(--color-primary-600) 0%,
@@ -91,7 +91,8 @@
 }
 
 .bg-pattern-straight {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(20, 21, 57, 0.8) 0%,
       rgba(20, 21, 57, 0) 50%,
@@ -102,7 +103,8 @@
 }
 
 .bg-pattern-diag {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(20, 21, 57, 0.95) 5%,
       rgba(20, 21, 57, 0.5) 50%,
@@ -120,6 +122,28 @@
   box-shadow: -10px 50px 50px 0px rgba(141, 137, 188, 0.2);
 }
 
+@media screen and (min-width: 48rem) {
+  .mask-right {
+    overflow: clip;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100vw - 16px);
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .mask-right {
+    overflow: clip;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100vw - 16px);
+    height: 60%;
+  }
+}
+
 @media screen and (min-width: 80rem) {
   .mask-bottom {
     overflow: clip;
@@ -135,25 +159,26 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    /* border: 1px solid white; */
     width: 120%;
     height: 65%;
   }
 
   .bg-pattern-straight {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         180deg,
         rgba(20, 21, 57, 0.8) 0%,
         rgba(20, 21, 57, 0) 50%,
         rgba(20, 21, 57, 1) 100%
       ),
-      url("src/ui/assets/textures/bg-pattern-straight.png") no-repeat center 15% /
-        170%,
+      url("src/ui/assets/textures/bg-pattern-straight.png") no-repeat center
+        15% / 170%,
       radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
   }
 
   .bg-pattern-diag {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         180deg,
         rgba(20, 21, 57, 0.95) 5%,
         rgba(20, 21, 57, 0.5) 50%,
@@ -176,8 +201,8 @@
 
   .bg-cta-gradient {
     background: var(--color-primary-500);
-    background: url("src/ui/assets/textures/cta-texture.png") no-repeat center -180% /
-        70%,
+    background:
+      url("src/ui/assets/textures/cta-texture.png") no-repeat center -180% / 70%,
       radial-gradient(
         ellipse 110% 140% at 50% 100%,
         var(--color-primary-500) 0%,
@@ -189,7 +214,7 @@
 
 @layer base {
   html {
-    @apply bg-primary-bg text-white p-0 m-0 tracking-[-2%] font-body font-light overflow-x-hidden;
+    @apply bg-primary-bg font-body m-0 overflow-x-hidden p-0 font-light tracking-[-2%] text-white;
   }
   body {
     @apply overflow-x-hidden;

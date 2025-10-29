@@ -81,15 +81,15 @@ export default function Homepage() {
   return (
     <>
       {mobileMenuVisible && (
-        <div className="w-full absolute h-full flex justify-end backdrop-blur-xs">
-          <div className="bg-cta-gradient--menu glow--menu h-full w-2/3 pb-16 pt-24 flex flex-col items-center gap-6 justify-center">
-            <Link to="/services" className="text-xl font-medium">
+        <div className="absolute flex h-full w-full justify-end backdrop-blur-xs">
+          <div className="bg-cta-gradient--menu glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12">
+            <Link to="/services" className="text-xl font-medium md:text-2xl">
               Mes services
             </Link>
-            <Link to="/projects" className="text-xl font-medium">
+            <Link to="/projects" className="text-xl font-medium md:text-2xl">
               Mes projets
             </Link>
-            <Link to="/about" className="text-xl font-medium">
+            <Link to="/about" className="text-xl font-medium md:text-2xl">
               Qui suis-je ?
             </Link>
             <span className="py-4" />
@@ -101,13 +101,13 @@ export default function Homepage() {
       <main>
         <section
           id="hero"
-          className="px-6 xl:px-16 mt-16 xl:mt-32 flex flex-col gap-16 xl:gap-32 items-center pb-16 xl:w-2/3 xl:mx-auto"
+          className="mt-16 flex flex-col items-center gap-16 px-6 pb-16 md:mt-32 md:gap-24 md:px-10 xl:mx-auto xl:w-2/3 xl:gap-32 xl:px-16"
         >
-          <h1 className="font-title text-5xl xl:text-6xl text-center leading-tight">
+          <h1 className="font-title text-center text-5xl leading-tight xl:text-6xl">
             <span className="font-bold">Simplifiez</span> vos worflows avec des
             outils conçus pour <span className="font-bold">votre métier</span>.
           </h1>
-          <p className="text-primary-200 text-xl xl:text-2xl leading-relaxed text-center">
+          <p className="text-primary-200 text-center text-xl leading-relaxed xl:text-2xl">
             Optimisez chaque étape de votre activité grâce à des solutions sur
             mesure, pensées et développées pour vous.
           </p>
@@ -115,14 +115,14 @@ export default function Homepage() {
         </section>
         <section
           id="brands"
-          className="flex flex-col gap-3 items-center xl:px-32 xl:pb-16"
+          className="flex flex-col items-center gap-3 xl:px-32 xl:pb-16"
         >
           <p className="text-primary-200 font-extralight italic">
             Ils m&apos;ont fait confiance !
           </p>
-          <div className="flex gap-3 p-4 w-full justify-between items-center">
+          <div className="flex w-full items-center justify-between gap-3 p-4">
             {brandLogos.map((brand, index) => (
-              <div key={index} className="w-full flex justify-center">
+              <div key={index} className="flex w-full justify-center">
                 {/* TODO srcset et sizes pour les images responsives */}
                 <img src={brand.logo} alt={brand.alt} />
               </div>
@@ -131,20 +131,20 @@ export default function Homepage() {
         </section>
         <section
           id="problem"
-          className="flex flex-col gap-16 py-16 px-4 xl:p-32 items-center xl:w-11/12 xl:mx-auto"
+          className="flex flex-col items-center gap-16 px-4 py-16 md:px-10 md:py-24 xl:mx-auto xl:w-11/12 xl:p-32"
         >
-          <h2 className="text-center text-3xl xl:text-5xl font-title">
+          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
             Des outils génériques qui ne comprennent pas vos besoins
           </h2>
-          <p className="font-extralight italic text-center leading-loose xl:text-xl xl:mb-10">
+          <p className="text-center leading-loose font-extralight italic md:text-lg xl:mb-10 xl:text-xl">
             Les logiciels standards que vous utilisez ne sont pas adaptés à vos
             méthodes de travail ? Ils vous imposent des contraintes ? Vous
             obligent à trouver des solutions détournées et rendent chaque tâche
             plus complexe qu&apos;elle ne devrait l&apos;être ?
           </p>
-          <div className="p-px rounded-2xl border-primary-gradient overflow-x-visible">
-            <div className="rounded-2xl flex flex-col xl:flex-row w-full bg-primary-bg xl:relative">
-              <p className="text-xl xl:text-2xl leading-loose pt-6 px-8 xl:w-2/3 xl:p-16">
+          <div className="border-primary-gradient overflow-x-visible rounded-2xl p-px">
+            <div className="bg-primary-bg flex w-full flex-col rounded-2xl md:relative md:flex-row">
+              <p className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl">
                 Vos équipes
                 <span className="font-semibold"> perdent en efficacité</span>,
                 l&apos;information circule mal entre les services, et
@@ -161,12 +161,12 @@ export default function Homepage() {
                 contraintes qu&apos;à
                 <span className="font-semibold"> créer de la valeur</span>.
               </p>
-              <div className="h-80 xl:h-auto overflow-y-clip xl:overflow-y-visible overflow-x-visible relative xl:w-1/3 mask-bottom">
+              <div className="relative h-80 overflow-x-visible overflow-y-clip mask-bottom sm:min-h-[500px] md:h-auto md:min-h-0 md:w-1/2 lg:w-1/3 xl:overflow-y-visible">
                 <img
                   src={IPhoneAsset}
                   alt="Illustration d'un téléphone saturé par des notifications"
                   width="970px"
-                  className="min-w-[400px] absolute -right-10 xl:left-0 xl:top-0"
+                  className="absolute -right-10 xl:top-1/5 xl:left-0 2xl:top-0"
                 />
               </div>
             </div>
@@ -174,21 +174,21 @@ export default function Homepage() {
         </section>
         <section
           id="agitate"
-          className="flex flex-col gap-16 py-16 px-4 xl:p-32 xl:gap-32"
+          className="flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:gap-32 xl:p-32"
         >
-          <h2 className="text-center text-3xl xl:text-5xl font-title">
+          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
             Ces workflows inefficaces vous coûtent plus cher que vous ne le
             pensez
           </h2>
-          <div className="flex flex-col gap-16 items-center">
-            <div className="flex flex-col xl:flex-row gap-6 w-full">
+          <div className="flex flex-col items-center gap-16">
+            <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-stretch md:justify-center">
               {statistics.map((stat, index) => (
                 <div
                   key={index}
-                  className="w-full min-h-56 border-primary-gradient p-px rounded-2xl"
+                  className="border-primary-gradient w-full rounded-2xl p-px sm:max-w-2/3 md:w-3/5"
                 >
-                  <div className="w-full h-full min-h-56 bg-primary-bg rounded-2xl px-6 pt-6 pb-2 flex flex-col gap-4 items-center">
-                    <div className="flex flex-col gap-0 items-center">
+                  <div className="bg-primary-bg flex h-full w-full flex-col items-center gap-4 rounded-2xl px-6 pt-6 pb-2 md:justify-evenly">
+                    <div className="flex flex-col items-center gap-0">
                       <p className="text-6xl font-black">
                         {stat.value}
                         <span className="text-base font-normal">%</span>
@@ -200,7 +200,7 @@ export default function Homepage() {
                     </p>
                     <a
                       href={stat.source}
-                      className="self-end text-2xs text-primary-200 underline decoration-dotted"
+                      className="text-2xs text-primary-200 self-end underline decoration-dotted"
                     >
                       Voir la source
                     </a>
@@ -213,55 +213,55 @@ export default function Homepage() {
         </section>
         <section
           id="solution"
-          className="flex flex-col gap-16 pt-16 px-4 xl:px-32 xl:pt-32"
+          className="flex flex-col gap-16 px-4 pt-16 md:px-10 md:py-24 xl:px-32 xl:pt-32"
         >
-          <h2 className="text-center text-3xl xl:text-5xl font-title">
+          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
             Des applications web sur mesure, pensées pour vous
           </h2>
-          <p className="font-extralight italic text-center leading-loose xl:text-xl">
+          <p className="text-center leading-loose font-extralight italic md:text-lg xl:text-xl">
             Je conçois des applications web sur mesure, parfaitement intégrées à
             vos outils et processus existants. Que vous cherchiez à automatiser
             des tâches, centraliser vos données ou structurer vos workflows,
             chaque solution est pensée autour de vos besoins réels.
           </p>
-          <div className="flex flex-col gap-10 xl:grid grid-cols-12 grid-rows-12 xl:gap-3">
+          <div className="flex grid-cols-12 grid-rows-12 flex-col gap-10 md:grid md:gap-3">
             {/* Carte accompagnement */}
-            <div className="overflow-x-visible w-full rounded-2xl flex flex-col pt-6 border border-primary-800 relative xl:col-start-1 xl:col-span-4 xl:row-start-1 xl:row-span-7">
-              <div className="px-6 gap-8 flex flex-col">
-                <h3 className="font-medium text-2xl xl:text-3xl">
+            <div className="border-primary-800 relative flex w-full flex-col overflow-x-visible rounded-2xl border pt-6 md:col-span-4 md:col-start-1 md:row-span-7 md:row-start-1">
+              <div className="flex flex-col gap-8 px-6">
+                <h3 className="text-2xl font-medium md:text-xl xl:text-3xl">
                   Un accompagnement sur-mesure,{" "}
                   <strong>du début à la fin</strong>
                 </h3>
-                <p className="font-extralight italic leading-normal text-lg">
+                <p className="text-lg leading-normal font-extralight italic md:text-base">
                   Écoute, pédagogie et réactivité : vous avancez en confiance,
                   avec un interlocuteur unique qui comprend vos enjeux et reste
                   disponible.
                 </p>
               </div>
-              <div className="h-70 xl:h-0 overflow-y-clip overflow-x-hidden relative"></div>
+              <div className="relative h-70 overflow-x-hidden overflow-y-clip md:h-0 xl:h-0"></div>
               <div className="mask-right">
                 <img
                   src={TextsAsset}
                   alt="Illustration d'un échange de sms"
                   width="598px"
-                  className="min-w-[500px] absolute -right-1/4 xl:left-0 xl:min-w-[600px]"
+                  className="absolute top-0 left-0 md:left-7/11 md:w-3/6 md:min-w-0 lg:w-1/2 xl:top-10 xl:left-0 xl:w-full"
                 />
               </div>
             </div>
             {/* Carte interface */}
-            <div className="overflow-x-visible w-full rounded-2xl flex flex-col xl:flex-row pt-6 gap-2 border border-primary-800 relative xl:col-start-5 xl:col-end-13 xl:row-start-1 xl:row-span-3">
-              <div className="px-6 gap-8 flex flex-col xl:w-3/5">
-                <h3 className="font-medium text-2xl xl:text-3xl">
+            <div className="border-primary-800 relative flex w-full flex-col gap-2 overflow-x-visible rounded-2xl border pt-6 md:col-start-5 md:col-end-13 md:row-span-3 md:row-start-1 md:flex-row">
+              <div className="flex flex-col gap-8 px-6 md:w-2/3 lg:w-3/5">
+                <h3 className="text-2xl font-medium md:text-xl xl:text-3xl">
                   Une interface pensée pour <strong>vos utilisateurs</strong>
                 </h3>
-                <p className="font-extralight italic leading-normal text-lg">
+                <p className="text-lg leading-normal font-extralight italic md:text-base">
                   L&apos;interface est simple à prendre en main, agréable à
                   utiliser au quotidien, et parfaitement adaptée à vos usages
                   métier.
                 </p>
                 <Button>Planifiez un appel</Button>
               </div>
-              <div className="h-64 xl:h-full xl:w-2/5 overflow-visible relative">
+              <div className="relative h-64 overflow-visible md:h-full md:w-1/3 lg:w-2/5">
                 <img
                   src={UiModsAsset}
                   alt="Illusatration d'une interface utilisateur"
@@ -270,54 +270,54 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte mise en prod */}
-            <div className=" w-full rounded-2xl overflow-hidden flex flex-col py-6 gap-2 border border-primary-800 xl:col-start-5 col-end-9 xl:row-start-4 xl:row-span-4">
-              <div className="px-6 gap-8 flex flex-col relative">
-                <h3 className="font-medium text-2xl xl:text-3xl">
+            <div className="border-primary-800 col-end-9 flex w-full flex-col gap-2 overflow-hidden rounded-2xl border py-6 md:col-start-5 md:row-span-4 md:row-start-4">
+              <div className="relative flex flex-col gap-8 px-6">
+                <h3 className="text-2xl font-medium md:text-xl xl:text-3xl">
                   Mise en ligne <strong>rapide</strong>, sans compromis sur la{" "}
                   <strong>qualité</strong>
                 </h3>
-                <div className="flex flex-row -gap-2 h-fit">
-                  <p className="font-extralight italic leading-normal text-lg w-3/4">
+                <div className="-gap-2 flex h-fit flex-row md:flex-col">
+                  <p className="w-3/4 text-lg leading-normal font-extralight italic md:w-full md:text-base">
                     Vos outils sont opérationnels rapidement pour que vous
                     puissiez gagner en efficacité sans attendre.
                   </p>
-                  <div className="w-1/4 relative h-60">
+                  <div className="relative h-60 w-1/4 md:h-full md:w-full">
                     <img
                       src={ZapAsset}
                       alt="Illustration d'un éclair"
-                      className="absolute min-w-80 -right-20 -top-6"
+                      className="absolute -top-6 -right-20 min-w-80 md:-top-12 md:right-0 md:w-60 md:min-w-0"
                     />
                   </div>
                 </div>
               </div>
             </div>
             {/* Carte évolutivité */}
-            <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 gap-2 border border-primary-800 xl:col-start-9 xl:col-end-13 xl:row-start-4 xl:row-span-4">
-              <div className="pl-6 gap-8 flex flex-col relative h-full">
-                <h3 className="font-medium text-2xl pr-6 xl:text-3xl">
+            <div className="border-primary-800 flex w-full flex-col gap-2 overflow-hidden rounded-2xl border pt-6 md:col-start-9 md:col-end-13 md:row-span-4 md:row-start-4">
+              <div className="relative flex h-full flex-col gap-8 pl-6">
+                <h3 className="pr-6 text-2xl font-medium md:text-xl xl:text-3xl">
                   Une solution pensée pour <strong>grandir avec vous</strong>
                 </h3>
-                <div className="flex flex-row -gap-2 h-full">
-                  <p className="font-extralight italic leading-normal text-lg w-5/6 pr-6">
+                <div className="-gap-2 flex h-full flex-row md:flex-col md:justify-between">
+                  <p className="w-5/6 pr-6 text-lg leading-normal font-extralight italic md:w-full md:text-base">
                     Architecture modulaire, fonctionnalités extensibles, votre
-                    outil s’adapte à vos futurs besoins.
+                    outil s&apos;adapte à vos futurs besoins.
                   </p>
-                  <div className="w-1/6 relative h-50 xl:h-full">
+                  <div className="relative h-50 w-1/6 border md:h-full md:w-full">
                     <img
                       src={GraphAsset}
                       alt="Illustration d'une courbe qui monte"
-                      className="absolute min-w-64 right-0 bottom-0"
+                      className="absolute right-0 bottom-0 min-w-52"
                     />
                   </div>
                 </div>
               </div>
             </div>
             {/* Carte compatibilité */}
-            <div className="w-full rounded-2xl overflow-hidden flex flex-col items-center xl:items-start pt-6 px-6 gap-8 border border-primary-800 h-[400px] xl:h-[360px] xl:col-start-7 xl:col-span-6 xl:row-start-8 xl:row-span-4">
-              <h3 className="font-medium text-2xl xl:text-3xl">
+            <div className="border-primary-800 flex h-[400px] w-full flex-col items-center gap-8 overflow-hidden rounded-2xl border px-6 pt-6 md:col-span-6 md:col-start-7 md:row-span-4 md:row-start-8 md:h-[360px] md:items-start">
+              <h3 className="text-2xl font-medium md:text-xl xl:text-3xl">
                 <strong>Compatible</strong> avec vos outils existants
               </h3>
-              <p className="font-extralight italic leading-normal text-lg">
+              <p className="text-lg leading-normal font-extralight italic md:text-base">
                 Connexions possibles avec vos logiciels, API ou plateformes déjà
                 en place.
               </p>
@@ -328,11 +328,11 @@ export default function Homepage() {
               />
             </div>
             {/* Carte solution sur mesure */}
-            <div className="w-full rounded-2xl overflow-hidden flex flex-col pt-6 px-6 gap-8 border border-primary-800 relative h-[360px] xl:h-[360px] xl:col-start-1 xl:col-span-6 xl:row-start-8 xl:row-span-4">
-              <h3 className="font-medium text-2xl xl:text-3xl">
+            <div className="border-primary-800 relative flex h-[360px] w-full flex-col gap-8 overflow-hidden rounded-2xl border px-6 pt-6 md:col-span-6 md:col-start-1 md:row-span-4 md:row-start-8 md:h-[360px]">
+              <h3 className="text-2xl font-medium md:text-xl xl:text-3xl">
                 Une solution vraiment faire <strong>pour vous</strong>
               </h3>
-              <p className="font-extralight italic leading-normal text-lg">
+              <p className="text-lg leading-normal font-extralight italic md:text-base">
                 Chaque projet part de vos contraintes réelles : vous obtenez une
                 solution unique, conçue pour fonctionner dans votre contexte.
               </p>
@@ -346,12 +346,12 @@ export default function Homepage() {
         </section>
         <section
           id="testimonials"
-          className="flex flex-col gap-16 py-16 px-4 xl:p-32 bg-pattern-straight"
+          className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 xl:p-32"
         >
-          <h2 className="text-center text-3xl xl:text-5xl font-title">
+          <h2 className="font-title text-center text-3xl xl:text-5xl">
             Ils ont gagné en efficacité grâce à des solutions pensées pour eux
           </h2>
-          <div className="flex flex-row flex-wrap gap-10 xl:gap-10 justify-center">
+          <div className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10">
             {testimonials.map(({ content, author, pp }, index) => (
               <TestimonialCard
                 key={index}
@@ -365,11 +365,11 @@ export default function Homepage() {
         <section id="cta" className="px-4 py-16 xl:p-32">
           <CTACard />
         </section>
-        <section id="faq" className="flex flex-col gap-16 py-16 px-4 xl:p-32">
-          <h2 className="text-center text-3xl font-title xl:text-5xl">
+        <section id="faq" className="flex flex-col gap-16 px-4 py-16 xl:p-32">
+          <h2 className="font-title text-center text-3xl xl:text-5xl">
             Questions fréquentes
           </h2>
-          <div className="flex flex-col xl:w-5/6 self-center">
+          <div className="flex flex-col self-center xl:w-5/6">
             <CollaspibleQuestion>
               1. Combien de temps faut-il pour développer un outil sur-mesure ?
             </CollaspibleQuestion>
