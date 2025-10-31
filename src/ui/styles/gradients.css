@@ -84,6 +84,49 @@
       var(--color-primary-bg) 100%
     );
 }
+
+@media screen and (min-width: 48rem) {
+  .mobile-menu-bg-gradient {
+    background: var(--color-primary-500);
+    background:
+      url("src/ui/assets/textures/cta-texture.png") no-repeat center 85vh / 140%,
+      radial-gradient(
+        ellipse 100% 100% at 50% 100%,
+        var(--color-primary-600) 0%,
+        var(--color-primary-800) 40%,
+        var(--color-primary-bg) 100%
+      );
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 48rem) {
+  .mobile-menu-bg-gradient {
+    background: var(--color-primary-500);
+    background:
+      url("src/ui/assets/textures/cta-texture.png") no-repeat center 75vh / 140%,
+      radial-gradient(
+        ellipse 100% 100% at 50% 100%,
+        var(--color-primary-600) 0%,
+        var(--color-primary-800) 40%,
+        var(--color-primary-bg) 100%
+      );
+  }
+}
+
+/* Phone size screens in landscape */
+@media screen and (orientation: landscape) and (max-width: 48rem) {
+  .mobile-menu-bg-gradient {
+    background: var(--color-primary-500);
+    background:
+      url("src/ui/assets/textures/cta-texture.png") no-repeat center 65vh / 120%,
+      radial-gradient(
+        ellipse 100% 100% at 50% 100%,
+        var(--color-primary-600) 0%,
+        var(--color-primary-800) 40%,
+        var(--color-primary-bg) 100%
+      );
+  }
+}
 /* --- End of mobile menu background gradient ---  */
 
 /* --- Start of background patterns --- */

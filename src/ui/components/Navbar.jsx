@@ -13,7 +13,7 @@ export default function Navbar({ toggleMobileMenu }) {
       <img
         src="src/ui/assets/icons/menu.svg"
         alt="Icône menu"
-        className="select-none xl:hidden"
+        className="z-50 select-none xl:hidden"
         onClick={() => toggleMobileMenu((prevState) => !prevState)}
       />
       <div className="hidden w-1/3 flex-row justify-center gap-8 xl:flex">
