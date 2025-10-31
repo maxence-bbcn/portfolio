@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import "./ui/assets/styles/effects.css";
-import "./ui/assets/styles/gradients.css";
-import "./ui/assets/styles/masks.css";
 import AboutPage from "./ui/pages/AboutPage.jsx";
 import Homepage from "./ui/pages/Homepage.jsx";
 import ProjectsPage from "./ui/pages/ProjectsPage.jsx";
 import ServicePage from "./ui/pages/ServicePage.jsx";
+import "./ui/styles/effects.css";
+import "./ui/styles/gradients.css";
+import "./ui/styles/masks.css";
 
 const router = createBrowserRouter([
   {

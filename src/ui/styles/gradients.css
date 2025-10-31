@@ -73,10 +73,10 @@
 /* --- End of cta card gradients --- */
 
 /* --- Start of mobile menu background gradient --- */
-.cta-card-bg-gradient--menu {
+.mobile-menu-bg-gradient {
   background: var(--color-primary-500);
   background:
-    url("src/ui/assets/textures/cta-texture.png") no-repeat 50% 135% / 170%,
+    url("src/ui/assets/textures/cta-texture.png") no-repeat center 120% / 150%,
     radial-gradient(
       ellipse 100% 100% at 50% 100%,
       var(--color-primary-600) 0%,

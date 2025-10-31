@@ -82,7 +82,7 @@ export default function Homepage() {
     <>
       {mobileMenuVisible && (
         <div className="absolute flex h-full w-full justify-end backdrop-blur-xs">
-          <div className="cta-card-bg-gradient--menu glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12">
+          <div className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12">
             <Link to="/services" className="text-xl font-medium md:text-2xl">
               Mes services
             </Link>
