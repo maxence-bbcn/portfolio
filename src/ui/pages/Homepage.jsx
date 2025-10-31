@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import AppsAsset from "../assets/images/apps circles.png";
 import FingerprintAsset from "../assets/images/fingerprint.png";
@@ -67,6 +67,7 @@ export default function Homepage() {
   ];
 
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     if (mobileMenuVisible) {
@@ -81,8 +82,16 @@ export default function Homepage() {
   return (
     <>
       {mobileMenuVisible && (
-        <div className="absolute z-10 flex h-full w-full justify-end backdrop-blur-xs">
-          <div className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12">
+        <div
+          className="absolute z-10 flex h-full w-full justify-end backdrop-blur-xs"
+          onClick={(event) => {
+            if (event.target !== menuRef.current) setMobileMenuVisible(false);
+          }}
+        >
+          <div
+            ref={menuRef}
+            className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12"
+          >
             <Link to="/services" className="text-xl font-medium md:text-2xl">
               Mes services
             </Link>
