@@ -298,15 +298,15 @@ export default function Homepage() {
                   Une solution pensée pour <strong>grandir avec vous</strong>
                 </h3>
                 <div className="flex h-full flex-col">
-                  <p className="w-5/6 pr-6 pl-6 text-lg leading-normal font-extralight italic md:w-full md:text-sm lg:text-base xl:text-lg xl:leading-relaxed">
+                  <p className="w-5/6 pr-6 pl-6 text-lg leading-normal font-extralight italic md:w-full md:text-sm lg:text-base xl:w-3/4 xl:text-lg xl:leading-relaxed">
                     Architecture modulaire, fonctionnalités extensibles, votre
                     outil s&apos;adapte à vos futurs besoins.
                   </p>
-                  <div className="relative h-full w-full">
+                  <div className="relative h-full w-full xl:h-0">
                     <img
                       src={GraphAsset}
                       alt="Illustration d'une courbe qui monte"
-                      className="ml-auto w-3/4 max-w-none md:ml-4 md:w-full lg:ml-8 xl:mt-10 xl:ml-auto xl:w-3/4"
+                      className="ml-auto w-3/4 max-w-none md:ml-4 md:w-full lg:ml-8 xl:absolute xl:-top-6 xl:right-0 xl:w-3/4 2xl:-top-12"
                     />
                   </div>
                 </div>
