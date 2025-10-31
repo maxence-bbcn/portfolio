@@ -285,7 +285,7 @@ export default function Homepage() {
                     <img
                       src={ZapAsset}
                       alt="Illustration d'un éclair"
-                      className="1-2xl:-top-20 1-2xl:-left-44 1-2xl:w-[450%] absolute -top-6 -right-20 w-80 max-w-none md:top-0 md:-left-24 md:w-60 lg:-top-10 lg:-left-30 lg:w-76 xl:-top-10 xl:-left-30 xl:w-72 2xl:-top-20 2xl:-left-48 2xl:w-[400%]"
+                      className="1-2xl:-top-20 1-2xl:-left-44 1-2xl:w-[450%] absolute -top-6 -right-20 w-80 max-w-none md:top-0 md:-left-24 md:w-60 lg:-top-10 lg:-left-30 lg:w-76 xl:-top-10 xl:-left-30 xl:w-72 2xl:-top-32 2xl:-left-48 2xl:w-[400%]"
                     />
                   </div>
                 </div>
