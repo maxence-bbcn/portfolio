@@ -1,0 +1,143 @@
+/* --- Start of button background gradient --- */
+.button-bg-gradient {
+  background: #5000f0;
+  background: linear-gradient(
+    90deg,
+    rgba(80, 0, 240, 1) 0%,
+    rgba(124, 0, 240, 1) 70%
+  );
+}
+/* --- End of button background gradient --- */
+
+/* --- Start of border primary gradient --- */
+.border-primary-gradient {
+  background: #494584;
+  background: linear-gradient(
+    180deg,
+    rgba(73, 69, 132, 1) 0%,
+    rgba(45, 43, 82, 1) 100%
+  );
+}
+/* --- End of border primary gradient --- */
+
+/* --- Start of cta card gradients --- */
+.cta-card-bg-gradient {
+  background: var(--color-primary-500);
+  background:
+    url("src/ui/assets/textures/cta-texture.png") no-repeat center 150% / 152%,
+    radial-gradient(
+      circle at 50% 120%,
+      var(--color-primary-500) 0%,
+      rgba(23, 24, 62, 1) 35%,
+      var(--color-primary-bg) 100%
+    );
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .cta-card-bg-gradient {
+    background: var(--color-primary-500);
+    background:
+      url("src/ui/assets/textures/cta-texture.png") no-repeat center -180% / 70%,
+      radial-gradient(
+        ellipse 110% 140% at 50% 100%,
+        var(--color-primary-500) 0%,
+        rgba(23, 24, 62, 1) 35%,
+        var(--color-primary-bg) 100%
+      );
+  }
+}
+
+.cta-card-border-gradient {
+  background: var(--color-primary-500);
+  background: radial-gradient(
+    ellipse at 40% bottom,
+    rgba(255, 255, 255, 1) 0%,
+    var(--color-primary-bg) 60%
+  );
+  background-repeat: no-repeat;
+  background-size: 120% 100%;
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .cta-card-border-gradient {
+    background: var(--color-primary-500);
+    background: radial-gradient(
+      ellipse at 40% bottom,
+      rgba(255, 255, 255, 1) 0%,
+      var(--color-primary-bg) 30%
+    );
+    background-repeat: no-repeat;
+    background-size: 120% 100%;
+  }
+}
+/* --- End of cta card gradients --- */
+
+/* --- Start of mobile menu background gradient --- */
+.cta-card-bg-gradient--menu {
+  background: var(--color-primary-500);
+  background:
+    url("src/ui/assets/textures/cta-texture.png") no-repeat 50% 135% / 170%,
+    radial-gradient(
+      ellipse 100% 100% at 50% 100%,
+      var(--color-primary-600) 0%,
+      var(--color-primary-800) 40%,
+      var(--color-primary-bg) 100%
+    );
+}
+/* --- End of mobile menu background gradient ---  */
+
+/* --- Start of background patterns --- */
+.bg-pattern-straight {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 21, 57, 0.8) 0%,
+      rgba(20, 21, 57, 0) 50%,
+      rgba(20, 21, 57, 1) 100%
+    ),
+    url("src/ui/assets/textures/bg-pattern-straight.png") 30% 10% / 700%,
+    radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .bg-pattern-straight {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 21, 57, 0.8) 0%,
+        rgba(20, 21, 57, 0) 50%,
+        rgba(20, 21, 57, 1) 100%
+      ),
+      url("src/ui/assets/textures/bg-pattern-straight.png") no-repeat center
+        15% / 170%,
+      radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+.bg-pattern-diag {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 21, 57, 0.95) 5%,
+      rgba(20, 21, 57, 0.5) 50%,
+      rgba(20, 21, 57, 0.95) 100%
+    ),
+    url("src/ui/assets/textures/bg-pattern-diag.png") no-repeat center left /
+      500% 100%;
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .bg-pattern-diag {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 21, 57, 0.95) 5%,
+        rgba(20, 21, 57, 0.5) 50%,
+        rgba(20, 21, 57, 0.95) 100%
+      ),
+      url("src/ui/assets/textures/bg-pattern-diag.png") no-repeat top center /
+        100% 100%;
+  }
+}
+/* --- End of background patterns --- */

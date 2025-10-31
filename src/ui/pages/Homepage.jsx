@@ -82,7 +82,7 @@ export default function Homepage() {
     <>
       {mobileMenuVisible && (
         <div className="absolute flex h-full w-full justify-end backdrop-blur-xs">
-          <div className="bg-cta-gradient--menu glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12">
+          <div className="cta-card-bg-gradient--menu glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12">
             <Link to="/services" className="text-xl font-medium md:text-2xl">
               Mes services
             </Link>
@@ -285,7 +285,7 @@ export default function Homepage() {
                     <img
                       src={ZapAsset}
                       alt="Illustration d'un éclair"
-                      className="absolute -top-6 -right-20 w-80 max-w-none md:top-0 md:-left-24 md:w-60 lg:-top-10 lg:-left-30 lg:w-76 xl:-top-20 xl:-left-30 xl:w-72"
+                      className="absolute -top-6 -right-20 w-80 max-w-none md:top-0 md:-left-24 md:w-60 lg:-top-10 lg:-left-30 lg:w-76 xl:-top-10 xl:-left-30 xl:w-72"
                     />
                   </div>
                 </div>
@@ -306,7 +306,7 @@ export default function Homepage() {
                     <img
                       src={GraphAsset}
                       alt="Illustration d'une courbe qui monte"
-                      className="ml-auto w-3/4 max-w-none md:ml-4 md:w-full lg:ml-8"
+                      className="ml-auto w-3/4 max-w-none md:ml-4 md:w-full lg:ml-8 xl:mt-10 xl:ml-auto xl:w-3/4"
                     />
                   </div>
                 </div>

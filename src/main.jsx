@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import "./ui/assets/styles/effects.css";
+import "./ui/assets/styles/gradients.css";
+import "./ui/assets/styles/masks.css";
 import AboutPage from "./ui/pages/AboutPage.jsx";
 import Homepage from "./ui/pages/Homepage.jsx";
 import ProjectsPage from "./ui/pages/ProjectsPage.jsx";
@@ -31,5 +34,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router}>
       <Homepage />
     </RouterProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

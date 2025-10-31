@@ -1,0 +1,101 @@
+/* --- Start of mask for sms asset placed onto the grid --- */
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-notifications {
+    overflow: clip;
+    position: absolute;
+    bottom: 0;
+    right: -3em;
+    width: 35%;
+    height: 125%;
+    border-radius: 1rem;
+  }
+}
+/* --- End of sms's mask --- */
+
+/* --- Start of mask for sms asset placed onto the grid --- */
+.mask-sms {
+  overflow: clip;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100vw - 16px);
+  height: 280px;
+}
+/* Tailwindcss --- MD --- */
+@media screen and (min-width: 48rem) {
+  .mask-sms {
+    height: 50%;
+    border-radius: 1rem;
+    border-bottom: 1px solid
+      linear-gradient(
+        var(--color-primary-bg) 30%,
+        var(--color-primary-800) 100%
+      );
+  }
+}
+/* Tailwindcss --- LG --- */
+@media screen and (min-width: 64rem) {
+  .mask-sms {
+    height: 60%;
+  }
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-sms {
+    width: 120%;
+    height: 60%;
+  }
+}
+/* Tailwindcss --- 2XL --- */
+@media screen and (min-width: 96rem) {
+  .mask-sms {
+    width: 120%;
+    height: 70%;
+  }
+}
+/* --- End of sms's mask --- */
+
+/* --- Start of mask for fingerprint asset placed onto the grid --- */
+.mask-fingerprint {
+  overflow: clip;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+}
+/* Tailwindcss --- LG --- */
+@media screen and (min-width: 64rem) {
+  .mask-fingerprint {
+    top: 30%;
+    left: 25%;
+  }
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-fingerprint {
+    top: 35%;
+    left: 40%;
+  }
+}
+/* --- End of fingerprint's mask --- */
+
+/* --- Start of mask for apps asset placed onto the grid --- */
+.mask-apps {
+  overflow: clip;
+  position: absolute;
+  top: 55%;
+  right: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-apps {
+    top: 55%;
+  }
+}
+/* --- End of apps' mask --- */

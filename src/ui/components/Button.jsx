@@ -21,7 +21,7 @@ export default function Button({ children, type = "button", className }) {
   return (
     <button
       type={type}
-      className={`bg-primary-gradient w-fit rounded-full px-6 py-2 text-white ${
+      className={`button-bg-gradient w-fit rounded-full px-6 py-2 text-white ${
         size === "small" ? "text-base" : "text-xl"
       } ${className}`}
     >

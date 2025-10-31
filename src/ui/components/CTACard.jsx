@@ -17,12 +17,12 @@ const CustomSparkleBulletListItem = ({ children }) => {
 
 export default function CTACard() {
   return (
-    <article className="rounded-2xl p-px border-cta-gradient glow">
-      <div className="rounded-2xl bg-cta-gradient flex flex-col gap-10 px-6 py-8 items-center xl:grid grid-cols-2 grid-rows-4 xl:p-16 xl:gap-10">
-        <h2 className="text-center text-2xl font-medium leading-normal xl:text-4xl xl:font-medium xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-span-3 xl:text-left">
+    <article className="cta-card-border-gradient glow rounded-2xl p-px">
+      <div className="cta-card-bg-gradient flex grid-cols-2 grid-rows-4 flex-col items-center gap-10 rounded-2xl px-6 py-8 xl:grid xl:gap-10 xl:p-16">
+        <h2 className="text-center text-2xl leading-normal font-medium xl:col-start-1 xl:col-end-2 xl:row-span-3 xl:row-start-1 xl:text-left xl:text-4xl xl:font-medium">
           Parlons de votre projet - gratuitement et sans engagement
         </h2>
-        <div className=" gap-4 flex flex-col items-center xl:col-start-2 xl:col-end-3 xl:row-start-1 xl:row-span-4 xl:items-start">
+        <div className="flex flex-col items-center gap-4 xl:col-start-2 xl:col-end-3 xl:row-span-4 xl:row-start-1 xl:items-start">
           <CustomSparkleBulletListItem>
             Un échange clair et accessible, sans jargon technique
           </CustomSparkleBulletListItem>
@@ -38,7 +38,7 @@ export default function CTACard() {
           </CustomSparkleBulletListItem>
         </div>
         <Button className="xl:hidden">Je réserve un appel gratuit</Button>
-        <Button className="hidden xl:block xl:col-start-1 xl:col-end-2 xl:row-start-4 xl:row-end-5">
+        <Button className="hidden xl:col-start-1 xl:col-end-2 xl:row-start-4 xl:row-end-5 xl:block">
           Je réserve un appel gratuit maintenant
         </Button>
       </div>
