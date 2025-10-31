@@ -77,15 +77,29 @@
 /* Tailwindcss --- LG --- */
 @media screen and (min-width: 64rem) {
   .mask-fingerprint {
-    top: 30%;
-    left: 25%;
+    top: 20%;
+    left: 35%;
   }
 }
 /* Tailwindcss --- XL --- */
 @media screen and (min-width: 80rem) {
   .mask-fingerprint {
-    top: 35%;
-    left: 40%;
+    top: 25%;
+    left: 45%;
+  }
+}
+/* Between XL & 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-fingerprint {
+    top: 15%;
+    left: 45%;
+  }
+}
+/* Tailwindcss --- 2XL --- */
+@media screen and (min-width: 96rem) {
+  .mask-fingerprint {
+    top: 0%;
+    left: 45%;
   }
 }
 /* --- End of fingerprint's mask --- */

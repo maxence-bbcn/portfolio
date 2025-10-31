@@ -335,7 +335,7 @@ export default function Homepage() {
               <h3 className="text-2xl font-medium md:text-xl xl:text-2xl 2xl:text-3xl">
                 Une solution vraiment faire <strong>pour vous</strong>
               </h3>
-              <p className="text-lg leading-normal font-extralight italic md:text-base xl:w-2/3 xl:text-lg xl:leading-relaxed">
+              <p className="text-lg leading-normal font-extralight italic md:text-base lg:w-3/4 xl:w-2/3 xl:text-lg xl:leading-relaxed 2xl:w-1/2">
                 Chaque projet part de vos contraintes réelles : vous obtenez une
                 solution unique, conçue pour fonctionner dans votre contexte.
               </p>
@@ -344,7 +344,7 @@ export default function Homepage() {
                 <img
                   src={FingerprintAsset}
                   alt="Illustration d'une emprunte digitale"
-                  className="w-full max-w-none lg:w-4/5 xl:w-2/3"
+                  className="w-full max-w-none lg:w-4/5 xl:w-2/3 2xl:w-3/5"
                 />
               </div>
             </div>
