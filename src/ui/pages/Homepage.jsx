@@ -244,7 +244,7 @@ export default function Homepage() {
                   src={TextsAsset}
                   alt="Illustration d'un échange de sms"
                   width="598px"
-                  className="absolute top-0 left-0 max-w-none md:left-7/11 md:w-3/6 md:min-w-0 lg:w-1/2 xl:top-12 xl:left-0 xl:w-[130%] 2xl:w-[110%]"
+                  className="absolute top-0 left-0 w-full max-w-none md:top-10 md:left-7/12 md:w-5/9 lg:w-1/2 xl:top-12 xl:left-0 xl:w-[130%] 2xl:w-[110%]"
                 />
               </div>
             </div>

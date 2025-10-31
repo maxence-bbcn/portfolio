@@ -18,14 +18,15 @@
   overflow: clip;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 5%;
   width: calc(100vw - 16px);
-  height: 280px;
+  height: 55%;
 }
 /* Tailwindcss --- MD --- */
 @media screen and (min-width: 48rem) {
   .mask-sms {
-    height: 50%;
+    height: 55%;
+    right: 0;
     border-radius: 1rem;
     border-bottom: 1px solid
       linear-gradient(
@@ -45,6 +46,13 @@
   .mask-sms {
     width: 120%;
     height: 60%;
+  }
+}
+/* Between XL & 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-sms {
+    width: 120%;
+    height: 70%;
   }
 }
 /* Tailwindcss --- 2XL --- */
@@ -92,7 +100,7 @@
   width: 100%;
   height: 100%;
 }
-/* Tailwindcss --- XL --- */
+/* Tailwindcss --- LG --- */
 @media screen and (min-width: 64rem) {
   .mask-apps {
     left: 28%;
