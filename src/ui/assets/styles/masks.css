@@ -93,9 +93,24 @@
   height: 100%;
 }
 /* Tailwindcss --- XL --- */
+@media screen and (min-width: 64rem) {
+  .mask-apps {
+    left: 28%;
+    top: 20%;
+  }
+}
+/* Tailwindcss --- XL --- */
 @media screen and (min-width: 80rem) {
   .mask-apps {
-    top: 55%;
+    left: 28%;
+    top: 20%;
+  }
+}
+/* Between Xl and 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-apps {
+    left: 28%;
+    top: 15%;
   }
 }
 /* --- End of apps' mask --- */

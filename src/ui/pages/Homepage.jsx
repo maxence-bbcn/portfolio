@@ -314,10 +314,10 @@ export default function Homepage() {
             </div>
             {/* Carte compatibilité */}
             <div className="border-primary-800 relative flex w-full flex-col gap-8 overflow-hidden rounded-2xl border px-6 pt-6 md:col-span-6 md:col-start-7 md:row-start-8 md:row-end-12 md:items-start lg:row-end-11">
-              <h3 className="text-2xl font-medium md:text-xl xl:text-2xl 2xl:text-3xl">
+              <h3 className="text-2xl font-medium md:text-xl lg:w-1/2 xl:text-2xl 2xl:text-3xl">
                 <strong>Compatible</strong> avec vos outils existants
               </h3>
-              <p className="text-lg leading-normal font-extralight italic md:text-base xl:text-lg xl:leading-relaxed">
+              <p className="text-lg leading-normal font-extralight italic md:text-base lg:w-1/2 xl:text-lg xl:leading-relaxed">
                 Connexions possibles avec vos logiciels, API ou plateformes déjà
                 en place.
               </p>
@@ -326,7 +326,7 @@ export default function Homepage() {
                 <img
                   src={AppsAsset}
                   alt="Logos de plusieurs outils liés par des cercles concentriques"
-                  className="mx-auto w-3/4 max-w-none lg:w-7/12 xl:w-3/5"
+                  className="mx-auto w-3/4 max-w-none lg:w-7/12 xl:w-1/2"
                 />
               </div>
             </div>
