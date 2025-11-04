@@ -362,7 +362,7 @@ export default function Homepage() {
         </section>
         <section
           id="testimonials"
-          className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 xl:p-32"
+          className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
         >
           <h2 className="font-title text-center text-3xl xl:text-5xl">
             Ils ont gagné en efficacité grâce à des solutions pensées pour eux
