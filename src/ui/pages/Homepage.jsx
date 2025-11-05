@@ -58,12 +58,12 @@ export default function Homepage() {
   ];
 
   const testimonials = [
-    {
-      author: "Filler",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
-      pp: "",
-    },
+    // {
+    //   author: "Filler",
+    //   content:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
+    //   pp: "",
+    // },
   ];
 
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
@@ -360,24 +360,26 @@ export default function Homepage() {
             </div>
           </div>
         </section>
-        <section
-          id="testimonials"
-          className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
-        >
-          <h2 className="font-title text-center text-3xl xl:text-5xl">
-            Ils ont gagné en efficacité grâce à des solutions pensées pour eux
-          </h2>
-          <div className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10">
-            {testimonials.map(({ content, author, pp }, index) => (
-              <TestimonialCard
-                key={index}
-                content={content}
-                author={author}
-                pp={pp}
-              />
-            ))}
-          </div>
-        </section>
+        {testimonials.length > 0 && (
+          <section
+            id="testimonials"
+            className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
+          >
+            <h2 className="font-title text-center text-3xl xl:text-5xl">
+              Ils ont gagné en efficacité grâce à des solutions pensées pour eux
+            </h2>
+            <div className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10">
+              {testimonials.map(({ content, author, pp }, index) => (
+                <TestimonialCard
+                  key={index}
+                  content={content}
+                  author={author}
+                  pp={pp}
+                />
+              ))}
+            </div>
+          </section>
+        )}
         <section id="cta" className="px-4 py-16 xl:p-32">
           <CTACard />
         </section>

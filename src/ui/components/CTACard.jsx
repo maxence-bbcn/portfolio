@@ -10,7 +10,7 @@ const CustomSparkleBulletListItem = ({ children }) => {
         width={"30px"}
         height={"30px"}
       />
-      <p className="leading text-xl">{children}</p>
+      <p className="leading text-lg">{children}</p>
     </div>
   );
 };
@@ -18,11 +18,11 @@ const CustomSparkleBulletListItem = ({ children }) => {
 export default function CTACard() {
   return (
     <article className="cta-card-border-gradient glow rounded-2xl p-px">
-      <div className="cta-card-bg-gradient flex grid-cols-2 grid-rows-4 flex-col items-center gap-10 rounded-2xl px-6 py-8 xl:grid xl:gap-10 xl:p-16">
-        <h2 className="text-center text-2xl leading-normal font-medium xl:col-start-1 xl:col-end-2 xl:row-span-3 xl:row-start-1 xl:text-left xl:text-4xl xl:font-medium">
+      <div className="cta-card-bg-gradient flex grid-cols-2 grid-rows-4 flex-col items-center gap-10 rounded-2xl px-6 py-8 lg:grid lg:gap-10 lg:p-16">
+        <h2 className="text-center text-2xl leading-normal font-medium lg:col-start-1 lg:col-end-2 lg:row-span-3 lg:row-start-1 lg:text-left lg:text-4xl lg:font-medium">
           Parlons de votre projet - gratuitement et sans engagement
         </h2>
-        <div className="flex flex-col items-center gap-4 xl:col-start-2 xl:col-end-3 xl:row-span-4 xl:row-start-1 xl:items-start">
+        <div className="flex flex-col items-start gap-4 lg:col-start-2 lg:col-end-3 lg:row-span-4 lg:row-start-1">
           <CustomSparkleBulletListItem>
             Un échange clair et accessible, sans jargon technique
           </CustomSparkleBulletListItem>
@@ -37,8 +37,8 @@ export default function CTACard() {
             Une estimation réaliste des délais et du type de projet à envisager
           </CustomSparkleBulletListItem>
         </div>
-        <Button className="xl:hidden">Je réserve un appel gratuit</Button>
-        <Button className="hidden xl:col-start-1 xl:col-end-2 xl:row-start-4 xl:row-end-5 xl:block">
+        <Button className="lg:hidden">Je réserve un appel gratuit</Button>
+        <Button className="hidden lg:col-start-1 lg:col-end-2 lg:row-start-4 lg:row-end-5 lg:block">
           Je réserve un appel gratuit maintenant
         </Button>
       </div>
