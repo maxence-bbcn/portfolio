@@ -205,7 +205,7 @@
       rgba(20, 21, 57, 0) 50%,
       rgba(20, 21, 57, 1) 100%
     ),
-    url("src/ui/assets/textures/bg-pattern-straight.png") 30% 10% / 700%,
+    url("src/ui/assets/textures/bg-pattern-straight.png") 35% 0% / 500%,
     radial-gradient(circle, rgba(45, 43, 82, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
