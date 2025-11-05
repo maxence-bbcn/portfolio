@@ -16,6 +16,8 @@
   overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   transition: all 150ms ease;
+  box-shadow: 4px 4px 1px 1px red;
+  box-sizing: border-box;
 }
 
 .btn-shine:hover {
@@ -28,6 +30,7 @@
   border-radius: 999px;
   box-shadow: inset 0 -8px 4px rgba(195, 193, 220, 0);
   transition: all 0.2s ease;
+  z-index: 0;
 }
 
 /* Effet lumineux */
@@ -42,6 +45,7 @@
   box-shadow: 0px 24px 32px 10px white;
   animation: shinebright 5s linear infinite;
   transition: all 0.1s ease;
+  z-index: -1;
 }
 
 .btn-shine:hover div {
@@ -50,7 +54,7 @@
 
 .btn-shine:hover::before {
   animation-play-state: paused;
-  box-shadow: 0 24px 32px 12px white;
+  /* box-shadow: 0 24px 32px 12px white; */
 }
 
 .btn-shine:active {
