@@ -95,7 +95,7 @@ export default function Homepage() {
     <>
       {mobileMenuVisible && (
         <div
-          className="absolute z-10 flex h-full w-full justify-end backdrop-blur-xs"
+          className="absolute z-10 flex h-full w-full justify-end backdrop-blur-xs max-md:landscape:h-screen"
           onClick={(event) => {
             if (event.target !== menuRef.current) setMobileMenuVisible(false);
           }}
@@ -104,16 +104,25 @@ export default function Homepage() {
             ref={menuRef}
             className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12"
           >
-            <Link to="/services" className="text-xl font-medium md:text-2xl">
+            <Link
+              to="/services"
+              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
+            >
               Mes services
             </Link>
-            <Link to="/projects" className="text-xl font-medium md:text-2xl">
+            <Link
+              to="/projects"
+              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
+            >
               Mes projets
             </Link>
-            <Link to="/about" className="text-xl font-medium md:text-2xl">
+            <Link
+              to="/about"
+              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
+            >
               Qui suis-je ?
             </Link>
-            <span className="py-4" />
+            <span className="py-4 max-md:landscape:hidden md:landscape:hidden" />
             <Button>Planifiez un appel</Button>
           </div>
         </div>
