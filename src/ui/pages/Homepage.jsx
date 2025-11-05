@@ -102,7 +102,7 @@ export default function Homepage() {
         >
           <div
             ref={menuRef}
-            className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12"
+            className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12 max-md:landscape:gap-3"
           >
             <Link
               to="/services"
