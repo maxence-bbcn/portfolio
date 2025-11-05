@@ -45,7 +45,7 @@
 }
 
 .btn-shine:hover div {
-  /* box-shadow: inset 0 -8px 12px rgba(255, 255, 255, 0.1); */
+  box-shadow: inset 0 -8px 12px rgba(255, 255, 255, 0.1);
 }
 
 .btn-shine:hover::before {
