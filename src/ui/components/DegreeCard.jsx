@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function DegreeCard({ item, props }) {
   return (
     <article
-      className="border-primary-600 flex w-44 flex-col items-center gap-2 rounded-2xl border p-4"
+      className="border-primary-600 bg-primary-bg flex w-44 flex-col items-center justify-between gap-2 rounded-2xl border p-4"
       {...props}
     >
       <img

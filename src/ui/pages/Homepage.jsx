@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import AppsAsset from "../assets/images/apps circles.png";
 import FingerprintAsset from "../assets/images/fingerprint.png";
 import GraphAsset from "../assets/images/graph.png";
@@ -13,9 +11,8 @@ import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import Button from "../components/Button";
 import CollaspibleQuestion from "../components/CollaspsibleQuestion";
 import CTACard from "../components/CTACard";
-import CustomFooter from "../components/CustomFooter";
-import Navbar from "../components/NavBar";
 import TestimonialCard from "../components/TestimonialCard";
+import MainLayout from "../layouts/MainLayout";
 
 export default function Homepage() {
   const brandLogos = [
@@ -78,50 +75,8 @@ export default function Homepage() {
     },
   ];
 
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
-  const menuRef = useRef(null);
-
-  useEffect(() => {
-    if (mobileMenuVisible) {
-      document.body.style.overflow = "hidden";
-      document.body.style.height = "90vh";
-    } else {
-      document.body.style.overflow = "";
-      document.body.style.height = "auto";
-    }
-  }, [mobileMenuVisible]);
-
   return (
-    <>
-      {mobileMenuVisible && (
-        <div
-          className="absolute z-10 flex h-full w-full justify-end backdrop-blur-xs max-md:landscape:h-screen"
-          onClick={(event) => {
-            if (event.target !== menuRef.current) setMobileMenuVisible(false);
-          }}
-        >
-          <div
-            ref={menuRef}
-            className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12 max-md:landscape:gap-3"
-          >
-            <Link
-              to="/about"
-              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
-            >
-              Qui suis-je ?
-            </Link>
-            <Link
-              to="/projects"
-              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
-            >
-              Mes projets
-            </Link>
-            <span className="py-4 max-md:landscape:hidden md:landscape:hidden" />
-            <Button>Planifiez un appel</Button>
-          </div>
-        </div>
-      )}
-      <Navbar toggleMobileMenu={setMobileMenuVisible} />
+    <MainLayout>
       <main>
         <section
           id="hero"
@@ -423,8 +378,7 @@ export default function Homepage() {
             </CollaspibleQuestion>
           </div>
         </section>
-        <CustomFooter />
       </main>
-    </>
+    </MainLayout>
   );
 }

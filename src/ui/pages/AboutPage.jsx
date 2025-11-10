@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import CTACard from "../components/CTACard";
 import DegreeCard from "../components/DegreeCard";
-import Navbar from "../components/NavBar";
 import TechItem from "../components/techItem";
+import MainLayout from "../layouts/MainLayout";
 
 export default function AboutPage() {
   const techStack = [
@@ -57,98 +56,105 @@ export default function AboutPage() {
     },
   ];
 
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
-  const menuRef = useRef(null);
-
-  useEffect(() => {
-    if (mobileMenuVisible) {
-      document.body.style.overflow = "hidden";
-      document.body.style.height = "90vh";
-    } else {
-      document.body.style.overflow = "";
-      document.body.style.height = "auto";
-    }
-  }, [mobileMenuVisible]);
-
   return (
-    <>
-      {mobileMenuVisible && (
-        <div
-          className="absolute z-10 flex h-full w-full justify-end backdrop-blur-xs max-md:landscape:h-screen"
-          onClick={(event) => {
-            if (event.target !== menuRef.current) setMobileMenuVisible(false);
-          }}
-        >
-          <div
-            ref={menuRef}
-            className="mobile-menu-bg-gradient glow--menu flex h-full w-2/3 flex-col items-center justify-center gap-6 pt-24 pb-16 md:gap-12 max-md:landscape:gap-3"
-          >
-            <Link
-              to="/about"
-              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
-            >
-              Qui suis-je ?
-            </Link>
-            <Link
-              to="/projects"
-              className="text-xl font-medium md:text-2xl max-md:landscape:text-lg"
-            >
-              Mes projets
-            </Link>
-            <span className="py-4 max-md:landscape:hidden md:landscape:hidden" />
-            <Button>Planifiez un appel</Button>
-          </div>
-        </div>
-      )}
-      <Navbar toggleMobileMenu={setMobileMenuVisible} />
+    <MainLayout>
       <main>
         <section
           id="hero"
-          className="mt-16 flex flex-col items-center gap-16 px-6 pb-16 md:mt-32 md:gap-24 md:px-10 xl:mx-auto xl:w-2/3 xl:gap-32 xl:px-16"
+          className="bg-pattern-straight flex flex-col items-center gap-16 px-4 pt-16 md:gap-24 md:px-10 md:pt-32 xl:gap-32 xl:p-32"
         >
           <h1 className="font-title text-center text-5xl leading-tight font-bold xl:text-6xl">
             Développeur web fullstack
           </h1>
-          <p className="text-primary-200 text-center text-xl leading-relaxed xl:text-2xl">
+          <p className="text-primary-200 text-center text-xl leading-relaxed lg:text-2xl">
             Passionné par la création de projets qui ont du sens !
           </p>
           <Button>Je planifie un appel gratuit</Button>
-        </section>
-        <section
-          id="presentation"
-          className="flex flex-col items-center gap-16 px-4 pt-16 md:mt-32 md:gap-24 md:px-10 xl:mx-auto xl:w-2/3 xl:gap-32 xl:px-16"
-        >
-          <p className="text-center text-xl leading-loose">
-            Du concept initial au produit opérationnel, je combine{" "}
-            <span className="font-semibold">technologie</span> et{" "}
-            <span className="font-semibold">design</span> pour bâtir des
-            expériences esthétiques, solides et pensées pour durer, au service
-            de vos besoins d&apos;aujourd&apos;hui et de demain.
-          </p>
-          <div className="flex flex-col gap-16">
-            <div className="flex flex-col gap-10">
-              <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
-                Domaines d&apos;expertises
-              </h2>
-              <div className="flex flex-wrap justify-center gap-2">
-                {techStack.map((item, index) => (
-                  <TechItem item={item} key={index} />
-                ))}
+          <div className="flex w-full flex-col items-center gap-16 pt-16 md:gap-24 xl:gap-32">
+            <p className="text-center text-xl leading-loose lg:text-2xl">
+              Du concept initial au produit opérationnel, je combine{" "}
+              <span className="font-semibold">technologie</span> et{" "}
+              <span className="font-semibold">design</span> pour bâtir des
+              expériences esthétiques, solides et pensées pour durer, au service
+              de vos besoins d&apos;aujourd&apos;hui et de demain.
+            </p>
+            <div className="flex flex-col gap-16 lg:flex-row">
+              <div className="flex flex-col gap-10 lg:w-5/12">
+                <h2 className="font-title text-center text-3xl md:text-4xl lg:text-left xl:text-5xl">
+                  Domaines d&apos;expertises
+                </h2>
+                <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+                  {techStack.map((item, index) => (
+                    <TechItem item={item} key={index} />
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-10">
-              <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
-                Dernières mises à jours
-              </h2>
-              <div className="flex flex-wrap justify-center gap-2">
-                {degrees.map((item, index) => (
-                  <DegreeCard item={item} key={index} />
-                ))}
+              <div className="flex flex-col gap-10 lg:w-7/12">
+                <h2 className="font-title text-center text-3xl md:text-4xl lg:text-right xl:text-5xl">
+                  Dernières mises à jours
+                </h2>
+                <div className="flex flex-wrap justify-center gap-2 lg:justify-end">
+                  {degrees.map((item, index) => (
+                    <DegreeCard item={item} key={index} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
+        <section
+          id="approach"
+          className="flex flex-col items-center gap-16 px-4 pt-16 md:gap-24 md:px-10 xl:gap-32 xl:p-32"
+        >
+          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
+            Mon approche : simple, efficace, personnalisée
+          </h2>
+          <p className="text-center leading-loose font-extralight italic 2xl:text-xl">
+            Disponible et réactif quand vous en avez besoin, je m&apos;adapte à
+            vos priorités tout au long du projet. Du premier atelier à la mise
+            en production, chaque étape est maîtrisée
+          </p>
+          <p className="text-center text-xl leading-loose lg:text-left 2xl:text-2xl">
+            Je vous propose bien plus qu&apos;un simple développement technique.
+            Vous bénéficiez d&apos;un{" "}
+            <span className="font-semibold">accompagnement personnalisé</span>,
+            avec une écoute attentive et professionnelle de vos besoins, pour
+            créer un outil{" "}
+            <span className="font-semibold">réellement utile</span> et{" "}
+            <span className="font-semibold">adapté</span> à votre
+            fonctionnement.
+          </p>
+          <p className="text-center text-xl leading-loose lg:text-left 2xl:text-2xl">
+            Je suis profondément convaincu que la réussite d&apos;un projet
+            repose avant tout sur une{" "}
+            <span className="font-semibold">bonne communication</span>,
+            c&apos;est pourquoi je favorise les échanges{" "}
+            <span className="font-semibold">simples</span>,{" "}
+            <span className="font-semibold">clairs</span> et{" "}
+            <span className="font-semibold">transparents</span>.
+          </p>
+          <div className="flex w-full flex-wrap justify-center gap-2 md:justify-evenly">
+            <article className="border-primary-600 rounded-xl border p-4">
+              <p className="text-center leading-loose font-semibold 2xl:text-2xl">
+                Développement sur mesure
+              </p>
+            </article>
+            <article className="border-primary-600 rounded-xl border p-4">
+              <p className="text-center leading-loose font-semibold 2xl:text-2xl">
+                Tests rigoureux
+              </p>
+            </article>
+            <article className="border-primary-600 rounded-xl border p-4">
+              <p className="text-center leading-loose font-semibold 2xl:text-2xl">
+                Déploiement fiable et accompagné
+              </p>
+            </article>
+          </div>
+        </section>
+        <section id="cta" className="px-4 pt-16 pb-24 xl:p-32">
+          <CTACard />
+        </section>
       </main>
-    </>
+    </MainLayout>
   );
 }

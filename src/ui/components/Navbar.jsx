@@ -5,7 +5,9 @@ export default function Navbar({ toggleMobileMenu }) {
   return (
     <nav className="relative flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16 xl:py-8">
       <div className="flex w-1/3 gap-3">
-        <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
+        <Link to="/">
+          <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
+        </Link>
         <p className="font-title hidden text-xl font-bold md:block">
           Maxence Barbançon
         </p>

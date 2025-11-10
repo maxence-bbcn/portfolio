@@ -1,3 +1,9 @@
+import MainLayout from "../layouts/MainLayout";
+
 export default function ProjectsPage() {
-  return <div></div>;
+  return (
+    <MainLayout>
+      <main></main>
+    </MainLayout>
+  );
 }
