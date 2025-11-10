@@ -27,6 +27,7 @@
   --font-body: "Inter", sans-serif;
   --text-2xs: 10px;
   --breakpoint-1-2xl: 90rem;
+  --animate-fadeIn: fadeIn 0.3s ease-out;
 }
 
 @layer base {
