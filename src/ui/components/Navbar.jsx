@@ -17,14 +17,11 @@ export default function Navbar({ toggleMobileMenu }) {
         onClick={() => toggleMobileMenu((prevState) => !prevState)}
       />
       <div className="hidden w-1/3 flex-row justify-center gap-8 xl:flex">
-        <Link to="/services" className="lg:text-lg 2xl:text-xl">
-          Mes services
+        <Link to="/about" className="lg:text-lg 2xl:text-xl">
+          Qui suis-je ?
         </Link>
         <Link to="/projects" className="lg:text-lg 2xl:text-xl">
           Mes projets
-        </Link>
-        <Link to="/about" className="lg:text-lg 2xl:text-xl">
-          Qui suis-je ?
         </Link>
       </div>
       <div className="hidden w-1/3 flex-row justify-end xl:flex">
