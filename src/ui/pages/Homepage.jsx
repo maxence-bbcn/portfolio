@@ -8,6 +8,7 @@ import ZapAsset from "../assets/images/zap.png";
 import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
+import AnimatedNumber from "../components/AnimatedNumber";
 import Button from "../components/Button";
 import CollaspibleQuestion from "../components/CollaspsibleQuestion";
 import CTACard from "../components/CTACard";
@@ -122,7 +123,7 @@ export default function Homepage() {
             plus complexe qu&apos;elle ne devrait l&apos;être ?
           </p>
           <div className="border-primary-gradient relative overflow-x-visible rounded-2xl p-px">
-            <div className="bg-primary-bg flex w-full flex-col rounded-2xl md:relative md:flex-row max-md:landscape:flex-row">
+            <div className="bg-primary-bg meet flex w-full flex-col rounded-2xl md:relative md:flex-row max-md:landscape:flex-row">
               <p className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base">
                 Vos équipes
                 <span className="font-semibold"> perdent en efficacité</span>,
@@ -169,10 +170,7 @@ export default function Homepage() {
                 >
                   <div className="bg-primary-bg flex h-full w-full flex-col items-center gap-4 rounded-2xl px-6 pt-6 pb-2 md:justify-evenly">
                     <div className="flex flex-col items-center gap-0">
-                      <p className="text-6xl font-black">
-                        {stat.value}
-                        <span className="text-base font-normal">%</span>
-                      </p>
+                      <AnimatedNumber value={stat.value} />
                       <p className="text-sm">{stat.catchphrase}</p>
                     </div>
                     <p className="text-sm font-extralight italic">
