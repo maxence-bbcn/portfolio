@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import AppsAsset from "../assets/images/apps circles.png";
 import FingerprintAsset from "../assets/images/fingerprint.png";
 import GraphAsset from "../assets/images/graph.png";
@@ -122,25 +123,59 @@ export default function Homepage() {
             obligent à trouver des solutions détournées et rendent chaque tâche
             plus complexe qu&apos;elle ne devrait l&apos;être ?
           </p>
-          <div className="border-primary-gradient relative overflow-x-visible rounded-2xl p-px">
-            <div className="bg-primary-bg meet flex w-full flex-col rounded-2xl md:relative md:flex-row max-md:landscape:flex-row">
-              <p className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base">
-                Vos équipes
-                <span className="font-semibold"> perdent en efficacité</span>,
-                l&apos;information circule mal entre les services, et
-                <span className="font-semibold">
-                  {" "}
-                  les tâches répétitives s&apos;accumulent
-                </span>
-                . Sans outil adapté, la centralisation des données devient
-                complexe,
-                <span className="font-semibold">
-                  les erreurs se multiplient
-                </span>
-                , et vos collaborateurs passent plus de temps à gérer des
-                contraintes qu&apos;à
-                <span className="font-semibold"> créer de la valeur</span>.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.8 }}
+            whileInView={{
+              opacity: [0, 1, 1, 1],
+              y: [40, 0, 0, 0],
+              scale: [0.8, 1.025, 1.025, 1],
+            }}
+            transition={{
+              duration: 1.8,
+              ease: "easeOut",
+              times: [0, 0.4, 0.7, 1],
+            }}
+            viewport={{ once: true, ease: "easeInOut", amount: 1 }}
+            className="border-primary-gradient relative overflow-x-visible rounded-2xl p-px"
+          >
+            <div className="bg-primary-bg relative flex w-full flex-col rounded-2xl md:flex-row max-md:landscape:flex-row">
+              <div className="relative overflow-hidden rounded-2xl">
+                <p className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base">
+                  Vos équipes
+                  <span className="font-semibold"> perdent en efficacité</span>,
+                  l&apos;information circule mal entre les services, et
+                  <span className="font-semibold">
+                    {" "}
+                    les tâches répétitives s&apos;accumulent
+                  </span>
+                  . Sans outil adapté, la centralisation des données devient
+                  complexe,
+                  <span className="font-semibold">
+                    les erreurs se multiplient
+                  </span>
+                  , et vos collaborateurs passent plus de temps à gérer des
+                  contraintes qu&apos;à
+                  <span className="font-semibold"> créer de la valeur</span>.
+                </p>
+                <motion.div
+                  className="pointer-events-none absolute inset-0 top-0 left-0 rounded-2xl border"
+                  initial={{ x: "0%", y: "0%" }}
+                  whileInView={{
+                    x: ["-150%", "150%"], // traverse en diagonale
+                  }}
+                  transition={{
+                    delay: 0.7, // commence pendant la "pause"
+                    duration: 1.1, // temps du passage
+                    ease: "easeInOut",
+                  }}
+                  viewport={{ once: true }}
+                  style={{
+                    background:
+                      "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 50%, rgba(255,255,255,0) 100%)",
+                    mixBlendMode: "overlay",
+                  }}
+                />
+              </div>
               <span className="relative h-70 overflow-x-hidden overflow-y-clip md:h-0 xl:h-0 max-md:landscape:h-0"></span>
               <div className="mask-notifications">
                 <img
@@ -151,7 +186,7 @@ export default function Homepage() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
         <section
           id="agitate"
