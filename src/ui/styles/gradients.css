@@ -1,14 +1,3 @@
-/* --- Start of button background gradient --- */
-.button-bg-gradient {
-  background: #5000f0;
-  background: linear-gradient(
-    90deg,
-    rgba(80, 0, 240, 1) 0%,
-    rgba(124, 0, 240, 1) 70%
-  );
-}
-/* --- End of button background gradient --- */
-
 /* --- Start of border primary gradient --- */
 .border-primary-gradient {
   background: #494584;
