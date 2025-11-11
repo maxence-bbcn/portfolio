@@ -27,7 +27,7 @@ export default function Navbar({ toggleMobileMenu }) {
         </Link>
       </div>
       <div className="hidden w-1/3 flex-row justify-end xl:flex">
-        <Button>Planifiez un appel</Button>
+        <Button size="small">Planifiez un appel</Button>
       </div>
     </nav>
   );
