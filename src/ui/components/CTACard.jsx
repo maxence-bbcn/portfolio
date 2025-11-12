@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { Button } from "./Button";
 import SparkleIcon from "/src/ui/assets/icons/sparkle.svg";
 
 const CustomSparkleBulletListItem = ({ children }) => {

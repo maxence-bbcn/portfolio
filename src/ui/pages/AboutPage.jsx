@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import CTACard from "../components/CTACard";
 import DegreeCard from "../components/DegreeCard";
 import TechItem from "../components/techItem";

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import CustomFooter from "../components/CustomFooter";
 import Navbar from "../components/NavBar";
 
@@ -49,6 +49,8 @@ export default function MainLayout({ children }) {
         </div>
       )}
       <Navbar toggleMobileMenu={setMobileMenuVisible} />
+      <br />
+      <br />
       {children}
       <CustomFooter />
     </>

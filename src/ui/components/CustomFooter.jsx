@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { Button } from "./Button";
 import CustomInput from "./CustomInput";
 
 export default function CustomFooter() {

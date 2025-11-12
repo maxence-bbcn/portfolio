@@ -10,13 +10,17 @@ import LogoCHT from "../assets/logos/cht.svg";
 import LogoMazette from "../assets/logos/mazette.svg";
 import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import AnimatedNumber from "../components/AnimatedNumber";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import CollaspibleQuestion from "../components/CollaspsibleQuestion";
 import CTACard from "../components/CTACard";
 import TestimonialCard from "../components/TestimonialCard";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Homepage() {
+  const title =
+    "Simplifiez vos workflows avec des outils conçus pour votre métier.";
+  const words = title.split(" ");
+
   const brandLogos = [
     {
       logo: LogoMazette,
@@ -77,6 +81,8 @@ export default function Homepage() {
     },
   ];
 
+  const MotionButton = motion(Button);
+
   return (
     <MainLayout>
       <main>
@@ -84,15 +90,70 @@ export default function Homepage() {
           id="hero"
           className="mt-16 flex flex-col items-center gap-16 px-6 pb-16 md:mt-32 md:gap-24 md:px-10 xl:mx-auto xl:w-2/3 xl:gap-32 xl:px-16"
         >
-          <h1 className="font-title text-center text-5xl leading-tight xl:text-6xl">
-            <span className="font-bold">Simplifiez</span> vos worflows avec des
-            outils conçus pour <span className="font-bold">votre métier</span>.
-          </h1>
-          <p className="text-primary-200 text-center text-xl leading-relaxed xl:text-2xl">
+          <motion.h1
+            className="font-title text-center text-5xl leading-tight xl:text-6xl"
+            variants={{
+              hidden: { opacity: 0, y: -40 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                  delay: 0.8,
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {words.map((w, i) => (
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: -40 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 1,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+                key={i}
+                className={`inline-block ${(i === 0 || i === words.length - 1 || i === words.length - 2) && "font-bold"}`}
+              >
+                {w}&nbsp;
+              </motion.span>
+            ))}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1.2,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="text-primary-200 text-center text-xl leading-relaxed xl:text-2xl"
+          >
             Optimisez chaque étape de votre activité grâce à des solutions sur
             mesure, pensées et développées pour vous.
-          </p>
-          <Button>Je planifie un appel gratuit</Button>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 1.4,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+          >
+            <Button> Je planifie un appel gratuit</Button>
+          </motion.div>
         </section>
         <section
           id="brands"
