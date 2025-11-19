@@ -16,11 +16,15 @@ import TestimonialCard from "../components/TestimonialCard";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Homepage() {
-  const title = [
-    ["Simplifiez", "vos", "workflows"],
-    ["avec", "des", "outils"],
-    ["conçus", "pour", "votre", "métier"],
-  ];
+  // const title = [
+  //   ["Simplifiez", "vos", "workflows"],
+  //   ["avec", "des", "outils"],
+  //   ["conçus", "pour", "votre", "métier"],
+  // ];
+
+  const title =
+    "Simplifiez vos workflows avec des outils conçus pour votre métier";
+  const words = title.split(" ");
 
   const brandLogos = [
     {
@@ -141,7 +145,7 @@ export default function Homepage() {
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.1,
+                  staggerChildren: 0.01,
                 },
               },
             }}
@@ -149,7 +153,33 @@ export default function Homepage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {title.map((line, i) => (
+            {words.map((word, i) => (
+              <span
+                key={i}
+                className={`${(i === words.length - 1 || i === words.length - 2) && "font-ascent italic"} inline-block whitespace-nowrap`}
+              >
+                {word.split("").map((letter, j) => (
+                  <motion.span
+                    key={j}
+                    className={`inline-block break-keep`}
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.5,
+                        },
+                      },
+                    }}
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.span>
+                ))}
+                &nbsp;
+              </span>
+            ))}
+            {/* {title.map((line, i) => (
               <motion.p
                 variants={{
                   hidden: { opacity: 0, y: 50 },
@@ -157,7 +187,7 @@ export default function Homepage() {
                     opacity: 1,
                     y: 0,
                     transition: {
-                      duration: 0.4,
+                      duration: 1,
                       ease: "easeOut",
                     },
                   },
@@ -168,13 +198,13 @@ export default function Homepage() {
                 {line.map((word, j) => (
                   <span
                     key={j}
-                    className={`${i === title.length - 1 && (j === line.length - 1 || j === line.length - 2) && "font-ascent italic"} break-keep`}
+                    className={`${i === title.length - 1 && (j === line.length - 1 || j === line.length - 2) && "font-ascent italic"} inline-block break-keep`}
                   >
                     {word}&nbsp;
                   </span>
                 ))}
               </motion.p>
-            ))}
+            ))} */}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
