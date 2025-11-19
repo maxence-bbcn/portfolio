@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+import { animate } from "motion";
+import { motion, useMotionValue } from "motion/react";
+import { useEffect, useRef } from "react";
 import AppsAsset from "../assets/images/apps circles.png";
 import FingerprintAsset from "../assets/images/fingerprint.png";
 import GraphAsset from "../assets/images/graph.png";
@@ -6,9 +8,6 @@ import IPhoneAsset from "../assets/images/Iphone - notifications.png";
 import TextsAsset from "../assets/images/Iphone - texts.png";
 import UiModsAsset from "../assets/images/ui mods.png";
 import ZapAsset from "../assets/images/zap.png";
-import LogoCHT from "../assets/logos/cht.svg";
-import LogoMazette from "../assets/logos/mazette.svg";
-import LogoUniversKids from "../assets/logos/univers-kids.svg";
 import AnimatedNumber from "../components/AnimatedNumber";
 import { Button } from "../components/Button";
 import CollaspibleQuestion from "../components/CollaspsibleQuestion";
@@ -17,24 +16,72 @@ import TestimonialCard from "../components/TestimonialCard";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Homepage() {
-  const title =
-    "Simplifiez vos workflows avec des outils conçus pour votre métier.";
-  const words = title.split(" ");
+  const title = [
+    ["Simplifiez", "vos", "workflows"],
+    ["avec", "des", "outils"],
+    ["conçus", "pour", "votre", "métier"],
+  ];
 
   const brandLogos = [
     {
-      logo: LogoMazette,
+      logo: "src/ui/assets/logos/mazette.svg",
       alt: "Logo de l'entreprise Mazette",
+      style: "h-full w-96 md:min-w-[10rem]",
     },
     {
-      logo: LogoCHT,
+      logo: "src/ui/assets/logos/cht.svg",
       alt: "Logo du centre hospitalier de Troyes",
+      style: "h-full w-96 md:min-w-[4rem]",
     },
     {
-      logo: LogoUniversKids,
+      logo: "src/ui/assets/logos/univers-kids.svg",
       alt: "Logo de l'entreprise Univers Kids",
+      style: "h-3/4 w-96 md:min-w-[6rem]",
+    },
+    {
+      logo: "src/ui/assets/logos/deflorenne-location.svg",
+      alt: "Logo de l'entreprise Delorenne Location",
+      style: "h-full w-96 md:min-w-[6rem]",
+    },
+    {
+      logo: "src/ui/assets/logos/alexandre-sebille.svg",
+      alt: "Logo de l'entreprise Alexandre Sebille",
+      style: "h-full w-48",
     },
   ];
+
+  const logosList = [
+    ...brandLogos,
+    ...brandLogos,
+    ...brandLogos,
+    ...brandLogos,
+    ...brandLogos,
+    ...brandLogos,
+  ];
+
+  const animatedLogoX = useMotionValue(0);
+  const brandRowContainerRef = useRef(null);
+  const brandContentWidth = useRef(0);
+
+  useEffect(() => {
+    const container = brandRowContainerRef.current;
+    brandContentWidth.current = container.scrollWidth / 2;
+
+    const controls = animate(animatedLogoX, -brandContentWidth.current, {
+      type: "tween",
+      ease: "linear",
+      duration: 60,
+      repeat: Infinity,
+      repeatType: "loop",
+      onUpdate(value) {
+        if (value <= -brandContentWidth.current) {
+          animatedLogoX.set(0);
+        }
+      },
+    });
+
+    return () => controls.stop();
+  }, [animatedLogoX]);
 
   const statistics = [
     {
@@ -81,8 +128,6 @@ export default function Homepage() {
     },
   ];
 
-  const MotionButton = motion(Button);
-
   return (
     <MainLayout>
       <main>
@@ -91,15 +136,11 @@ export default function Homepage() {
           className="mt-16 flex flex-col items-center gap-16 px-6 pb-16 md:mt-32 md:gap-24 md:px-10 xl:mx-auto xl:w-2/3 xl:gap-32 xl:px-16"
         >
           <motion.h1
-            className="font-title text-center text-5xl leading-tight xl:text-6xl"
+            className="font-title w-full text-center text-5xl leading-tight xl:text-6xl"
             variants={{
-              hidden: { opacity: 0, y: -40 },
+              hidden: {},
               visible: {
-                opacity: 1,
-                y: 0,
                 transition: {
-                  duration: 1.2,
-                  delay: 0.8,
                   staggerChildren: 0.1,
                 },
               },
@@ -108,32 +149,38 @@ export default function Homepage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {words.map((w, i) => (
-              <motion.span
+            {title.map((line, i) => (
+              <motion.p
                 variants={{
-                  hidden: { opacity: 0, y: -40 },
+                  hidden: { opacity: 0, y: 50 },
                   visible: {
                     opacity: 1,
                     y: 0,
                     transition: {
-                      duration: 1,
+                      duration: 0.4,
                       ease: "easeOut",
                     },
                   },
                 }}
                 key={i}
-                className={`inline-block ${(i === 0 || i === words.length - 1 || i === words.length - 2) && "font-bold"}`}
+                className={`flex w-full flex-wrap items-center justify-center`}
               >
-                {w}&nbsp;
-              </motion.span>
+                {line.map((word, j) => (
+                  <span
+                    key={j}
+                    className={`${i === title.length - 1 && (j === line.length - 1 || j === line.length - 2) && "font-ascent italic"} break-keep`}
+                  >
+                    {word}&nbsp;
+                  </span>
+                ))}
+              </motion.p>
             ))}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 1,
-              delay: 1.2,
+              duration: 0.6,
               ease: "easeOut",
             }}
             viewport={{ once: true, amount: 0.4 }}
@@ -146,8 +193,8 @@ export default function Homepage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.8,
-              delay: 1.4,
+              duration: 0.6,
+              delay: 0.2,
               ease: "easeOut",
             }}
             viewport={{ once: true }}
@@ -159,17 +206,45 @@ export default function Homepage() {
           id="brands"
           className="flex flex-col items-center gap-3 xl:px-32 xl:pb-16"
         >
-          <p className="text-primary-200 font-extralight italic">
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.9 }}
+            className="text-primary-200 font-extralight italic"
+          >
             Ils m&apos;ont fait confiance !
-          </p>
-          <div className="flex w-full items-center justify-between gap-3 p-4">
-            {brandLogos.map((brand, index) => (
-              <div key={index} className="flex w-full justify-center">
-                {/* TODO srcset et sizes pour les images responsives */}
-                <img src={brand.logo} alt={brand.alt} />
-              </div>
-            ))}
-          </div>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 1.1 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.8 }}
+            className="relative w-full overflow-hidden lg:w-11/12"
+          >
+            <div className="brand-row-shadow">
+              <motion.div
+                className="flex w-full items-center gap-20 p-4 whitespace-nowrap md:gap-32 lg:gap-36"
+                ref={brandRowContainerRef}
+                style={{ x: animatedLogoX }}
+              >
+                {logosList.map((brand, index) => (
+                  <img
+                    key={index}
+                    src={brand.logo}
+                    alt={brand.alt}
+                    className={`${brand.style}`}
+                  />
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
         </section>
         <section
           id="problem"

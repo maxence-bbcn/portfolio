@@ -4,60 +4,41 @@ import { Button } from "./Button";
 
 export default function Navbar({ toggleMobileMenu }) {
   return (
-    <nav className="bg-primary-bg fixed top-0 right-0 left-0 z-10 flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16 xl:py-8">
-      <motion.div
-        initial={{ x: -40, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          duration: 0.5,
-          ease: "easeOut",
-        }}
-        viewport={{ once: true }}
-        className="flex w-1/3 gap-3"
-      >
+    <motion.nav
+      initial={{ y: -40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
+      viewport={{ once: true }}
+      className="bg-primary-bg fixed top-0 right-0 left-0 z-10 flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16 xl:py-8"
+    >
+      <div className="flex w-1/3 gap-3">
         <Link to="/">
           <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
         </Link>
         <p className="font-title hidden text-xl font-bold md:block">
           Maxence Barbançon
         </p>
-      </motion.div>
+      </div>
       <img
         src="src/ui/assets/icons/menu.svg"
         alt="Icône menu"
         className="z-50 select-none xl:hidden"
         onClick={() => toggleMobileMenu((prevState) => !prevState)}
       />
-      <motion.div
-        initial={{ y: -40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.3,
-          ease: "easeOut",
-        }}
-        viewport={{ once: true }}
-        className="hidden w-1/3 flex-row justify-center gap-8 xl:flex"
-      >
+      <div className="hidden w-1/3 flex-row justify-center gap-8 xl:flex">
         <Link to="/about" className="lg:text-lg 2xl:text-xl">
           Qui suis-je ?
         </Link>
         <Link to="/projects" className="lg:text-lg 2xl:text-xl">
           Mes projets
         </Link>
-      </motion.div>
-      <motion.div
-        initial={{ x: 40, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          duration: 0.5,
-          ease: "easeOut",
-        }}
-        viewport={{ once: true }}
-        className="hidden w-1/3 flex-row justify-end xl:flex"
-      >
+      </div>
+      <div className="hidden w-1/3 flex-row justify-end xl:flex">
         <Button size="small">Planifiez un appel</Button>
-      </motion.div>
-    </nav>
+      </div>
+    </motion.nav>
   );
 }
