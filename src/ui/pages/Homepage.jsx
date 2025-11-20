@@ -9,6 +9,7 @@ import TextsAsset from "../assets/images/Iphone - texts.png";
 import UiModsAsset from "../assets/images/ui mods.png";
 import ZapAsset from "../assets/images/zap.png";
 import AnimatedNumber from "../components/AnimatedNumber";
+import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/Button";
 import CollaspibleQuestion from "../components/CollaspsibleQuestion";
 import CTACard from "../components/CTACard";
@@ -139,73 +140,11 @@ export default function Homepage() {
           id="hero"
           className="mt-16 flex flex-col items-center gap-16 px-6 pb-16 md:mt-32 md:gap-24 md:px-10 xl:mx-auto xl:w-2/3 xl:gap-32 xl:px-16"
         >
-          <motion.h1
-            className="font-title w-full text-center text-5xl leading-tight xl:text-6xl"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.01,
-                },
-              },
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {words.map((word, i) => (
-              <span
-                key={i}
-                className={`${(i === words.length - 1 || i === words.length - 2) && "font-ascent italic"} inline-block whitespace-nowrap`}
-              >
-                {word.split("").map((letter, j) => (
-                  <motion.span
-                    key={j}
-                    className={`inline-block break-keep`}
-                    variants={{
-                      hidden: { opacity: 0, y: 50 },
-                      visible: {
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          duration: 0.5,
-                        },
-                      },
-                    }}
-                  >
-                    {letter === " " ? "\u00A0" : letter}
-                  </motion.span>
-                ))}
-                &nbsp;
-              </span>
-            ))}
-            {/* {title.map((line, i) => (
-              <motion.p
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 1,
-                      ease: "easeOut",
-                    },
-                  },
-                }}
-                key={i}
-                className={`flex w-full flex-wrap items-center justify-center`}
-              >
-                {line.map((word, j) => (
-                  <span
-                    key={j}
-                    className={`${i === title.length - 1 && (j === line.length - 1 || j === line.length - 2) && "font-ascent italic"} inline-block break-keep`}
-                  >
-                    {word}&nbsp;
-                  </span>
-                ))}
-              </motion.p>
-            ))} */}
-          </motion.h1>
+          <AnimatedTitle
+            title="Simplifiez vos workflows avec des outils conçus pour votre métier"
+            tag="h1"
+            ascentWordPos={[8, 9]}
+          />
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -280,9 +219,10 @@ export default function Homepage() {
           id="problem"
           className="flex flex-col items-center gap-16 px-4 py-16 md:px-10 md:py-24 xl:mx-auto xl:w-11/12 xl:p-32"
         >
-          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
-            Des outils génériques qui ne comprennent pas vos besoins
-          </h2>
+          <AnimatedTitle
+            title="Des outils génériques qui ne comprennent pas vos besoins"
+            tag="h2"
+          />
           <p className="text-center leading-loose font-extralight italic md:text-lg xl:mb-10 xl:text-xl">
             Les logiciels standards que vous utilisez ne sont pas adaptés à vos
             méthodes de travail ? Ils vous imposent des contraintes ? Vous
@@ -358,10 +298,10 @@ export default function Homepage() {
           id="agitate"
           className="flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:gap-32 xl:p-32"
         >
-          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
-            Ces workflows inefficaces vous coûtent plus cher que vous ne le
-            pensez
-          </h2>
+          <AnimatedTitle
+            title="Ces workflows inefficaces vous coûtent plus cher que vous ne le pensez"
+            tag="h2"
+          />
           <div className="flex flex-col items-center gap-16">
             <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-stretch md:justify-center">
               {statistics.map((stat, index) => (
@@ -394,9 +334,10 @@ export default function Homepage() {
           id="solution"
           className="flex flex-col gap-16 px-4 pt-16 md:px-10 md:py-24 xl:px-32 xl:pt-32"
         >
-          <h2 className="font-title text-center text-3xl md:text-4xl xl:text-5xl">
-            Des applications web sur mesure, pensées pour vous
-          </h2>
+          <AnimatedTitle
+            title="Des applications web sur mesure, pensées pour vous"
+            tag="h2"
+          />
           <p className="text-center leading-loose font-extralight italic md:text-lg xl:text-xl">
             Je conçois des applications web sur mesure, parfaitement intégrées à
             vos outils et processus existants. Que vous cherchiez à automatiser
@@ -534,9 +475,10 @@ export default function Homepage() {
             id="testimonials"
             className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
           >
-            <h2 className="font-title text-center text-3xl xl:text-5xl">
-              Ils ont gagné en efficacité grâce à des solutions pensées pour eux
-            </h2>
+            <AnimatedTitle
+              title="Ils ont gagné en efficacité grâce à des solutions pensées pour eux"
+              tag="h2"
+            />
             <div className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10">
               {testimonials.map(({ content, author, pp }, index) => (
                 <TestimonialCard
@@ -553,9 +495,7 @@ export default function Homepage() {
           <CTACard />
         </section>
         <section id="faq" className="flex flex-col gap-16 px-4 py-16 xl:p-32">
-          <h2 className="font-title text-center text-3xl xl:text-5xl">
-            Questions fréquentes
-          </h2>
+          <AnimatedTitle title="Questions fréquentes" tag="h2" />
           <div className="flex flex-col self-center xl:w-5/6">
             <CollaspibleQuestion>
               1. Combien de temps faut-il pour développer un outil sur-mesure ?

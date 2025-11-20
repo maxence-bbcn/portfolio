@@ -1,3 +1,4 @@
+import AnimatedTitle from "./AnimatedTitle";
 import { Button } from "./Button";
 import CustomInput from "./CustomInput";
 
@@ -5,9 +6,11 @@ export default function CustomFooter() {
   return (
     <div className="flex flex-col gap-16">
       <div className="bg-pattern-diag flex w-full flex-col items-center justify-center gap-16 self-center px-4 py-16 xl:px-32 xl:py-32">
-        <h2 className="font-title px-4 text-center text-3xl xl:px-32 xl:text-5xl">
-          Des projets web plus classiques ? Je suis aussi là pour ça.
-        </h2>
+        <AnimatedTitle
+          title="Des projets web plus classiques ? Je suis aussi là pour ça."
+          tag="h2"
+        />
+
         <p className="text-primary-200 px-4 text-center leading-relaxed xl:px-32 xl:text-2xl">
           Mes compétences en design et développement web me permettent de
           réaliser des projets variés, du site vitrine au e-commerce. Ensemble,
