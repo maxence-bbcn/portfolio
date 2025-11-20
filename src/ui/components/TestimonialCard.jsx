@@ -1,6 +1,8 @@
+import { motion } from "motion/react";
+
 export default function TestimonialCard({ content, author, pp, ...props }) {
   return (
-    <article
+    <motion.article
       {...props}
       className="border-primary-gradient rounded-2xl p-px md:max-w-2/3 xl:max-w-2/5 max-md:landscape:w-2/3"
     >
@@ -19,6 +21,6 @@ export default function TestimonialCard({ content, author, pp, ...props }) {
           {author}
         </p>
       </div>
-    </article>
+    </motion.article>
   );
 }

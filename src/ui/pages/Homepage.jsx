@@ -17,16 +17,6 @@ import TestimonialCard from "../components/TestimonialCard";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Homepage() {
-  // const title = [
-  //   ["Simplifiez", "vos", "workflows"],
-  //   ["avec", "des", "outils"],
-  //   ["conçus", "pour", "votre", "métier"],
-  // ];
-
-  const title =
-    "Simplifiez vos workflows avec des outils conçus pour votre métier";
-  const words = title.split(" ");
-
   const brandLogos = [
     {
       logo: "src/ui/assets/logos/mazette.svg",
@@ -215,7 +205,18 @@ export default function Homepage() {
             </div>
           </motion.div>
         </section>
-        <section
+        <motion.section
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.4,
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
           id="problem"
           className="flex flex-col items-center gap-16 px-4 py-16 md:px-10 md:py-24 xl:mx-auto xl:w-11/12 xl:p-32"
         >
@@ -223,64 +224,59 @@ export default function Homepage() {
             title="Des outils génériques qui ne comprennent pas vos besoins"
             tag="h2"
           />
-          <p className="text-center leading-loose font-extralight italic md:text-lg xl:mb-10 xl:text-xl">
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 1.1 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              },
+            }}
+            className="text-center leading-loose font-extralight italic md:text-lg xl:mb-10 xl:text-xl"
+          >
             Les logiciels standards que vous utilisez ne sont pas adaptés à vos
             méthodes de travail ? Ils vous imposent des contraintes ? Vous
             obligent à trouver des solutions détournées et rendent chaque tâche
             plus complexe qu&apos;elle ne devrait l&apos;être ?
-          </p>
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.8 }}
-            whileInView={{
-              opacity: [0, 1, 1, 1],
-              y: [40, 0, 0, 0],
-              scale: [0.8, 1.025, 1.025, 1],
-            }}
-            transition={{
-              duration: 1.8,
-              ease: "easeOut",
-              times: [0, 0.4, 0.7, 1],
-            }}
-            viewport={{ once: true, ease: "easeInOut", amount: 1 }}
-            className="border-primary-gradient relative overflow-x-visible rounded-2xl p-px"
-          >
-            <div className="bg-primary-bg relative flex w-full flex-col rounded-2xl md:flex-row max-md:landscape:flex-row">
-              <div className="relative overflow-hidden rounded-2xl">
-                <p className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base">
+          </motion.p>
+          <div className="border-primary-gradient relative overflow-x-visible rounded-2xl p-px">
+            <div className="bg-primary-bg relative flex w-full flex-col rounded-2xl max-md:overflow-hidden md:flex-row max-md:landscape:flex-row">
+              <div className="relative rounded-2xl md:overflow-hidden max-md:landscape:overflow-hidden">
+                <motion.p
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base"
+                >
                   Vos équipes
-                  <span className="font-semibold"> perdent en efficacité</span>,
-                  l&apos;information circule mal entre les services, et
-                  <span className="font-semibold">
-                    {" "}
-                    les tâches répétitives s&apos;accumulent
+                  <span className="inline-block font-semibold">
+                    &nbsp;perdent en efficacité&nbsp;
+                  </span>
+                  , l&apos;information circule mal entre les services, et
+                  <span className="inline-block font-semibold">
+                    &nbsp;les tâches répétitives s&apos;accumulent&nbsp;
                   </span>
                   . Sans outil adapté, la centralisation des données devient
                   complexe,
-                  <span className="font-semibold">
+                  <span className="inline-block font-semibold">
                     les erreurs se multiplient
                   </span>
                   , et vos collaborateurs passent plus de temps à gérer des
                   contraintes qu&apos;à
-                  <span className="font-semibold"> créer de la valeur</span>.
-                </p>
-                <motion.div
-                  className="pointer-events-none absolute inset-0 top-0 left-0 rounded-2xl border"
-                  initial={{ x: "0%", y: "0%" }}
-                  whileInView={{
-                    x: ["-150%", "150%"], // traverse en diagonale
-                  }}
-                  transition={{
-                    delay: 0.7, // commence pendant la "pause"
-                    duration: 1.1, // temps du passage
-                    ease: "easeInOut",
-                  }}
-                  viewport={{ once: true }}
-                  style={{
-                    background:
-                      "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 50%, rgba(255,255,255,0) 100%)",
-                    mixBlendMode: "overlay",
-                  }}
-                />
+                  <span className="inline-block font-semibold">
+                    &nbsp;créer de la valeur
+                  </span>
+                  .
+                </motion.p>
               </div>
               <span className="relative h-70 overflow-x-hidden overflow-y-clip md:h-0 xl:h-0 max-md:landscape:h-0"></span>
               <div className="mask-notifications">
@@ -292,11 +288,22 @@ export default function Homepage() {
                 />
               </div>
             </div>
-          </motion.div>
-        </section>
-        <section
+          </div>
+        </motion.section>
+        <motion.section
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.4,
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.18 }}
           id="agitate"
-          className="flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:gap-32 xl:p-32"
+          className="flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:mb-32 xl:gap-32 xl:p-32"
         >
           <AnimatedTitle
             title="Ces workflows inefficaces vous coûtent plus cher que vous ne le pensez"
@@ -327,23 +334,59 @@ export default function Homepage() {
                 </div>
               ))}
             </div>
-            <Button>J&apos;améliore mes workflows</Button>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+            >
+              <Button>J&apos;améliore mes workflows</Button>
+            </motion.div>
           </div>
-        </section>
-        <section
+        </motion.section>
+        <motion.section
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.4,
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
           id="solution"
-          className="flex flex-col gap-16 px-4 pt-16 md:px-10 md:py-24 xl:px-32 xl:pt-32"
+          className="flex flex-col gap-16 px-4 pt-16 md:px-10 md:py-24 xl:px-32 xl:py-0"
         >
           <AnimatedTitle
             title="Des applications web sur mesure, pensées pour vous"
             tag="h2"
           />
-          <p className="text-center leading-loose font-extralight italic md:text-lg xl:text-xl">
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 1.1 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              },
+            }}
+            className="text-center leading-loose font-extralight italic md:text-lg xl:text-xl"
+          >
             Je conçois des applications web sur mesure, parfaitement intégrées à
             vos outils et processus existants. Que vous cherchiez à automatiser
             des tâches, centraliser vos données ou structurer vos workflows,
             chaque solution est pensée autour de vos besoins réels.
-          </p>
+          </motion.p>
           <div className="flex grid-cols-12 grid-rows-12 flex-col gap-10 md:grid md:items-stretch md:gap-3 max-md:landscape:grid max-md:landscape:items-stretch max-md:landscape:gap-3">
             {/* Carte accompagnement */}
             <div className="border-primary-800 relative flex w-full flex-col overflow-x-visible rounded-2xl border pt-6 md:col-span-4 md:col-start-1 md:row-span-7 md:row-start-1 max-md:landscape:col-span-4 max-md:landscape:col-start-1 max-md:landscape:row-span-7 max-md:landscape:row-start-1">
@@ -469,9 +512,20 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
         {testimonials.length > 0 && (
-          <section
+          <motion.section
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.4,
+                },
+              },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
             id="testimonials"
             className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
           >
@@ -479,7 +533,20 @@ export default function Homepage() {
               title="Ils ont gagné en efficacité grâce à des solutions pensées pour eux"
               tag="h2"
             />
-            <div className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.6,
+                    ease: "easeOut",
+                  },
+                },
+              }}
+              className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10"
+            >
               {testimonials.map(({ content, author, pp }, index) => (
                 <TestimonialCard
                   key={index}
@@ -488,13 +555,27 @@ export default function Homepage() {
                   pp={pp}
                 />
               ))}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
         )}
         <section id="cta" className="px-4 py-16 xl:p-32">
           <CTACard />
         </section>
-        <section id="faq" className="flex flex-col gap-16 px-4 py-16 xl:p-32">
+        <motion.section
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.4,
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          id="faq"
+          className="flex flex-col gap-16 px-4 py-16 xl:p-32"
+        >
           <AnimatedTitle title="Questions fréquentes" tag="h2" />
           <div className="flex flex-col self-center xl:w-5/6">
             <CollaspibleQuestion>
@@ -516,7 +597,7 @@ export default function Homepage() {
               ?
             </CollaspibleQuestion>
           </div>
-        </section>
+        </motion.section>
       </main>
     </MainLayout>
   );

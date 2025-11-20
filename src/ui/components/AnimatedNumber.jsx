@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function AnimatedNumber({ value }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 1, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 1 });
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {

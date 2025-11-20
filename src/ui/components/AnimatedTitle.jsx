@@ -34,7 +34,11 @@ const AnimatedWords = ({ words, ascentWordPos }) => {
   );
 };
 
-export default function AnimatedTitle({ title, tag, ascentWordPos }) {
+export default function AnimatedTitle({
+  title,
+  tag: Tag = "h1",
+  ascentWordPos,
+}) {
   const words = title.split(" ");
   const containerVariant = {
     hidden: {},
@@ -46,25 +50,19 @@ export default function AnimatedTitle({ title, tag, ascentWordPos }) {
   };
   const containerViewport = { once: true, amount: 1 };
 
-  return tag === "h1" ? (
-    <motion.h1
-      className="font-title w-full text-center text-5xl leading-tight xl:text-6xl"
+  const additionnalProps =
+    Tag === "h1" ? { initial: "hidden", whileInView: "visible" } : {};
+
+  const MotionTag = motion[Tag];
+
+  return (
+    <MotionTag
+      className={`${Tag === "h1" ? "font-title w-full text-center text-5xl leading-tight xl:text-6xl" : "font-title text-center text-3xl md:text-4xl xl:text-5xl"}`}
       variants={containerVariant}
-      initial="hidden"
-      whileInView="visible"
+      {...additionnalProps}
       viewport={containerViewport}
     >
       <AnimatedWords words={words} ascentWordPos={ascentWordPos} />
-    </motion.h1>
-  ) : (
-    <motion.h2
-      className="font-title text-center text-3xl md:text-4xl xl:text-5xl"
-      variants={containerVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={containerViewport}
-    >
-      <AnimatedWords words={words} ascentWordPos={ascentWordPos} />
-    </motion.h2>
+    </MotionTag>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import AnimatedTitle from "./AnimatedTitle";
 import { Button } from "./Button";
 import CustomInput from "./CustomInput";
@@ -5,17 +6,44 @@ import CustomInput from "./CustomInput";
 export default function CustomFooter() {
   return (
     <div className="flex flex-col gap-16">
-      <div className="bg-pattern-diag flex w-full flex-col items-center justify-center gap-16 self-center px-4 py-16 xl:px-32 xl:py-32">
+      <motion.div
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.4,
+            },
+          },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="bg-pattern-diag flex w-full flex-col items-center justify-center gap-16 self-center px-4 py-16 xl:px-32 xl:py-32"
+      >
         <AnimatedTitle
           title="Des projets web plus classiques ? Je suis aussi là pour ça."
           tag="h2"
         />
 
-        <p className="text-primary-200 px-4 text-center leading-relaxed xl:px-32 xl:text-2xl">
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 40, scale: 1.1 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                duration: 0.4,
+                ease: "easeOut",
+              },
+            },
+          }}
+          className="text-primary-200 px-4 text-center leading-relaxed xl:px-32 xl:text-2xl"
+        >
           Mes compétences en design et développement web me permettent de
           réaliser des projets variés, du site vitrine au e-commerce. Ensemble,
           nous pouvons donner vie à votre projet !
-        </p>
+        </motion.p>
         <div className="from-primary-400 to-primary-800/80 w-full rounded-2xl bg-linear-to-b p-px md:w-11/12 2xl:w-3/5">
           <form
             action="fonction à créer"
@@ -43,7 +71,7 @@ export default function CustomFooter() {
             <Button type="submit">J&apos;envoie un message</Button>
           </form>
         </div>
-      </div>
+      </motion.div>
       <footer className="px-4 lg:px-16 xl:px-32">
         <h2 className="py-16 text-center text-2xl font-bold lg:text-left xl:text-4xl">
           Travaillons ensemble !

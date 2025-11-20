@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { Button } from "./Button";
 import SparkleIcon from "/src/ui/assets/icons/sparkle.svg";
 
@@ -17,7 +18,19 @@ const CustomSparkleBulletListItem = ({ children }) => {
 
 export default function CTACard() {
   return (
-    <article className="cta-card-border-gradient glow rounded-2xl p-px">
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+      viewport={{ once: true, amount: 0.35 }}
+      className="cta-card-border-gradient glow rounded-2xl p-px"
+    >
       <div className="cta-card-bg-gradient flex grid-cols-2 grid-rows-4 flex-col items-center gap-10 rounded-2xl px-6 py-8 lg:grid lg:gap-10 lg:p-16">
         <h2 className="text-center text-2xl leading-normal font-medium lg:col-start-1 lg:col-end-2 lg:row-span-3 lg:row-start-1 lg:text-left lg:text-4xl lg:font-medium">
           Parlons de votre projet - gratuitement et sans engagement
@@ -42,6 +55,6 @@ export default function CTACard() {
           Je réserve un appel gratuit maintenant
         </Button>
       </div>
-    </article>
+    </motion.article>
   );
 }
