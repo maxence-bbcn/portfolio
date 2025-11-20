@@ -22,6 +22,16 @@
   );
 }
 
+.card {
+  background-color: var(--color-primary-bg);
+  transition: background-color 500ms ease-in-out;
+}
+
+.card:hover {
+  background-color: rgba(73, 69, 132, 0.1);
+}
+
+/* Utilisé pour ouvrir les images des projets en grand */
 @keyframes fadeIn {
   0% {
     opacity: 0;
