@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 
 const AnimatedWords = ({ words, ascentWordPos }) => {
-  console.log(words);
   return (
     <>
       {words.map((word, i) => (
