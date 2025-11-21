@@ -359,7 +359,7 @@ export default function Homepage() {
           }}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.05 }}
           id="solution"
           className="flex flex-col gap-16 px-4 pt-16 md:px-10 md:py-24 xl:px-32 xl:py-0"
         >
@@ -525,13 +525,13 @@ export default function Homepage() {
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.4,
+                  // staggerChildren: 0.4,
                 },
               },
             }}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
             id="testimonials"
             className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
           >
@@ -540,17 +540,13 @@ export default function Homepage() {
               tag="h2"
             />
             <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.6,
-                    ease: "easeOut",
-                  },
-                },
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
               }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.1 }}
               className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10"
             >
               {testimonials.map(({ content, author, pp }, index) => (
