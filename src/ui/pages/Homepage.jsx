@@ -389,7 +389,7 @@ export default function Homepage() {
           </motion.p>
           <div className="flex grid-cols-12 grid-rows-12 flex-col gap-10 md:grid md:items-stretch md:gap-3 max-md:landscape:grid max-md:landscape:items-stretch max-md:landscape:gap-3">
             {/* Carte accompagnement */}
-            <div className="border-primary-800 card relative flex w-full flex-col overflow-x-visible rounded-2xl border pt-6 md:col-span-4 md:col-start-1 md:row-span-7 md:row-start-1 max-md:landscape:col-span-4 max-md:landscape:col-start-1 max-md:landscape:row-span-7 max-md:landscape:row-start-1">
+            <div className="border-primary-800 relative flex w-full flex-col overflow-x-visible rounded-2xl border pt-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-span-4 md:col-start-1 md:row-span-7 md:row-start-1 max-md:landscape:col-span-4 max-md:landscape:col-start-1 max-md:landscape:row-span-7 max-md:landscape:row-start-1">
               <div className="flex flex-col gap-8 px-6">
                 <h3 className="text-2xl font-medium md:text-lg xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
                   Un accompagnement sur-mesure,{" "}
@@ -418,7 +418,7 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte interface */}
-            <div className="border-primary-800 card relative flex w-full flex-col gap-2 overflow-x-visible rounded-2xl border pt-6 md:col-start-5 md:col-end-13 md:row-span-3 md:row-start-1 md:flex-row max-md:landscape:col-start-5 max-md:landscape:col-end-13 max-md:landscape:row-span-3 max-md:landscape:row-start-1 max-md:landscape:flex-row">
+            <div className="border-primary-800 relative flex w-full flex-col gap-2 overflow-x-visible rounded-2xl border pt-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-start-5 md:col-end-13 md:row-span-3 md:row-start-1 md:flex-row max-md:landscape:col-start-5 max-md:landscape:col-end-13 max-md:landscape:row-span-3 max-md:landscape:row-start-1 max-md:landscape:flex-row">
               <div className="flex flex-col gap-8 px-6 md:w-2/3 md:py-2 lg:w-3/5 lg:gap-6 max-md:landscape:w-2/3 max-md:landscape:py-2">
                 <h3 className="text-2xl font-medium md:text-lg xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
                   Une interface pensée pour <strong>vos utilisateurs</strong>
@@ -439,7 +439,7 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte mise en prod */}
-            <div className="border-primary-800 card flex w-full flex-col items-stretch gap-2 overflow-hidden rounded-2xl border py-6 md:col-start-5 md:col-end-9 md:row-span-4 md:row-start-4 max-md:landscape:col-start-5 max-md:landscape:col-end-9 max-md:landscape:row-span-4 max-md:landscape:row-start-4">
+            <div className="border-primary-800 flex w-full flex-col items-stretch gap-2 overflow-hidden rounded-2xl border py-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-start-5 md:col-end-9 md:row-span-4 md:row-start-4 max-md:landscape:col-start-5 max-md:landscape:col-end-9 max-md:landscape:row-span-4 max-md:landscape:row-start-4">
               <div className="relative flex flex-col gap-8 px-6 md:gap-4 lg:gap-8 max-md:landscape:gap-4">
                 <h3 className="text-2xl font-medium md:text-lg xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
                   Mise en ligne <strong>rapide</strong>, sans compromis sur la{" "}
@@ -461,7 +461,7 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte évolutivité */}
-            <div className="border-primary-800 card flex w-full flex-col gap-2 overflow-hidden rounded-2xl border pt-6 md:col-start-9 md:col-end-13 md:row-span-4 md:row-start-4 max-md:landscape:col-start-9 max-md:landscape:col-end-13 max-md:landscape:row-span-4 max-md:landscape:row-start-4">
+            <div className="border-primary-800 flex w-full flex-col gap-2 overflow-hidden rounded-2xl border pt-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-start-9 md:col-end-13 md:row-span-4 md:row-start-4 max-md:landscape:col-start-9 max-md:landscape:col-end-13 max-md:landscape:row-span-4 max-md:landscape:row-start-4">
               <div className="relative flex h-full flex-col gap-8">
                 <h3 className="pr-6 pl-6 text-2xl font-medium md:text-lg xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
                   Une solution pensée pour <strong>grandir avec vous</strong>
@@ -482,7 +482,7 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte compatibilité */}
-            <div className="border-primary-800 card relative flex w-full flex-col gap-8 overflow-hidden rounded-2xl border px-6 pt-6 md:col-span-6 md:col-start-7 md:row-start-8 md:row-end-12 md:items-start lg:row-end-11 max-md:landscape:col-span-6 max-md:landscape:col-start-7 max-md:landscape:row-start-8 max-md:landscape:row-end-11">
+            <div className="border-primary-800 relative flex w-full flex-col gap-8 overflow-hidden rounded-2xl border px-6 pt-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-span-6 md:col-start-7 md:row-start-8 md:row-end-12 md:items-start lg:row-end-11 max-md:landscape:col-span-6 max-md:landscape:col-start-7 max-md:landscape:row-start-8 max-md:landscape:row-end-11">
               <h3 className="text-2xl font-medium md:text-lg lg:w-1/2 xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
                 <strong>Compatible</strong> avec vos outils existants
               </h3>
@@ -500,7 +500,7 @@ export default function Homepage() {
               </div>
             </div>
             {/* Carte solution sur mesure */}
-            <div className="border-primary-800 card relative flex w-full flex-col gap-8 overflow-hidden rounded-2xl border px-6 pt-6 md:col-span-6 md:col-start-1 md:row-start-8 md:row-end-12 lg:row-end-11 max-md:landscape:col-span-6 max-md:landscape:col-start-1 max-md:landscape:row-start-8 max-md:landscape:row-end-11">
+            <div className="border-primary-800 relative flex w-full flex-col gap-8 overflow-hidden rounded-2xl border px-6 pt-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-span-6 md:col-start-1 md:row-start-8 md:row-end-12 lg:row-end-11 max-md:landscape:col-span-6 max-md:landscape:col-start-1 max-md:landscape:row-start-8 max-md:landscape:row-end-11">
               <h3 className="text-2xl font-medium md:text-lg xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
                 Une solution vraiment faire <strong>pour vous</strong>
               </h3>

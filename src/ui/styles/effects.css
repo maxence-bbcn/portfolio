@@ -22,15 +22,6 @@
   );
 }
 
-.card {
-  background-color: var(--color-primary-bg);
-  transition: background-color 500ms ease-in-out;
-}
-
-.card:hover {
-  background-color: rgba(73, 69, 132, 0.1);
-}
-
 .menuSlideIn {
   animation: menuSlideIn 0.3s ease-out forwards;
 }

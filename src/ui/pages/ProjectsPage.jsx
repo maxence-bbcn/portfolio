@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
 import MainLayout from "../layouts/MainLayout";
@@ -43,15 +45,36 @@ export default function ProjectsPage() {
           id="hero"
           className="flex flex-col items-center gap-16 px-4 pt-16 md:gap-24 md:px-10 md:pt-32 xl:gap-32 xl:p-32"
         >
-          <h1 className="font-title text-center text-5xl leading-tight font-bold xl:text-6xl">
-            Mes projets, un aperçu de mon travail
-          </h1>
-          <p className="text-primary-200 text-center text-xl leading-relaxed xl:text-2xl">
+          <AnimatedTitle
+            title="Mes projets, un aperçu de mon travail"
+            tag="h1"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="text-primary-200 text-center text-xl leading-relaxed xl:text-2xl"
+          >
             Des solutions concrètes et adaptées aux besoins de mes clients, mais
             aussi des expériences et explorations qui nourrissent ma créativité
             et mon savoir-faire.
-          </p>
-          <Button>Je planifie un appel gratuit</Button>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+          >
+            <Button>Je planifie un appel gratuit</Button>
+          </motion.div>
         </section>
         <section className="flex flex-col gap-8 px-4 pt-16 md:gap-24 md:px-10 md:pt-32 xl:gap-16 xl:p-32">
           {projects.map((project, index) => (

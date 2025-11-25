@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,22 @@ export default function ProjectCard({ project, props }) {
   const handleClose = () => setIsOpen(false);
 
   return (
-    <article
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        backgroundColor: "rgba(49, 46, 129, 0.1)",
+        scale: 1.02,
+        transition: {
+          duration: 0.3,
+          ease: "easeInOut",
+        },
+      }}
+      viewport={{ once: true, amount: 0.4 }}
       className="border-primary-600 flex flex-col justify-end gap-6 rounded-2xl border px-10 pt-10 pb-8 lg:gap-10"
       {...props}
     >
@@ -72,6 +88,6 @@ export default function ProjectCard({ project, props }) {
           Voir le projet
         </Link>
       )}
-    </article>
+    </motion.article>
   );
 }
