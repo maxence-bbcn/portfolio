@@ -12,7 +12,7 @@ export default function Navbar({ toggleMobileMenu }) {
         ease: "easeOut",
       }}
       viewport={{ once: true }}
-      className="bg-primary-bg fixed top-0 right-0 left-0 z-10 flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16 xl:py-8"
+      className="bg-primary-bg fixed top-0 right-0 left-0 z-10 flex flex-row items-center justify-between px-6 py-4 shadow-md md:px-10 md:py-6 xl:px-16 xl:py-8"
     >
       <div className="flex w-1/3 gap-3">
         <Link to="/">
