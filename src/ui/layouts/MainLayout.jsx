@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useRef, useState } from "react";
+import { lazy, Suspense, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
-import CustomFooter from "../components/CustomFooter";
 import Navbar from "../components/NavBar";
+
+const CustomFooter = lazy(() => import("../components/CustomFooter"));
 
 export default function MainLayout({ children }) {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
@@ -37,7 +38,7 @@ export default function MainLayout({ children }) {
                 className="absolute top-5 right-5 cursor-pointer"
                 onClick={() => setMobileMenuVisible(false)}
               >
-                <img src="src/ui/assets/icons/x.svg" alt="X" />
+                <img src="/assets/icons/x.svg" alt="X" />
               </button>
               <Link
                 to="/about"
@@ -69,7 +70,9 @@ export default function MainLayout({ children }) {
       <br />
       <br />
       {children}
-      <CustomFooter />
+      <Suspense fallback={null}>
+        <CustomFooter />
+      </Suspense>
     </>
   );
 }

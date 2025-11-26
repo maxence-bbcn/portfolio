@@ -1,6 +1,5 @@
-import { animate } from "motion";
-import { motion, useMotionValue } from "motion/react";
-import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
+import { lazy, Suspense } from "react";
 import AppsAsset from "../assets/images/apps circles.png";
 import FingerprintAsset from "../assets/images/fingerprint.png";
 import GraphAsset from "../assets/images/graph.png";
@@ -16,70 +15,11 @@ import CTACard from "../components/CTACard";
 import TestimonialCard from "../components/TestimonialCard";
 import MainLayout from "../layouts/MainLayout";
 
+const BrandRow = lazy(() => import("../components/BrandRow"));
+
 export default function Homepage() {
   const openCal = () =>
     window.open("https://cal.com/maxence-barbancon-w75rjo", "_blank").focus();
-
-  const brandLogos = [
-    {
-      logo: "src/ui/assets/logos/mazette.svg",
-      alt: "Logo de l'entreprise Mazette",
-      style: "h-full w-96 md:min-w-[10rem]",
-    },
-    {
-      logo: "src/ui/assets/logos/cht.svg",
-      alt: "Logo du centre hospitalier de Troyes",
-      style: "h-full w-96 md:min-w-[4rem]",
-    },
-    {
-      logo: "src/ui/assets/logos/univers-kids.svg",
-      alt: "Logo de l'entreprise Univers Kids",
-      style: "h-3/4 w-96 md:min-w-[6rem]",
-    },
-    {
-      logo: "src/ui/assets/logos/deflorenne-location.svg",
-      alt: "Logo de l'entreprise Delorenne Location",
-      style: "h-full w-96 md:min-w-[6rem]",
-    },
-    {
-      logo: "src/ui/assets/logos/alexandre-sebille.svg",
-      alt: "Logo de l'entreprise Alexandre Sebille",
-      style: "h-full w-48",
-    },
-  ];
-
-  const logosList = [
-    ...brandLogos,
-    ...brandLogos,
-    ...brandLogos,
-    ...brandLogos,
-    ...brandLogos,
-    ...brandLogos,
-  ];
-
-  const animatedLogoX = useMotionValue(0);
-  const brandRowContainerRef = useRef(null);
-  const brandContentWidth = useRef(0);
-
-  useEffect(() => {
-    const container = brandRowContainerRef.current;
-    brandContentWidth.current = container.scrollWidth / 2;
-
-    const controls = animate(animatedLogoX, -brandContentWidth.current, {
-      type: "tween",
-      ease: "linear",
-      duration: 60,
-      repeat: Infinity,
-      repeatType: "loop",
-      onUpdate(value) {
-        if (value <= -brandContentWidth.current) {
-          animatedLogoX.set(0);
-        }
-      },
-    });
-
-    return () => controls.stop();
-  }, [animatedLogoX]);
 
   const statistics = [
     {
@@ -190,22 +130,9 @@ export default function Homepage() {
             viewport={{ once: true, amount: 0.8 }}
             className="relative w-full overflow-hidden lg:w-11/12"
           >
-            <div className="brand-row-shadow">
-              <motion.div
-                className="flex w-full items-center gap-20 p-4 whitespace-nowrap md:gap-32 lg:gap-36"
-                ref={brandRowContainerRef}
-                style={{ x: animatedLogoX }}
-              >
-                {logosList.map((brand, index) => (
-                  <img
-                    key={index}
-                    src={brand.logo}
-                    alt={brand.alt}
-                    className={`${brand.style}`}
-                  />
-                ))}
-              </motion.div>
-            </div>
+            <Suspense fallback={null}>
+              <BrandRow />
+            </Suspense>
           </motion.div>
         </section>
         <motion.section

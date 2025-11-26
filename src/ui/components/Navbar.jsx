@@ -15,13 +15,13 @@ export default function Navbar({ toggleMobileMenu }) {
       className="bg-primary-bg fixed top-0 right-0 left-0 z-10 flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16"
     >
       <Link to="/" className="flex w-1/3 gap-3">
-        <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
+        <img src="/assets/logos/moi.svg" alt="Logo" />
         <p className="font-title hidden text-xl font-bold md:block">
           Maxence Barbançon
         </p>
       </Link>
       <img
-        src="src/ui/assets/icons/menu.svg"
+        src="/assets/icons/menu.svg"
         alt="Icône menu"
         className="z-50 select-none xl:hidden"
         onClick={() => toggleMobileMenu((prevState) => !prevState)}

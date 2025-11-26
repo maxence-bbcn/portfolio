@@ -8,32 +8,32 @@ import MainLayout from "../layouts/MainLayout";
 export default function ProjectsPage() {
   const projects = [
     {
-      logo: "src/ui/assets/logos/deflorenne-location.svg",
+      logo: "/assets/logos/deflorenne-location.svg",
       title: "Site vitrine",
       status: 0,
       description:
         "Ce projet a pour vocation de mettre en avant les produits mise à la location par Deflorenne Location. Le design se veut esthétique, minimaliste et accessible. Le site permet à l'utilisateur d'ajouter du mobilier ou des produits dans son panier pour ensuite envoyer automatiquement une demande de devis personnalisé.",
       image: "src/ui/assets/images/project--deflorenne-location.png",
       stackIcons: [
-        "src/ui/assets/logos/figma.svg",
-        "src/ui/assets/logos/react.svg",
-        "src/ui/assets/logos/git.svg",
+        "/assets/logos/figma.svg",
+        "/assets/logos/react.svg",
+        "/assets/logos/git.svg",
       ],
       link: "",
     },
     {
-      logo: "src/ui/assets/logos/univers-kids.svg",
+      logo: "/assets/logos/univers-kids.svg",
       title: "Site e-commerce",
       status: 1,
       description:
         "L'objectif de cette mission était de permettre à Univers Kids d'accroître son potentiel marketing en vendant sur internet via un outil esthétique qui rappelle les couleurs et les valeurs de la boutique, mais aussi performant permettant au gérant de constituer sa base de données de stocks, de la modifier et de la faire vivre en totale autonomie via un dashboard administrateur et permettant également aux clients d'acheter sereinement et efficacement via le site e commerce.",
       image: "src/ui/assets/images/project--univers-kids.png",
       stackIcons: [
-        "src/ui/assets/logos/figma.svg",
-        "src/ui/assets/logos/react.svg",
-        "src/ui/assets/logos/node.svg",
-        "src/ui/assets/logos/express.svg",
-        "src/ui/assets/logos/git.svg",
+        "/assets/logos/figma.svg",
+        "/assets/logos/react.svg",
+        "/assets/logos/node.svg",
+        "/assets/logos/express.svg",
+        "/assets/logos/git.svg",
       ],
       link: "",
     },

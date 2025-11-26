@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { contactSchema } from "../utils/validationSchema.js";
 import AnimatedTitle from "./AnimatedTitle";
 import { Button } from "./Button";
 import CustomInput from "./CustomInput";
@@ -30,21 +30,11 @@ export default function CustomFooter() {
     );
   }, [mailSuccess]);
 
-  const schema = yup.object().shape({
-    lastname: yup.string().required("Veuillez saisir votre nom."),
-    firstname: yup.string().required("Veuillez saisir votre prénom."),
-    email: yup
-      .string()
-      .email("Veuillez saisir un email valide.")
-      .required("Email obligatoire"),
-    message: yup.string().required("Veuillez saisir un message."),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({ resolver: yupResolver(contactSchema) });
 
   const onSubmit = (data) => {
     const values = {
@@ -178,7 +168,7 @@ export default function CustomFooter() {
             </p>
             <p className="text-2xl font-semibold">Contact :</p>
             <div className="flex flex-row gap-2">
-              <img src="src/ui/assets/icons/mail.svg" alt="icône e-mail" />
+              <img src="/assets/icons/mail.svg" alt="icône e-mail" />
               <p>maxence.barbancon@gmail.com</p>
             </div>
             <Button
@@ -208,7 +198,7 @@ export default function CustomFooter() {
         </div>
         <div className="flex flex-col items-center gap-10 py-8 lg:flex-row-reverse lg:justify-between">
           <div className="flex flex-row items-center gap-4">
-            <img src="src/ui/assets/logos/linkedin.svg" alt="logo LinkedIn" />
+            <img src="/assets/logos/linkedin.svg" alt="logo LinkedIn" />
             <p>Connectons-nous sur LinkedIn !</p>
           </div>
           <p>Maxence Barbançon ©2025</p>

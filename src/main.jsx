@@ -1,4 +1,4 @@
-import React from "react";
+import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import {} from "react-router";
 import {
@@ -8,9 +8,6 @@ import {
   ScrollRestoration,
 } from "react-router-dom";
 import "./index.css";
-import AboutPage from "./ui/pages/AboutPage.jsx";
-import Homepage from "./ui/pages/Homepage.jsx";
-import ProjectsPage from "./ui/pages/ProjectsPage.jsx";
 import "./ui/styles/effects.css";
 import "./ui/styles/gradients.css";
 import "./ui/styles/masks.css";
@@ -19,10 +16,16 @@ const RootLayout = () => {
   return (
     <>
       <ScrollRestoration />
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
+
+const Homepage = lazy(() => import("./ui/pages/Homepage.jsx"));
+const AboutPage = lazy(() => import("./ui/pages/AboutPage.jsx"));
+const ProjectsPage = lazy(() => import("./ui/pages/ProjectsPage.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -46,7 +49,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+  <RouterProvider router={router} />,
 );

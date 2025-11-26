@@ -1,24 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: Inter;
-  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
-}
-
-@font-face {
-  font-family: Lora;
-  src: url("../assets/fonts/Lora/Lora-VariableFont_wght.ttf");
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Lobster;
-  src: url("src/ui/assets/fonts/Lobster/Lobster-Regular.ttf");
-  font-weight: 100 900;
-  font-style: normal;
-}
-
 @theme {
   --color-primary-900: #1f1e39;
   --color-primary-800: #2d2b52;
@@ -33,7 +14,7 @@
   --color-primary-ascent: #7c00f0;
   --font-title: "Lora", serif;
   --font-body: "Inter", sans-serif;
-  --font-ascent: "Lobster", sans-serif;
+  --font-ascent: "Lobster", cursive;
   --text-2xs: 10px;
   --breakpoint-1-2xl: 90rem;
   --animate-fadeIn: fadeIn 0.3s ease-out;

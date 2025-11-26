@@ -9,48 +9,48 @@ import MainLayout from "../layouts/MainLayout";
 export default function AboutPage() {
   const techStack = [
     {
-      image: "src/ui/assets/logos/react.svg",
+      image: "/assets/logos/react.svg",
       name: "React",
     },
     {
-      image: "src/ui/assets/logos/node.svg",
+      image: "/assets/logos/node.svg",
       name: "Node.js",
     },
     {
-      image: "src/ui/assets/logos/express.svg",
+      image: "/assets/logos/express.svg",
       name: "Express.js",
     },
     {
-      image: "src/ui/assets/logos/next.svg",
+      image: "/assets/logos/next.svg",
       name: "Next.js",
     },
     {
-      image: "src/ui/assets/logos/git.svg",
+      image: "/assets/logos/git.svg",
       name: "Github",
     },
     {
-      image: "src/ui/assets/logos/figma.svg",
+      image: "/assets/logos/figma.svg",
       name: "Figma",
     },
   ];
 
   const degrees = [
     {
-      image: "src/ui/assets/icons/code.svg",
+      image: "/assets/icons/code.svg",
       title: "React",
       subtitle: "The Ultimate React Course 2025: React, Next.js, Redux & More",
       link: "https://www.udemy.com/course/the-ultimate-react-course",
       source: "Udemy - 2025",
     },
     {
-      image: "src/ui/assets/icons/design.svg",
+      image: "/assets/icons/design.svg",
       title: "Figma",
       subtitle: "Figma UI UX Design Advanced",
       link: "https://www.udemy.com/course/figma-ui-ux-design-advanced-tutorial/",
       source: "Udemy - 2025",
     },
     {
-      image: "src/ui/assets/icons/award.svg",
+      image: "/assets/icons/award.svg",
       title: "Ingénieur",
       subtitle: "Informatique et Systèmes d'Information",
       link: "https://www.utt.fr/formations/diplome-d-ingenieur/informatique-et-systemes-d-information",
