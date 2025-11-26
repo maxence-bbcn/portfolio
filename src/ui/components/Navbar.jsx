@@ -14,14 +14,12 @@ export default function Navbar({ toggleMobileMenu }) {
       viewport={{ once: true }}
       className="bg-primary-bg fixed top-0 right-0 left-0 z-10 flex flex-row items-center justify-between px-6 py-4 md:px-10 md:py-6 xl:px-16"
     >
-      <div className="flex w-1/3 gap-3">
-        <Link to="/">
-          <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
-        </Link>
+      <Link to="/" className="flex w-1/3 gap-3">
+        <img src="src/ui/assets/logos/moi.svg" alt="Logo" />
         <p className="font-title hidden text-xl font-bold md:block">
           Maxence Barbançon
         </p>
-      </div>
+      </Link>
       <img
         src="src/ui/assets/icons/menu.svg"
         alt="Icône menu"
