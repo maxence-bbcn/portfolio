@@ -1,10 +1,8 @@
 import { motion } from "motion/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "./Button";
 
 export default function Navbar({ toggleMobileMenu }) {
-  const navigate = useNavigate();
-
   return (
     <motion.nav
       initial={{ y: -40, opacity: 0 }}

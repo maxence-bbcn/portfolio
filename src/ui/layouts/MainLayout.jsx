@@ -52,7 +52,15 @@ export default function MainLayout({ children }) {
                 Mes projets
               </Link>
               <span className="py-4 max-md:landscape:hidden md:landscape:hidden" />
-              <Button>Planifiez un appel</Button>
+              <Button
+                onClick={() =>
+                  window
+                    .open("https://cal.com/maxence-barbancon-w75rjo", "_blank")
+                    .focus()
+                }
+              >
+                Planifiez un appel
+              </Button>
             </motion.div>
           </div>
         )}
