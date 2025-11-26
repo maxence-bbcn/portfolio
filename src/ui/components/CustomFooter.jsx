@@ -181,7 +181,15 @@ export default function CustomFooter() {
               <img src="src/ui/assets/icons/mail.svg" alt="icône e-mail" />
               <p>maxence.barbancon@gmail.com</p>
             </div>
-            <Button>Je réserve un appel gratuit</Button>
+            <Button
+              onClick={() =>
+                window
+                  .open("https://cal.com/maxence-barbancon-w75rjo", "_blank")
+                  .focus()
+              }
+            >
+              Je réserve un appel gratuit
+            </Button>
           </div>
           <div className="flex flex-col items-center gap-6 lg:items-start">
             <p className="text-2xl font-semibold">Services</p>

@@ -87,7 +87,15 @@ export default function AboutPage() {
             }}
             viewport={{ once: true }}
           >
-            <Button>Je planifie un appel gratuit</Button>
+            <Button
+              onClick={() =>
+                window
+                  .open("https://cal.com/maxence-barbancon-w75rjo", "_blank")
+                  .focus()
+              }
+            >
+              Je planifie un appel gratuit
+            </Button>
           </motion.div>
           <div className="flex w-full flex-col items-center gap-16 pt-16 md:gap-24 xl:gap-32">
             <motion.p

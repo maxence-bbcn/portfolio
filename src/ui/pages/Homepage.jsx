@@ -17,6 +17,9 @@ import TestimonialCard from "../components/TestimonialCard";
 import MainLayout from "../layouts/MainLayout";
 
 export default function Homepage() {
+  const openCal = () =>
+    window.open("https://cal.com/maxence-barbancon-w75rjo", "_blank").focus();
+
   const brandLogos = [
     {
       logo: "src/ui/assets/logos/mazette.svg",
@@ -158,7 +161,7 @@ export default function Homepage() {
             }}
             viewport={{ once: true }}
           >
-            <Button> Je planifie un appel gratuit</Button>
+            <Button onClick={openCal}> Je planifie un appel gratuit</Button>
           </motion.div>
         </section>
         <section
@@ -344,7 +347,7 @@ export default function Homepage() {
               }}
               viewport={{ once: true }}
             >
-              <Button>J&apos;améliore mes workflows</Button>
+              <Button onClick={openCal}>J&apos;améliore mes workflows</Button>
             </motion.div>
           </div>
         </motion.section>
@@ -428,7 +431,7 @@ export default function Homepage() {
                   utiliser au quotidien, et parfaitement adaptée à vos usages
                   métier.
                 </p>
-                <Button>Planifiez un appel</Button>
+                <Button onClick={openCal}>Planifiez un appel</Button>
               </div>
               <div className="relative h-64 overflow-visible md:h-full md:w-1/3 lg:w-2/5 max-md:landscape:h-full max-md:landscape:w-1/3">
                 <img

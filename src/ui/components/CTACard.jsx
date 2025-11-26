@@ -51,7 +51,14 @@ export default function CTACard() {
           </CustomSparkleBulletListItem>
         </div>
         <Button className="lg:hidden">Je réserve un appel gratuit</Button>
-        <Button className="hidden lg:col-start-1 lg:col-end-2 lg:row-start-4 lg:row-end-5 lg:inline-block">
+        <Button
+          className="hidden lg:col-start-1 lg:col-end-2 lg:row-start-4 lg:row-end-5 lg:inline-block"
+          onClick={() =>
+            window
+              .open("https://cal.com/maxence-barbancon-w75rjo", "_blank")
+              .focus()
+          }
+        >
           Je réserve un appel gratuit maintenant
         </Button>
       </div>

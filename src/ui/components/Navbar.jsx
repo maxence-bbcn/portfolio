@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 
 export default function Navbar({ toggleMobileMenu }) {
+  const navigate = useNavigate();
+
   return (
     <motion.nav
       initial={{ y: -40, opacity: 0 }}
@@ -37,7 +39,16 @@ export default function Navbar({ toggleMobileMenu }) {
         </Link>
       </div>
       <div className="hidden w-1/3 flex-row justify-end xl:flex">
-        <Button size="small">Planifiez un appel</Button>
+        <Button
+          size="small"
+          onClick={() =>
+            window
+              .open("https://cal.com/maxence-barbancon-w75rjo", "_blank")
+              .focus()
+          }
+        >
+          Planifiez un appel
+        </Button>
       </div>
     </motion.nav>
   );

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/Button";
+import CTACard from "../components/CTACard";
 import ProjectCard from "../components/ProjectCard";
 import MainLayout from "../layouts/MainLayout";
 
@@ -73,13 +74,24 @@ export default function ProjectsPage() {
             }}
             viewport={{ once: true }}
           >
-            <Button>Je planifie un appel gratuit</Button>
+            <Button
+              onClick={() =>
+                window
+                  .open("https://cal.com/maxence-barbancon-w75rjo", "_blank")
+                  .focus()
+              }
+            >
+              Je planifie un appel gratuit
+            </Button>
           </motion.div>
         </section>
         <section className="flex flex-col gap-8 px-4 pt-16 md:gap-24 md:px-10 md:pt-32 xl:gap-16 xl:p-32">
           {projects.map((project, index) => (
             <ProjectCard project={project} key={index} />
           ))}
+        </section>
+        <section id="cta" className="px-4 py-16 xl:p-32">
+          <CTACard />
         </section>
       </main>
     </MainLayout>
