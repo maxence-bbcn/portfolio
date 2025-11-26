@@ -1,16 +1,21 @@
-export default function CustomInput({ fieldName, placeholder, ...props }) {
-  return (
-    <div className="flex flex-col gap-1 w-full">
-      <label htmlFor={fieldName}>{fieldName} *</label>
-      <input
-        {...props}
-        type="text"
-        required
-        id={fieldName}
-        name={fieldName}
-        placeholder={placeholder}
-        className="border rounded-lg p-6 bg-primary-bg border-primary-500/50"
-      />
-    </div>
-  );
-}
+import { forwardRef } from "react";
+
+const CustomInput = forwardRef(
+  ({ fieldName, placeholder, ...inputProps }, ref) => {
+    return (
+      <div className="flex w-full flex-col gap-1">
+        <label htmlFor={inputProps.name}>{fieldName} *</label>
+        <input
+          ref={ref}
+          id={inputProps.name}
+          placeholder={placeholder}
+          className="bg-primary-bg border-primary-500/50 rounded-lg border p-6"
+          {...inputProps}
+        />
+      </div>
+    );
+  },
+);
+
+CustomInput.displayName = "CustomInput";
+export default CustomInput;

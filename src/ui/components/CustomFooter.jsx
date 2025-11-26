@@ -1,9 +1,61 @@
-import { motion } from "motion/react";
+import emailjs from "@emailjs/browser";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 import AnimatedTitle from "./AnimatedTitle";
 import { Button } from "./Button";
 import CustomInput from "./CustomInput";
 
 export default function CustomFooter() {
+  const form = useRef();
+  emailjs.init("heTV3xSPg4dDMJVvj");
+  const [mailSuccess, setMailSuccess] = useState({
+    success: null,
+    displayMessage: false,
+  });
+
+  const sendEmail = (values) => {
+    emailjs.send("service_0b5j77r", "template_u66z0n5", values).then(
+      () => setMailSuccess({ success: true, displayMessage: true }),
+      () => setMailSuccess({ success: false, displayMessage: true }),
+    );
+  };
+
+  useEffect(() => {
+    setTimeout(
+      () => setMailSuccess({ success: null, displayMessage: false }),
+      5000,
+    );
+  }, [mailSuccess]);
+
+  const schema = yup.object().shape({
+    lastname: yup.string().required("Veuillez saisir votre nom."),
+    firstname: yup.string().required("Veuillez saisir votre prénom."),
+    email: yup
+      .string()
+      .email("Veuillez saisir un email valide.")
+      .required("Email obligatoire"),
+    message: yup.string().required("Veuillez saisir un message."),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmit = (data) => {
+    const values = {
+      lastname: data.lastname,
+      firstname: data.firstname,
+      email: data.email,
+      message: data.message,
+    };
+    sendEmail(values);
+  };
+
   return (
     <div className="flex flex-col gap-16">
       <motion.div
@@ -44,32 +96,73 @@ export default function CustomFooter() {
           réaliser des projets variés, du site vitrine au e-commerce. Ensemble,
           nous pouvons donner vie à votre projet !
         </motion.p>
-        <div className="from-primary-400 to-primary-800/80 w-full rounded-2xl bg-linear-to-b p-px md:w-11/12 2xl:w-3/5">
+        <div className="from-primary-400 to-primary-800/80 relative w-full rounded-2xl bg-linear-to-b p-px md:w-11/12 2xl:w-3/5">
           <form
-            action="fonction à créer"
-            method="post"
+            ref={form}
+            onSubmit={handleSubmit(onSubmit)}
             className="from-primary-800 to-primary-bg flex flex-col items-end gap-5 rounded-2xl bg-linear-180 p-8"
           >
-            <CustomInput fieldName={"Nom"} placeholder={"Votre nom"} />
-            <CustomInput fieldName={"Prénom"} placeholder={"Votre prénom"} />
+            <CustomInput
+              fieldName={"Nom"}
+              placeholder={"Votre nom"}
+              {...register("lastname")}
+            />
+            {errors.lastname && (
+              <p className="self-start text-xs leading-0 text-red-400">
+                {errors.lastname.message}
+              </p>
+            )}
+            <CustomInput
+              fieldName={"Prénom"}
+              placeholder={"Votre prénom"}
+              {...register("firstname")}
+            />
+            {errors.firstname && (
+              <p className="self-start text-xs leading-0 text-red-400">
+                {errors.firstname.message}
+              </p>
+            )}
             <CustomInput
               fieldName={"Mail"}
               placeholder={"Votre adresse e-mail"}
+              {...register("email")}
             />
+            {errors.email && (
+              <p className="self-start text-xs leading-0 text-red-400">
+                {errors.email.message}
+              </p>
+            )}
             <div className="flex w-full flex-col gap-1">
               <label htmlFor={"Message"}>Message *</label>
               <textarea
                 rows={7}
-                type="text"
-                required
-                id={"Message"}
-                name={"Message"}
+                id={"message"}
                 placeholder={"Votre message"}
                 className="bg-primary-bg border-primary-500/50 rounded-lg border p-6"
+                {...register("message")}
               />
             </div>
+            {errors.message && (
+              <p className="self-start text-xs leading-0 text-red-400">
+                {errors.message.message}
+              </p>
+            )}
             <Button type="submit">J&apos;envoie un message</Button>
           </form>
+          {mailSuccess.displayMessage && (
+            <AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="absolute right-10 -bottom-15 w-fit rounded-xl bg-indigo-900/50 p-4 ring-2 ring-indigo-400"
+              >
+                {mailSuccess.success
+                  ? "E-mail envoyé avec succès !"
+                  : "Échec de l'envoie du mail, réessayez plus tard."}
+              </motion.div>
+            </AnimatePresence>
+          )}
         </div>
       </motion.div>
       <footer className="px-4 lg:px-16 xl:px-32">
