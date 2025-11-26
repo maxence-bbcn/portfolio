@@ -580,24 +580,46 @@ export default function Homepage() {
         >
           <AnimatedTitle title="Questions fréquentes" tag="h2" />
           <div className="flex flex-col self-center xl:w-5/6">
-            <CollaspibleQuestion>
-              1. Combien de temps faut-il pour développer un outil sur-mesure ?
-            </CollaspibleQuestion>
-            <CollaspibleQuestion>
-              2. Est-ce que vous pouvez intégrer l&apos;outil avec les logiciels
-              que nous utilisons déjà ?
-            </CollaspibleQuestion>
-            <CollaspibleQuestion>
-              3. Je n&apos;ai pas de cahier des charges précis, est-ce un
-              problème ?
-            </CollaspibleQuestion>
-            <CollaspibleQuestion>
-              4. Quel budget faut-il prévoir pour un projet comme le mien ?
-            </CollaspibleQuestion>
-            <CollaspibleQuestion>
-              5. Et si j&apos;ai besoin de faire évoluer l&apos;outil plus tard
-              ?
-            </CollaspibleQuestion>
+            <CollaspibleQuestion
+              question={
+                "1. Combien de temps faut-il pour développer un outil sur-mesure ?"
+              }
+              answer={
+                "Tout dépend de la complexité : quelques semaines pour un outil simple, plusieurs mois pour un projet avancé. On vous donne toujours une estimation claire après avoir défini vos besoins."
+              }
+            />
+            <CollaspibleQuestion
+              question={
+                "2. Est-ce que vous pouvez intégrer l'outil avec les logiciels que nous utilisons déjà ?"
+              }
+              answer={
+                "Oui ! CRM, ERP, messageries… nous faisons en sorte que votre nouvel outil s’intègre parfaitement à votre environnement actuel."
+              }
+            />
+            <CollaspibleQuestion
+              question={
+                "3. Je n'ai pas de cahier des charges précis, est-ce un problème ?"
+              }
+              answer={
+                "Pas du tout. Nous vous aidons à clarifier vos besoins et à définir les fonctionnalités clés avant de commencer le développement."
+              }
+            />
+            <CollaspibleQuestion
+              question={
+                "4. Quel budget faut-il prévoir pour un projet comme le mien ?"
+              }
+              answer={
+                "Le budget varie selon la complexité et le périmètre. Après un premier échange, nous vous fournissons une estimation claire et adaptée à vos objectifs."
+              }
+            />
+            <CollaspibleQuestion
+              question={
+                "5. Et si j'ai besoin de faire évoluer l'outil plus tard ?"
+              }
+              answer={
+                "Nos solutions sont conçues pour grandir avec vous : nouvelles fonctionnalités, adaptations ou intégrations futures, nous assurons un suivi pour que l’outil reste performant et pertinent."
+              }
+            />
           </div>
         </motion.section>
       </main>
