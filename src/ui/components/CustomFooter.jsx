@@ -1,12 +1,13 @@
 import emailjs from "@emailjs/browser";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { contactSchema } from "../utils/validationSchema.js";
-import AnimatedTitle from "./AnimatedTitle";
 import { Button } from "./Button";
-import CustomInput from "./CustomInput";
+
+const AnimatedTitle = lazy(() => import("./AnimatedTitle"));
+const CustomInput = lazy(() => import("./CustomInput"));
 
 export default function CustomFooter() {
   const form = useRef();
@@ -92,31 +93,37 @@ export default function CustomFooter() {
             onSubmit={handleSubmit(onSubmit)}
             className="from-primary-800 to-primary-bg flex flex-col items-end gap-5 rounded-2xl bg-linear-180 p-8"
           >
-            <CustomInput
-              fieldName={"Nom"}
-              placeholder={"Votre nom"}
-              {...register("lastname")}
-            />
+            <Suspense fallback={<div style={{ height: 0 }}></div>}>
+              <CustomInput
+                fieldName={"Nom"}
+                placeholder={"Votre nom"}
+                {...register("lastname")}
+              />
+            </Suspense>
             {errors.lastname && (
               <p className="self-start text-xs leading-0 text-red-400">
                 {errors.lastname.message}
               </p>
             )}
-            <CustomInput
-              fieldName={"Prénom"}
-              placeholder={"Votre prénom"}
-              {...register("firstname")}
-            />
+            <Suspense fallback={<div style={{ height: 0 }}></div>}>
+              <CustomInput
+                fieldName={"Prénom"}
+                placeholder={"Votre prénom"}
+                {...register("firstname")}
+              />
+            </Suspense>
             {errors.firstname && (
               <p className="self-start text-xs leading-0 text-red-400">
                 {errors.firstname.message}
               </p>
             )}
-            <CustomInput
-              fieldName={"Mail"}
-              placeholder={"Votre adresse e-mail"}
-              {...register("email")}
-            />
+            <Suspense fallback={<div style={{ height: 0 }}></div>}>
+              <CustomInput
+                fieldName={"Mail"}
+                placeholder={"Votre adresse e-mail"}
+                {...register("email")}
+              />
+            </Suspense>
             {errors.email && (
               <p className="self-start text-xs leading-0 text-red-400">
                 {errors.email.message}

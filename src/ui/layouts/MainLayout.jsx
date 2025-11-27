@@ -1,12 +1,12 @@
 import { AnimatePresence, motion } from "motion/react";
 import { lazy, Suspense, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Button } from "../components/Button";
 import Navbar from "../components/NavBar";
 
 const CustomFooter = lazy(() => import("../components/CustomFooter"));
 
-export default function MainLayout({ children }) {
+export default function MainLayout() {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const menuRef = useRef(null);
 
@@ -69,8 +69,8 @@ export default function MainLayout({ children }) {
       <Navbar toggleMobileMenu={setMobileMenuVisible} />
       <br />
       <br />
-      {children}
-      <Suspense fallback={null}>
+      <Outlet />
+      <Suspense fallback={<div style={{ height: 0 }} />}>
         <CustomFooter />
       </Suspense>
     </>
