@@ -1,12 +1,5 @@
 import { motion } from "motion/react";
 import { lazy, Suspense } from "react";
-import AppsAsset from "../assets/images/apps circles.png";
-import FingerprintAsset from "../assets/images/fingerprint.png";
-import GraphAsset from "../assets/images/graph.png";
-import IPhoneAsset from "../assets/images/Iphone - notifications.png";
-import TextsAsset from "../assets/images/Iphone - texts.png";
-import UiModsAsset from "../assets/images/ui mods.png";
-import ZapAsset from "../assets/images/zap.png";
 import AnimatedNumber from "../components/AnimatedNumber";
 import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/Button";
@@ -211,9 +204,13 @@ export default function Homepage() {
               <span className="relative h-70 overflow-x-hidden overflow-y-clip md:h-0 xl:h-0 max-md:landscape:h-0"></span>
               <div className="mask-notifications">
                 <img
-                  src={IPhoneAsset}
+                  srcSet="/assets/images/Iphone-notifications-400w.webp 400w, /assets/images/Iphone-notifications-600w.webp 600w, /assets/images/Iphone-notifications-800w.webp 800w, /assets/images/Iphone-notifications-1000w.webp 1000w, /assets/images/Iphone-notifications-1200w.webp 1200w, /assets/images/Iphone-notifications-1600w.webp 1600w"
+                  sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (min-width: 1201px) 1600px"
+                  src="/assets/images/Iphone-notifications.webp"
                   alt="Illustration d'un téléphone saturé par des notifications"
-                  width="970px"
+                  width="1853"
+                  height="2256"
+                  loading="lazy"
                   className="max-xs:w-full absolute w-full max-w-none max-md:landscape:w-full"
                 />
               </div>
@@ -334,17 +331,15 @@ export default function Homepage() {
               <span className="relative h-70 overflow-x-hidden overflow-y-clip md:h-0 xl:h-0 max-md:landscape:h-0"></span>
               <div className="mask-sms">
                 <img
-                  src={TextsAsset}
+                  srcSet="/assets/images/iPhone-texts-400w.webp 400w, /assets/images/iPhone-texts-600w.webp 600w, /assets/images/iPhone-texts-800w.webp 800w, /assets/images/iPhone-texts-1000w.webp 1000w, /assets/images/iPhone-texts-1200w.webp 1200w, /assets/images/iPhone-texts-1600w.webp 1600w, /assets/images/iPhone-texts-2000w.webp 2000w"
+                  sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px"
+                  src="/assets/images/iPhone-texts.webp"
                   alt="Illustration d'un échange de sms"
-                  width="598px"
+                  width="2388"
+                  height="2165"
+                  loading="lazy"
                   className="absolute top-0 left-0 w-full max-w-none md:top-10 md:left-7/12 md:w-5/9 lg:w-1/2 xl:top-12 xl:left-0 xl:w-[130%] 2xl:w-[110%] max-md:landscape:top-10 max-md:landscape:-left-15 max-md:landscape:w-[170%]"
                 />
-              </div>
-              <div className="corner-container">
-                <span className="corner"></span>
-                <span className="corner"></span>
-                <span className="corner"></span>
-                <span className="corner"></span>
               </div>
             </div>
             {/* Carte interface */}
@@ -362,8 +357,13 @@ export default function Homepage() {
               </div>
               <div className="relative h-64 overflow-visible md:h-full md:w-1/3 lg:w-2/5 max-md:landscape:h-full max-md:landscape:w-1/3">
                 <img
-                  src={UiModsAsset}
-                  alt="Illusatration d'une interface utilisateur"
+                  srcSet="/assets/images/ui-400w.webp 400w, /assets/images/ui-600w.webp 600w, /assets/images/ui-800w.webp 800w, /assets/images/ui-1000w.webp 1000w, /assets/images/ui-1200w.webp 1200w"
+                  sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (min-width: 1001px) 1200px"
+                  src="/assets/images/ui.webp"
+                  alt="Illustration d'une interface utilisateur"
+                  width="1461"
+                  height="1374"
+                  loading="lazy"
                   className="1-2xl:w-[110%] 1-2xl:-top-5 absolute left-1/10 w-5/6 max-w-none md:-left-2/10 md:w-[150%] lg:-top-10 lg:w-[130%] xl:-top-8 xl:left-0 xl:w-[120%] 2xl:w-11/12 max-md:landscape:-left-2/10 max-md:landscape:w-[150%]"
                 />
               </div>
@@ -382,8 +382,13 @@ export default function Homepage() {
                   </p>
                   <div className="relative h-60 w-1/4 md:h-fit lg:w-1/4 max-md:landscape:h-fit">
                     <img
-                      src={ZapAsset}
+                      srcSet="/assets/images/zap-400w.webp 400w, /assets/images/zap-600w.webp 600w, /assets/images/zap-800w.webp 800w, /assets/images/zap-1000w.webp 1000w, /assets/images/zap-1200w.webp 1200w"
+                      sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (min-width: 1001px) 1200px"
+                      src="/assets/images/zap.webp"
                       alt="Illustration d'un éclair"
+                      width="1424"
+                      height="2047"
+                      loading="lazy"
                       className="1-2xl:-top-20 1-2xl:-left-44 1-2xl:w-[450%] absolute -top-6 -right-20 w-80 max-w-none md:top-0 md:-left-24 md:w-60 lg:-top-10 lg:-left-30 lg:w-76 xl:-top-10 xl:-left-30 xl:w-72 2xl:-top-32 2xl:-left-48 2xl:w-[400%] max-md:landscape:top-0 max-md:landscape:w-60"
                     />
                   </div>
@@ -403,9 +408,14 @@ export default function Homepage() {
                   </p>
                   <div className="relative h-full w-full xl:h-0">
                     <img
-                      src={GraphAsset}
+                      srcSet="/assets/images/graph-400w.webp 400w, /assets/images/graph-600w.webp 600w, /assets/images/graph-800w.webp 800w, /assets/images/graph-1000w.webp 1000w"
+                      sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (min-width: 801px) 1000px"
+                      src="/assets/images/graph.webp"
                       alt="Illustration d'une courbe qui monte"
-                      className="ml-auto w-3/4 max-w-none md:ml-4 md:w-full lg:ml-8 xl:absolute xl:-top-6 xl:right-0 xl:w-3/4 2xl:-top-12 max-md:landscape:mt-8 max-md:landscape:ml-4 max-md:landscape:w-full"
+                      width="1100"
+                      height="479"
+                      loading="lazy"
+                      className="ml-auto w-3/4 max-w-none md:ml-4 md:w-full lg:ml-8 xl:absolute xl:right-0 xl:w-3/4 max-md:landscape:mt-8 max-md:landscape:ml-4 max-md:landscape:w-full"
                     />
                   </div>
                 </div>
@@ -423,8 +433,13 @@ export default function Homepage() {
               <span className="relative h-30 overflow-x-hidden overflow-y-clip md:h-0 max-md:landscape:h-0"></span>
               <div className="mask-apps">
                 <img
-                  src={AppsAsset}
+                  srcSet="/assets/images/apps-400w.webp 400w, /assets/images/apps-600w.webp 600w, /assets/images/apps-800w.webp 800w, /assets/images/apps-1000w.webp 1000w, /assets/images/apps-1200w.webp 1200w"
+                  sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (min-width: 1001px) 1200px"
+                  src="/assets/images/apps.webp"
                   alt="Logos de plusieurs outils liés par des cercles concentriques"
+                  width="1252"
+                  height="1164"
+                  loading="lazy"
                   className="mx-auto w-3/4 max-w-none lg:w-7/12 xl:w-1/2"
                 />
               </div>
@@ -441,8 +456,13 @@ export default function Homepage() {
               <span className="relative h-30 overflow-x-hidden overflow-y-clip md:h-0 max-md:landscape:h-0"></span>
               <div className="mask-fingerprint">
                 <img
-                  src={FingerprintAsset}
+                  srcSet="/assets/images/fingerprint-400w.webp 400w, /assets/images/fingerprint-600w.webp 600w, /assets/images/fingerprint-800w.webp 800w, /assets/images/fingerprint-1000w.webp 1000w, /assets/images/fingerprint-1200w.webp 1200w, /assets/images/fingerprint-1600w.webp 1600w"
+                  sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (min-width: 1201px) 1600px"
+                  src="/assets/images/fingerprint.webp"
                   alt="Illustration d'une emprunte digitale"
+                  width="1745"
+                  height="1783"
+                  loading="lazy"
                   className="w-full max-w-none lg:w-4/5 xl:w-2/3 2xl:w-3/5 max-md:landscape:w-4/5"
                 />
               </div>

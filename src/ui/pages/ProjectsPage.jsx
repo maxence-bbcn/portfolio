@@ -13,7 +13,7 @@ export default function ProjectsPage() {
       status: 0,
       description:
         "Ce projet a pour vocation de mettre en avant les produits mise à la location par Deflorenne Location. Le design se veut esthétique, minimaliste et accessible. Le site permet à l'utilisateur d'ajouter du mobilier ou des produits dans son panier pour ensuite envoyer automatiquement une demande de devis personnalisé.",
-      image: "src/ui/assets/images/project--deflorenne-location.png",
+      image: "src/ui/assets/images/project--deflorenne-location.webp",
       stackIcons: [
         "/assets/logos/figma.svg",
         "/assets/logos/react.svg",
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
       status: 1,
       description:
         "L'objectif de cette mission était de permettre à Univers Kids d'accroître son potentiel marketing en vendant sur internet via un outil esthétique qui rappelle les couleurs et les valeurs de la boutique, mais aussi performant permettant au gérant de constituer sa base de données de stocks, de la modifier et de la faire vivre en totale autonomie via un dashboard administrateur et permettant également aux clients d'acheter sereinement et efficacement via le site e commerce.",
-      image: "src/ui/assets/images/project--univers-kids.png",
+      image: "src/ui/assets/images/project--univers-kids.webp",
       stackIcons: [
         "/assets/logos/figma.svg",
         "/assets/logos/react.svg",
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
         </section>
         <section className="flex flex-col gap-8 px-4 pt-16 md:gap-24 md:px-10 md:pt-32 xl:gap-16 xl:p-32">
           {projects.map((project, index) => (
-            <ProjectCard project={project} key={index} />
+            <ProjectCard project={project} key={index} index={index} />
           ))}
         </section>
         <section id="cta" className="px-4 py-16 xl:p-32">

@@ -20,7 +20,7 @@ export default function CollaspibleQuestion({ question, answer }) {
           variants={iconAnimationVariant}
           animate={open ? "open" : "closed"}
           className="origin-center"
-          src="src\ui\assets\icons\Chevron bottom.svg"
+          src="/assets/icons/Chevron bottom.svg"
           alt=""
           width={"24px"}
           height={"auto"}

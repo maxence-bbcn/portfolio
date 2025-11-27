@@ -1,12 +1,11 @@
 import { motion } from "motion/react";
 import { Button } from "./Button";
-import SparkleIcon from "/src/ui/assets/icons/sparkle.svg";
 
 const CustomSparkleBulletListItem = ({ children }) => {
   return (
     <div className="flex flex-row items-start gap-3">
       <img
-        src={SparkleIcon}
+        src="/assets/icons/sparkle.svg"
         alt="étoile pour liste à puce"
         width={"30px"}
         height={"30px"}

@@ -2,7 +2,32 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ProjectCard({ project, props }) {
+const projectImagesProps = [
+  {
+    srcset:
+      "/assets/images/project--deflorenne-location-400w.webp 400w, /assets/images/project--deflorenne-location-600w.webp 600w, /assets/images/project--deflorenne-location-800w.webp 800w, /assets/images/project--deflorenne-location-1000w.webp 1000w, /assets/images/project--deflorenne-location-1200w.webp 1200w, /assets/images/project--deflorenne-location-1600w.webp 1600w, /assets/images/project--deflorenne-location-2000w.webp 2000w",
+    sizes:
+      "(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px",
+    src: "/assets/images/project--deflorenne-location.webp",
+    alt: "Aperçu du projet",
+    width: "7680",
+    height: "4320",
+    loading: "lazy",
+  },
+  {
+    srcset:
+      "/assets/images/project--univers-kids-400w.webp 400w, /assets/images/project--univers-kids-600w.webp 600w, /assets/images/project--univers-kids-800w.webp 800w, /assets/images/project--univers-kids-1000w.webp 1000w, /assets/images/project--univers-kids-1200w.webp 1200w, /assets/images/project--univers-kids-1600w.webp 1600w, /assets/images/project--univers-kids-2000w.webp 2000w",
+    sizes:
+      "(max-width: 400px) 400px, (max-width: 600px) 600px, (max-width: 800px) 800px, (max-width: 1000px) 1000px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (min-width: 1601px) 2000px",
+    src: "/assets/images/project--univers-kids.webp",
+    alt: "Aperçu du projet",
+    width: "7680",
+    height: "4320",
+    loading: "lazy",
+  },
+];
+
+export default function ProjectCard({ project, index, ...props }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(true);
@@ -11,14 +36,13 @@ export default function ProjectCard({ project, props }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.6,
         ease: "easeOut",
       }}
       whileHover={{
         backgroundColor: "rgba(49, 46, 129, 0.1)",
-        scale: 1.02,
         transition: {
           duration: 0.3,
           ease: "easeInOut",
@@ -63,8 +87,7 @@ export default function ProjectCard({ project, props }) {
             {project.description}
           </p>
           <img
-            src={project.image}
-            alt="aperçu du projet"
+            {...projectImagesProps[index]}
             className="aspect-video h-fit w-full cursor-pointer rounded-2xl object-cover transition hover:opacity-80 md:w-1/2 max-lg:landscape:w-1/2"
             onClick={handleOpen}
           />
@@ -76,7 +99,7 @@ export default function ProjectCard({ project, props }) {
               <img
                 src={project.image}
                 alt="Image du projet"
-                className="max-h-[80%] max-w-[90%] scale-100 transform rounded-2xl shadow-lg transition-transform duration-300"
+                className="max-h-[90%] max-w-full scale-100 transform rounded-2xl shadow-lg transition-transform duration-300"
                 onClick={(e) => e.stopPropagation()} // Empêche la fermeture si on clique sur l’image
               />
             </div>
