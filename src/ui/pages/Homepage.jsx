@@ -1,5 +1,6 @@
-import { motion } from "motion/react";
-import { lazy, Suspense } from "react";
+import { animate } from "motion";
+import { motion, useMotionValue } from "motion/react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import AnimatedNumber from "../components/AnimatedNumber";
 import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/Button";
@@ -9,54 +10,104 @@ import TestimonialCard from "../components/TestimonialCard";
 
 const BrandRow = lazy(() => import("../components/BrandRow"));
 
+const statistics = [
+  {
+    value: 26,
+    catchphrase: "Du temps de travail perdu chaque jour",
+    content:
+      "Environ 26% du temps de travail quotidien est consacré à des tâches administratives inutiles ou redondantes...",
+    source: "",
+  },
+  {
+    value: 58,
+    catchphrase: 'Du temps passé à du "work about work"',
+    content:
+      "Les employés passent 58% de leur temps à des activités de coordination, d'e-mails, de réunions ou de gestion de tâches administratives...",
+    source: "",
+  },
+  {
+    value: 30,
+    catchphrase: "De perte de CA annuel",
+    content:
+      "Des processus inefficaces peuvent coûter entre 20 et 30% des revenus annuels d'une entreprise à cause de tâches redondantes...",
+    source: "",
+  },
+];
+
+const testimonials = [
+  {
+    author: "Daniel Duserre",
+    role: "Responsable de la sécurité du système d'information, Responsable de la production, Relais DPO des Hôpitaux Champagne Sud",
+    catchphrase:
+      "J'ai eu l'opportunité de collaborer avec Monsieur BARBANÇON dans le cadre d'un projet stratégique visant à concevoir un portail patient offrant une vision à 360° du parcours de soins sur le territoire. Son expertise technique et sa capacité à comprendre les enjeux métiers ont été déterminantes pour l'avancement de ce projet.",
+    content: [
+      { type: "text", text: "Monsieur BARBANÇON se distingue par :" },
+      {
+        type: "list",
+        text: [
+          "Une forte compétence en conception et développement : il a contribué à imaginer et structurer un portail ergonomique et performant, répondant aux besoins des utilisateurs.",
+          "La mise en place de solutions fiables et sécurisées : notamment pour des appels contextuels, garantissant la confidentialité et la robustesse des échanges.",
+          "Un excellent esprit collaboratif : il a su travailler en étroite coordination avec nos équipes, en apportant des solutions pragmatiques et innovantes.",
+        ],
+      },
+      {
+        type: "text",
+        text: "Grâce à son professionnalisme et son engagement, le projet a atteint ses objectifs avec succès. Je recommande vivement Monsieur BARBANCON pour tout projet nécessitant une expertise technique pointue, une forte exigence en matière de sécurité et une capacité à délivrer rapidement des solutions fiables et performantes.",
+      },
+    ],
+    logo: "/assets/logos/cht-colored.svg",
+  },
+  {
+    author: "Michaël Diot",
+    role: "Chef d'entreprise",
+    catchphrase: "Je recommande vivement !",
+    content: [
+      {
+        type: "text",
+        text: "Un montage du site complet de A à Z avec un suivi impeccable.",
+      },
+      {
+        type: "text",
+        text: "Un accompagnement dans votre projet personnalisé, une personne à l'écoute, un SAV réactif et enfin la possibilité d'avoir un site sur mesure !",
+      },
+      {
+        type: "text",
+        text: "Un professionnel qui se plie en 4 pour donner le meilleur possible !",
+      },
+    ],
+    logo: "/assets/logos/univers-kids-colored.svg",
+  },
+];
+
 export default function Homepage() {
   const openCal = () =>
     window.open("https://cal.com/maxence-barbancon-w75rjo", "_blank").focus();
 
-  const statistics = [
-    {
-      value: 26,
-      catchphrase: "Du temps de travail perdu chaque jour",
-      content:
-        "Environ 26% du temps de travail quotidien est consacré à des tâches administratives inutiles ou redondantes...",
-      source: "",
-    },
-    {
-      value: 58,
-      catchphrase: 'Du temps passé à du "work about work"',
-      content:
-        "Les employés passent 58% de leur temps à des activités de coordination, d'e-mails, de réunions ou de gestion de tâches administratives...",
-      source: "",
-    },
-    {
-      value: 30,
-      catchphrase: "De perte de CA annuel",
-      content:
-        "Des processus inefficaces peuvent coûter entre 20 et 30% des revenus annuels d'une entreprise à cause de tâches redondantes...",
-      source: "",
-    },
-  ];
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const testimonialContainerRef = useRef(null);
+  const x = useMotionValue(0);
 
-  const testimonials = [
-    {
-      author: "Filler",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
-      pp: "",
-    },
-    {
-      author: "Filler",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
-      pp: "",
-    },
-    {
-      author: "Filler",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
-      pp: "",
-    },
-  ];
+  const handleNextTestimonial = () => {
+    setActiveTestimonial((i) => Math.min(testimonials.length - 1, i + 1));
+  };
+
+  const handlePreviousTestimonial = () => {
+    setActiveTestimonial((i) => Math.max(0, i - 1));
+  };
+
+  useEffect(() => {
+    if (testimonialContainerRef.current) {
+      const containerWidth = testimonialContainerRef.current.offsetWidth;
+      const gap = 32 * 4;
+      const targetX =
+        -activeTestimonial * containerWidth - gap * activeTestimonial;
+      animate(x, targetX, {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      });
+    }
+  }, [activeTestimonial, x]);
 
   return (
     <main>
@@ -468,7 +519,7 @@ export default function Homepage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           id="testimonials"
-          className="bg-pattern-straight flex flex-col gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
+          className="bg-pattern-straight flex flex-col items-center gap-16 px-4 py-16 md:px-10 md:py-24 xl:p-32 xl:px-32"
         >
           <AnimatedTitle
             title="Ils ont gagné en efficacité grâce à des solutions pensées pour eux"
@@ -482,16 +533,57 @@ export default function Homepage() {
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.1 }}
-            className="flex flex-row flex-wrap justify-center gap-10 xl:gap-10"
           >
-            {testimonials.map(({ content, author, pp }, index) => (
-              <TestimonialCard
-                key={index}
-                content={content}
-                author={author}
-                pp={pp}
-              />
-            ))}
+            <div className="flex flex-row flex-wrap justify-center gap-10 md:hidden xl:gap-10">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} />
+              ))}
+            </div>
+            <div className="hidden w-full items-center justify-center md:flex md:gap-6 lg:gap-12">
+              <button
+                className="z-40 h-fit cursor-pointer"
+                onClick={handlePreviousTestimonial}
+              >
+                <img
+                  src="/assets/icons/Chevron bottom.svg"
+                  width={32}
+                  className="rotate-90"
+                />
+              </button>
+              <div
+                className="relative max-w-9/12"
+                ref={testimonialContainerRef}
+              >
+                <motion.div
+                  className="flex w-full items-center gap-32"
+                  style={{ x }}
+                >
+                  {testimonials.map((item) => (
+                    <TestimonialCard testimonial={item} key={item.author} />
+                  ))}
+                </motion.div>
+
+                <div className="absolute -bottom-8 flex w-full justify-center gap-4">
+                  {testimonials.map((item, index) => (
+                    <span
+                      onClick={() => setActiveTestimonial(index)}
+                      key={index}
+                      className={`${index === activeTestimonial ? "w-6" : "w-2"} h-2 cursor-pointer rounded-full bg-white transition-all duration-300`}
+                    ></span>
+                  ))}
+                </div>
+              </div>
+              <button
+                className="z-40 h-fit cursor-pointer"
+                onClick={handleNextTestimonial}
+              >
+                <img
+                  src="/assets/icons/Chevron bottom.svg"
+                  width={32}
+                  className="-rotate-90"
+                />
+              </button>
+            </div>
           </motion.div>
         </motion.section>
       )}
@@ -528,7 +620,7 @@ export default function Homepage() {
               "2. Est-ce que vous pouvez intégrer l'outil avec les logiciels que nous utilisons déjà ?"
             }
             answer={
-              "Oui ! CRM, ERP, messageries… nous faisons en sorte que votre nouvel outil s’intègre parfaitement à votre environnement actuel."
+              "Oui ! CRM, ERP, messageries… nous faisons en sorte que votre nouvel outil s'intègre parfaitement à votre environnement actuel."
             }
           />
           <CollaspibleQuestion
@@ -552,7 +644,7 @@ export default function Homepage() {
               "5. Et si j'ai besoin de faire évoluer l'outil plus tard ?"
             }
             answer={
-              "Nos solutions sont conçues pour grandir avec vous : nouvelles fonctionnalités, adaptations ou intégrations futures, nous assurons un suivi pour que l’outil reste performant et pertinent."
+              "Nos solutions sont conçues pour grandir avec vous : nouvelles fonctionnalités, adaptations ou intégrations futures, nous assurons un suivi pour que l'outil reste performant et pertinent."
             }
           />
         </div>
