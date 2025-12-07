@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       title: "Site vitrine",
       status: 0,
       description:
-        "Ce projet a pour vocation de mettre en avant les produits mise à la location par Deflorenne Location. Le design se veut esthétique, minimaliste et accessible. Le site permet à l'utilisateur d'ajouter du mobilier ou des produits dans son panier pour ensuite envoyer automatiquement une demande de devis personnalisé.",
+        "Ce projet a pour vocation de mettre en avant les produits mis à la location par Deflorenne Location. Le design se veut esthétique, minimaliste et accessible. Le site permet à l'utilisateur d'ajouter du mobilier ou des produits dans son panier pour ensuite envoyer automatiquement une demande de devis personnalisé.",
       image: "/assets/images/project-deflorenne-location.webp",
       stackIcons: [
         "/assets/logos/figma.svg",
@@ -21,11 +21,11 @@ export default function ProjectsPage() {
       link: "",
     },
     {
-      logo: "/assets/logos/univers-kids.svg",
+      logo: "/assets/logos/univers-kids-colored.svg",
       title: "Site e-commerce",
       status: 1,
       description:
-        "L'objectif de cette mission était de permettre à Univers Kids d'accroître son potentiel marketing en vendant sur internet via un outil esthétique qui rappelle les couleurs et les valeurs de la boutique, mais aussi performant permettant au gérant de constituer sa base de données de stocks, de la modifier et de la faire vivre en totale autonomie via un dashboard administrateur et permettant également aux clients d'acheter sereinement et efficacement via le site e commerce.",
+        "L'objectif de cette mission était de permettre à Univers Kids d'accroître son potentiel marketing en vendant sur internet via un outil esthétique rappelant les couleurs et les valeurs de la boutique. Tout en étant performant, ce site a permis au gérant de constituer sa base de données de stocks, de la modifier et de la faire vivre en totale autonomie via un dashboard administrateur. Cela a également permis aux clients d'acheter sereinement et efficacement via le site e-commerce.",
       image: "/assets/images/project-univers-kids.webp",
       stackIcons: [
         "/assets/logos/figma.svg",

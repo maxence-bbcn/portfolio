@@ -15,7 +15,7 @@ const statistics = [
     value: 26,
     catchphrase: "Du temps de travail perdu chaque jour",
     content:
-      "Environ 26% du temps de travail quotidien est consacré à des tâches administratives inutiles ou redondantes...",
+      "Environ 26% du temps de travail quotidien est consacré à des tâches administratives inutiles ou répétitives...",
     source: "",
   },
   {
@@ -52,7 +52,7 @@ const testimonials = [
       },
       {
         type: "text",
-        text: "Grâce à son professionnalisme et son engagement, le projet a atteint ses objectifs avec succès. Je recommande vivement Monsieur BARBANCON pour tout projet nécessitant une expertise technique pointue, une forte exigence en matière de sécurité et une capacité à délivrer rapidement des solutions fiables et performantes.",
+        text: "Grâce à son professionnalisme et son engagement, le projet a atteint ses objectifs avec succès. Je recommande vivement Monsieur BARBANÇON pour tout projet nécessitant une expertise technique pointue, une forte exigence en matière de sécurité et une capacité à délivrer rapidement des solutions fiables et performantes.",
       },
     ],
     logo: "/assets/logos/cht-colored.svg",
@@ -231,13 +231,13 @@ export default function Homepage() {
               >
                 Vos équipes
                 <span className="inline-block font-semibold">
-                  &nbsp;perdent en efficacité&nbsp;
+                  &nbsp;perdent en efficacité
                 </span>
                 , l&apos;information circule mal entre les services, et
                 <span className="inline-block font-semibold">
-                  &nbsp;les tâches répétitives s&apos;accumulent&nbsp;
+                  &nbsp;les tâches répétitives s&apos;accumulent.
                 </span>
-                . Sans outil adapté, la centralisation des données devient
+                &nbsp;Sans outil adapté, la centralisation des données devient
                 complexe,
                 <span className="inline-block font-semibold">
                   les erreurs se multiplient
@@ -368,7 +368,7 @@ export default function Homepage() {
           <div className="border-primary-800 relative flex w-full flex-col overflow-x-visible rounded-2xl border pt-6 transition-colors duration-300 ease-in-out hover:bg-indigo-900/10 md:col-span-4 md:col-start-1 md:row-span-7 md:row-start-1 max-md:landscape:col-span-4 max-md:landscape:col-start-1 max-md:landscape:row-span-7 max-md:landscape:row-start-1">
             <div className="flex flex-col gap-8 px-6">
               <h3 className="text-2xl font-medium md:text-lg xl:text-2xl 2xl:text-3xl max-md:landscape:text-lg">
-                Un accompagnement sur-mesure, <strong>du début à la fin</strong>
+                Un accompagnement sur mesure, <strong>du début à la fin</strong>
               </h3>
               <p className="text-lg leading-normal font-extralight italic md:text-sm lg:text-base xl:text-lg xl:leading-relaxed max-md:landscape:text-sm">
                 Écoute, pédagogie et réactivité : vous avancez en confiance,
@@ -445,7 +445,7 @@ export default function Homepage() {
               </h3>
               <div className="flex h-full flex-col">
                 <p className="w-5/6 pr-6 pl-6 text-lg leading-normal font-extralight italic md:w-full md:text-sm lg:text-base xl:w-3/4 xl:text-lg xl:leading-relaxed max-md:landscape:w-full max-md:landscape:text-sm">
-                  Architecture modulaire, fonctionnalités extensibles, votre
+                  Architecture modulaire, fonctionnalités extensibles : votre
                   outil s&apos;adapte à vos futurs besoins.
                 </p>
                 <div className="relative h-full w-full xl:h-0">
@@ -609,10 +609,10 @@ export default function Homepage() {
         <div className="flex flex-col self-center xl:w-5/6">
           <CollaspibleQuestion
             question={
-              "1. Combien de temps faut-il pour développer un outil sur-mesure ?"
+              "1. Combien de temps faut-il pour développer un outil sur mesure ?"
             }
             answer={
-              "Tout dépend de la complexité : quelques semaines pour un outil simple, plusieurs mois pour un projet avancé. On vous donne toujours une estimation claire après avoir défini vos besoins."
+              "Tout dépend de la complexité : quelques semaines pour un outil simple, plusieurs mois pour un projet avancé. Je vous donne toujours une estimation claire après avoir défini vos besoins."
             }
           />
           <CollaspibleQuestion
@@ -620,7 +620,7 @@ export default function Homepage() {
               "2. Est-ce que vous pouvez intégrer l'outil avec les logiciels que nous utilisons déjà ?"
             }
             answer={
-              "Oui ! CRM, ERP, messageries… nous faisons en sorte que votre nouvel outil s'intègre parfaitement à votre environnement actuel."
+              "Oui ! CRM, ERP, messageries… Je fais en sorte que votre nouvel outil s'intègre parfaitement à votre environnement actuel."
             }
           />
           <CollaspibleQuestion
@@ -628,7 +628,7 @@ export default function Homepage() {
               "3. Je n'ai pas de cahier des charges précis, est-ce un problème ?"
             }
             answer={
-              "Pas du tout. Nous vous aidons à clarifier vos besoins et à définir les fonctionnalités clés avant de commencer le développement."
+              "Pas du tout. Je vous aide à clarifier vos besoins et à définir les fonctionnalités clés avant de commencer le développement."
             }
           />
           <CollaspibleQuestion
@@ -636,7 +636,7 @@ export default function Homepage() {
               "4. Quel budget faut-il prévoir pour un projet comme le mien ?"
             }
             answer={
-              "Le budget varie selon la complexité et le périmètre. Après un premier échange, nous vous fournissons une estimation claire et adaptée à vos objectifs."
+              "Le budget varie selon la complexité et le périmètre. Après un premier échange, je vous fournis une estimation claire et adaptée à vos objectifs."
             }
           />
           <CollaspibleQuestion
@@ -644,7 +644,7 @@ export default function Homepage() {
               "5. Et si j'ai besoin de faire évoluer l'outil plus tard ?"
             }
             answer={
-              "Nos solutions sont conçues pour grandir avec vous : nouvelles fonctionnalités, adaptations ou intégrations futures, nous assurons un suivi pour que l'outil reste performant et pertinent."
+              "Mes solutions sont conçues pour grandir avec vous : nouvelles fonctionnalités, adaptations ou intégrations futures, j'assure un suivi pour que l'outil reste performant et pertinent."
             }
           />
         </div>
