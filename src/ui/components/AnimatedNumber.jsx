@@ -2,7 +2,7 @@ import { animate } from "motion";
 import { useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-export default function AnimatedNumber({ value }) {
+export default function AnimatedNumber({ value, unit }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 1 });
   const [displayValue, setDisplayValue] = useState(0);
@@ -21,7 +21,7 @@ export default function AnimatedNumber({ value }) {
   return (
     <p ref={ref} className="text-6xl font-black">
       {displayValue}
-      <span className="text-base font-normal">%</span>
+      <span className="pl-px text-base font-normal">{unit}</span>
     </p>
   );
 }

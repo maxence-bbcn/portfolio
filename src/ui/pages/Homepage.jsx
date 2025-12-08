@@ -12,25 +12,34 @@ const BrandRow = lazy(() => import("../components/BrandRow"));
 
 const statistics = [
   {
-    value: 26,
-    catchphrase: "Du temps de travail perdu chaque jour",
+    value: 258,
+    unit: "h",
+    catchphrase: "Perdues par an",
     content:
-      "Environ 26% du temps de travail quotidien est consacré à des tâches administratives inutiles ou répétitives...",
-    source: "",
+      "Environ 258 heures par an sont consacrées à des tâches répétitives ou à des réunions inutiles...",
+    source: "HRM",
+    sourceLink:
+      "https://www.hrmonline.com.au/section/featured/average-worker-spends-58-of-their-time-on-work-about-work/",
   },
   {
     value: 58,
+    unit: "%",
     catchphrase: 'Du temps passé à du "work about work"',
     content:
       "Les employés passent 58% de leur temps à des activités de coordination, d'e-mails, de réunions ou de gestion de tâches administratives...",
-    source: "",
+    source: "Asana / Anatomy of work 2023",
+    sourceLink:
+      "https://investors.asana.com/news-releases/news-release-details/asana-anatomy-work-global-index-2023-smart-collaboration-and",
   },
   {
-    value: 30,
-    catchphrase: "De perte de CA annuel",
+    value: 75,
+    unit: "%",
+    catchphrase: "Des réunions considérées comme inutiles",
     content:
-      "Des processus inefficaces peuvent coûter entre 20 et 30% des revenus annuels d'une entreprise à cause de tâches redondantes...",
-    source: "",
+      "Près de trois quarts des réunions sont considérées comme inefficaces, souvent perçues comme du temps perdu…",
+    source: "Atlassian",
+    sourceLink:
+      "https://fortune.com/2024/03/21/meetings-productivity-ineffective-atlassian-report/",
   },
 ];
 
@@ -292,19 +301,21 @@ export default function Homepage() {
                 key={index}
                 className="border-primary-gradient w-full rounded-2xl p-px sm:max-w-2/3 md:w-3/5"
               >
-                <div className="bg-primary-bg flex h-full w-full flex-col items-center gap-4 rounded-2xl px-6 pt-6 pb-2 md:justify-evenly">
+                <div className="bg-primary-bg flex h-full w-full flex-col items-center gap-4 rounded-2xl px-6 pt-6 pb-2 md:justify-between">
                   <div className="flex flex-col items-center gap-0">
-                    <AnimatedNumber value={stat.value} />
+                    <AnimatedNumber value={stat.value} unit={stat.unit} />
                     <p className="text-sm">{stat.catchphrase}</p>
                   </div>
                   <p className="text-sm font-extralight italic">
                     {stat.content}
                   </p>
                   <a
-                    href={stat.source}
+                    href={stat.sourceLink}
+                    target="_blank"
                     className="text-2xs text-primary-200 self-end underline decoration-dotted"
+                    rel="noreferrer"
                   >
-                    Voir la source
+                    {stat.source}
                   </a>
                 </div>
               </div>
