@@ -1,18 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logos/moi.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bienvenue sur mon portfolio, vous y retrouverez des explications sur ma façon de travailler ainsi que des exemples de projets."
+    />
+    <title>Maxence Barbançon</title>
+    <!-- Preconnect (accélère la résolution DNS + handshake TLS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./src/ui/assets/icons/logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Bienvenue sur mon portfolio, vous y retrouverez des explications sur ma façon de travailler ainsi que des exemples de projets." />
-  <title>Maxence Barbançon</title>
-</head>
+    <!-- Inter -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=optional"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Lora -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@100..900&display=optional"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
 
+    <!-- Lobster -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=optional"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <!-- Fallback si JS est désactivé -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=optional"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@100..900&display=optional"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lobster&display=optional"
+      />
+    </noscript>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

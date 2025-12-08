@@ -1,0 +1,222 @@
+/* --- Start of mask for sms asset placed onto the grid --- */
+.mask-notifications {
+  overflow: clip;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 100%;
+  height: 40%;
+  border-radius: 1rem;
+}
+/* Small phones like S22 in landscape */
+@media screen and (max-height: 24rem) and (orientation: landscape) {
+  .mask-notifications {
+    height: 110%;
+    width: 40%;
+    left: 60%;
+  }
+}
+/* Small devices (like S22) */
+@media screen and (max-width: 24rem) {
+  .mask-notifications {
+    height: 30%;
+    left: 0;
+  }
+}
+/* Tailwindcss --- MD --- */
+@media screen and (min-width: 48rem) {
+  .mask-notifications {
+    height: 100%;
+    width: 40%;
+    left: 65%;
+  }
+}
+/* Tailwindcss --- LG --- */
+@media screen and (min-width: 64rem) {
+  .mask-notifications {
+    height: 110%;
+    width: 45%;
+    left: 60%;
+  }
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-notifications {
+    right: -10%;
+    left: unset;
+    width: 45%;
+    height: 115%;
+  }
+}
+/* Between XL & 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-notifications {
+    right: -5%;
+    width: 40%;
+    height: 120%;
+  }
+}
+/* --- End of sms's mask --- */
+
+/* --- Start of mask for sms asset placed onto the grid --- */
+.mask-sms {
+  overflow: clip;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: calc(100vw - 16px);
+  height: 55%;
+  border-radius: 1rem;
+}
+/* Small phones like S22 in landscape */
+@media screen and (max-height: 24rem) and (orientation: landscape) {
+  .mask-sms {
+    right: 0;
+    width: 110%;
+  }
+}
+/* Small phones like S22 */
+@media screen and (max-width: 24rem) {
+  .mask-sms {
+    height: 45%;
+  }
+}
+/* Tailwindcss --- MD --- */
+@media screen and (min-width: 48rem) {
+  .mask-sms {
+    height: 55%;
+    right: 0;
+    border-radius: 1rem;
+    border-bottom: 1px solid
+      linear-gradient(
+        var(--color-primary-bg) 30%,
+        var(--color-primary-800) 100%
+      );
+  }
+}
+/* Tailwindcss --- LG --- */
+@media screen and (min-width: 64rem) {
+  .mask-sms {
+    height: 60%;
+  }
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-sms {
+    width: 120%;
+    height: 60%;
+  }
+}
+/* Between XL & 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-sms {
+    width: 120%;
+    height: 70%;
+  }
+}
+/* Tailwindcss --- 2XL --- */
+@media screen and (min-width: 96rem) {
+  .mask-sms {
+    width: 120%;
+    height: 70%;
+  }
+}
+/* --- End of sms's mask --- */
+
+/* --- Start of mask for fingerprint asset placed onto the grid --- */
+.mask-fingerprint {
+  overflow: clip;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+}
+/* Small phones like S22 in landscape */
+@media screen and (max-height: 24rem) and (orientation: landscape) {
+  .mask-fingerprint {
+    top: 45%;
+    left: 20%;
+  }
+}
+/* Small phones like S22 */
+@media screen and (max-width: 24rem) {
+  .mask-fingerprint {
+    top: 50%;
+  }
+}
+/* Tailwindcss --- LG --- */
+@media screen and (min-width: 64rem) {
+  .mask-fingerprint {
+    top: 20%;
+    left: 35%;
+  }
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-fingerprint {
+    top: 25%;
+    left: 45%;
+  }
+}
+/* Between XL & 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-fingerprint {
+    top: 15%;
+    left: 45%;
+  }
+}
+/* Tailwindcss --- 2XL --- */
+@media screen and (min-width: 96rem) {
+  .mask-fingerprint {
+    top: 0%;
+    left: 45%;
+  }
+}
+/* --- End of fingerprint's mask --- */
+
+/* --- Start of mask for apps asset placed onto the grid --- */
+.mask-apps {
+  overflow: clip;
+  position: absolute;
+  top: 55%;
+  right: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+/* Small phones like S22 in landscape */
+@media screen and (max-height: 24rem) and (orientation: landscape) {
+  .mask-apps {
+    top: 60%;
+  }
+}
+/* Small phones like S22 */
+@media screen and (max-width: 24rem) {
+  .mask-apps {
+    top: 60%;
+  }
+}
+/* Tailwindcss --- LG --- */
+@media screen and (min-width: 64rem) {
+  .mask-apps {
+    left: 28%;
+    top: 20%;
+  }
+}
+/* Tailwindcss --- XL --- */
+@media screen and (min-width: 80rem) {
+  .mask-apps {
+    left: 28%;
+    top: 20%;
+  }
+}
+/* Between Xl and 2XL */
+@media screen and (min-width: 90rem) {
+  .mask-apps {
+    left: 28%;
+    top: 15%;
+  }
+}
+/* --- End of apps' mask --- */
