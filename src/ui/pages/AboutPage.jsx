@@ -167,7 +167,7 @@ export default function AboutPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         id="approach"
-        className="flex flex-col items-center gap-16 px-4 pt-16 md:gap-24 md:px-10 xl:gap-32 xl:p-32"
+        className="flex flex-col items-center gap-16 px-4 pt-16 md:gap-20 md:px-10 xl:p-32"
       >
         <AnimatedTitle
           title="Mon approche : simple, efficace, personnalisée"
