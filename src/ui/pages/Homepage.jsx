@@ -236,25 +236,25 @@ export default function Homepage() {
                   ease: "easeOut",
                 }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="px-8 pt-6 text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base"
+                className="px-8 pt-6 text-left text-xl leading-loose md:w-3/5 md:pb-6 md:text-base lg:w-2/3 lg:p-16 lg:text-lg 2xl:text-2xl max-md:landscape:w-3/5 max-md:landscape:pb-6 max-md:landscape:text-base"
               >
-                Vos équipes
+                Vos équipes&nbsp;
                 <span className="inline-block font-semibold">
-                  &nbsp;perdent en efficacité
+                  perdent en efficacité,&nbsp;
                 </span>
-                , l&apos;information circule mal entre les services, et
+                l&apos;information circule mal entre les services, et&nbsp;
                 <span className="inline-block font-semibold">
-                  &nbsp;les tâches répétitives s&apos;accumulent.
+                  les tâches répétitives s&apos;accumulent.&nbsp;
                 </span>
-                &nbsp;Sans outil adapté, la centralisation des données devient
+                Sans outil adapté, la centralisation des données devient
                 complexe,
                 <span className="inline-block font-semibold">
                   les erreurs se multiplient
                 </span>
                 , et vos collaborateurs passent plus de temps à gérer des
-                contraintes qu&apos;à
+                contraintes qu&apos;à&nbsp;
                 <span className="inline-block font-semibold">
-                  &nbsp;créer de la valeur
+                  créer de la valeur
                 </span>
                 .
               </motion.p>
