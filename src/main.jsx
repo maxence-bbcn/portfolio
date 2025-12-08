@@ -15,6 +15,7 @@ const MainLayout = lazy(() => import("./ui/layouts/MainLayout.jsx"));
 const Homepage = lazy(() => import("./ui/pages/Homepage.jsx"));
 const AboutPage = lazy(() => import("./ui/pages/AboutPage.jsx"));
 const ProjectsPage = lazy(() => import("./ui/pages/ProjectsPage.jsx"));
+const LegalPage = lazy(() => import("./ui/pages/LegalPage.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={null}>
             <AboutPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/legal",
+        element: (
+          <Suspense fallback={null}>
+            <LegalPage />
           </Suspense>
         ),
       },
