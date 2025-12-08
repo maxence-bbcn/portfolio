@@ -3,7 +3,7 @@ import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/Button";
 import CTACard from "../components/CTACard";
 import DegreeCard from "../components/DegreeCard";
-import TechItem from "../components/techItem";
+import TechItem from "../components/TechItem";
 
 export default function AboutPage() {
   const techStack = [

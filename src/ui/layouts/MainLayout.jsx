@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { lazy, Suspense, useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { Button } from "../components/Button";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 
 const CustomFooter = lazy(() => import("../components/CustomFooter"));
 
