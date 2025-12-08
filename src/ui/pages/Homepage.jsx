@@ -552,13 +552,13 @@ export default function Homepage() {
             </div>
             <div className="hidden w-full items-center justify-center md:flex md:gap-6 lg:gap-12">
               <button
-                className="z-40 h-fit cursor-pointer"
+                className="z-40 h-fit cursor-pointer transition-transform duration-150 ease-out hover:scale-120"
                 onClick={handlePreviousTestimonial}
               >
                 <img
                   src="/assets/icons/Chevron bottom.svg"
                   width={32}
-                  className="rotate-90"
+                  className={`rotate-90 ${activeTestimonial === 0 ? "hidden" : "block"}`}
                 />
               </button>
               <div
@@ -585,13 +585,13 @@ export default function Homepage() {
                 </div>
               </div>
               <button
-                className="z-40 h-fit cursor-pointer"
+                className="z-40 h-fit cursor-pointer transition-transform duration-150 ease-out hover:scale-120"
                 onClick={handleNextTestimonial}
               >
                 <img
                   src="/assets/icons/Chevron bottom.svg"
                   width={32}
-                  className="-rotate-90"
+                  className={`-rotate-90 ${activeTestimonial === testimonials.length - 1 ? "hidden" : "block"}`}
                 />
               </button>
             </div>
