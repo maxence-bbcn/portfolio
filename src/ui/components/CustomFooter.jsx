@@ -22,7 +22,10 @@ export default function CustomFooter() {
 
   const sendEmail = (values) => {
     emailjs.send("service_0b5j77r", "template_u66z0n5", values).then(
-      () => setMailSuccess({ success: true, displayMessage: true }),
+      () => {
+        setMailSuccess({ success: true, displayMessage: true });
+        form.current.reset();
+      },
       () => setMailSuccess({ success: false, displayMessage: true }),
     );
   };
