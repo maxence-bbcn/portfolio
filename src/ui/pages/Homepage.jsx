@@ -67,6 +67,35 @@ const testimonials = [
     logo: "/assets/logos/cht-colored.svg",
   },
   {
+    author: "Mickaël Deflorenne",
+    role: "Chef d'entreprise",
+    catchphrase:
+      "Constamment à l'écoute du besoin de ses clients, il a réalisé avec soin chaque modification demandée",
+    content: [
+      {
+        type: "text",
+        text: "J'ai fait appel à Monsieur Maxence Barbançon pour la création d'un site web de A à Z. Je venais de créer ma société et je lui ai laissé carte blanche.",
+      },
+      {
+        type: "text",
+        text: "Il a été efficace et créatif, il a même réalisé un logo pour l'entreprise. Il est force de proposition pour que l'interface corresponde le maximum a une utilisation simple pour le client.",
+      },
+      {
+        type: "text",
+        text: "Il est constamment à l'écoute du besoin de ses clients, il a réalisé avec soin chaque modification demandée. Chaque changement réalisé a apporté un petit plus au site.",
+      },
+      {
+        type: "text",
+        text: "Il a un suivi de projet très encadré, il revient vers nous quand cela est nécessaire. Il s'est adapté à mes horaires difficiles pour mener à bien ce projet.",
+      },
+      {
+        type: "text",
+        text: "J'ai apprécié travailler en collaboration avec Maxence Barbançon, avec qui la communication a été fluide, il a été compréhensif et particulièrement proactif. Je le remercie pour sa patience, son expertise technique, son exigence et son accompagnement. Je suis pleinement satisfait du travail proposé et accompli. Je ne regrette pas mon choix et je recommande vivement son travail. ",
+      },
+    ],
+    logo: "/assets/logos/deflorenne-location.svg",
+  },
+  {
     author: "Michaël Diot",
     role: "Chef d'entreprise",
     catchphrase: "Je recommande vivement !",
