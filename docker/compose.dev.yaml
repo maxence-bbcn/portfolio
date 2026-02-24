@@ -1,0 +1,10 @@
+services:
+  portfolio:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    volumes:
+    - ..:/app
+    - /app/node_modules
+    ports:
+      - "80:80"
