@@ -7,7 +7,7 @@ import ProjectCard from "../components/ProjectCard";
 export default function ProjectsPage() {
   const projects = [
     {
-      logo: "/assets/logo/cht-colored.svg",
+      logo: "/assets/logos/cht-colored.svg",
       title: "Patient 360",
       status: 1,
       description: "Cette application web, divisée en une API node JS et un frontend React JS, a pour objectif de permettre à un professionnel de santé de retracer l'historique d'un patient via, notamment, une vue frise chronologique et d'en afficher les documents liés au dossier patient (comptes rendus d'imagerie, d'analyses, ordonnances, etc.).",
