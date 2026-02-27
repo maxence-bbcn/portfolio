@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 
 const projectImagesProps = [
   {
+    srcset: "",
+     sizes:
+      "",
+    src: "",
+    alt: "Aperçu du projet",
+    width: "7680",
+    height: "4320",
+    loading: "lazy",
+  },
+  {
     srcset:
       "/assets/images/project--deflorenne-location-400w.webp 400w, /assets/images/project--deflorenne-location-600w.webp 600w, /assets/images/project--deflorenne-location-800w.webp 800w, /assets/images/project--deflorenne-location-1000w.webp 1000w, /assets/images/project--deflorenne-location-1200w.webp 1200w, /assets/images/project--deflorenne-location-1600w.webp 1600w, /assets/images/project--deflorenne-location-2000w.webp 2000w",
     sizes:
